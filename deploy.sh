@@ -20,6 +20,7 @@ Options:
 "
 
 
+
 run_build() {
   bundle exec middleman build --clean
 }
