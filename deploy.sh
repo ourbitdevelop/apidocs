@@ -19,6 +19,7 @@ Options:
       --push-only          Only push but not build
 "
 
+
 run_build() {
   bundle exec middleman build --clean
 }

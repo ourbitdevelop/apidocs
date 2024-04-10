@@ -1,5 +1,5 @@
 ---
-title: API 文档
+title: API Document
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -13,150 +13,390 @@ meta:
     content: Documentation for the ourbit API
 ---
 
-# 介绍
+# Introduction
 
-## API Key 设置
+## API Key Setup
 
-- 很多接口需要API Key才可以访问. 请参考[这个页面](https://www.ourbit.com/user/openapi)来设置API Key.
-- 设置API Key的同时，为了安全，建议设置IP访问白名单(未添加白名单有效期为90天).
-- 永远不要把你的API key/secret告诉给任何人.
+- Some endpoints will require an API Key. Please refer to [this page](https://www.ourbit.com/user/openapi) regarding API key creation.
+- Once API key is created, it is recommended to set IP restrictions on the key for security reasons.
+- Never share your API key/secret key to ANYONE.
   
-<aside class="warning">如果不小心泄露了API key，请立刻删除此Key, 并可以另外生产新的Key.</aside>
+<aside class="warning">If the API keys were accidentally shared, please delete them immediately and create a new key.</aside>
 
-## API Key 权限设置
+## API Key Restrictions
 
-在创建API Key时勾选所需要的权限 
+Check the required permissions when creating an API Key
 
-## API 代码库
+## API Library
 
-我们为开发者提供了Python,DotNET,Java,Javascript,Go五种语言的SDK,提供用户直接通过SDK调用API的方法。目前支持现货所有接口。
+We provide developers with SDKs in five languages: Python, DotNET, Java, Javascript, and Go, and provide users with methods to call APIs directly through the SDK. Currently supports all interfaces in spot.
 
 [https://github.com/ourbitdevelop/ourbit-api-sdk](https://github.com/ourbitdevelop/ourbit-api-sdk)
 
 <aside class="notice">
-使用中遇到问题请通过<a href="https://github.com/ourbitdevelop/ourbit-api-sdk/issues" target="_blank">提交问题</a>反馈
+Any problem please submit <a href="https://github.com/ourbitdevelop/ourbit-api-sdk/issues" target="_blank"> feedback</a>
 </aside>
-
-## Demo示例
-
-我们提供了5种语言的demo，用户可以参考，目前支持了现货，推送等示例，后续会持续更新。
-
-https://github.com/ourbitdevelop/ourbit-api-demo
-
-使用中遇到问题请通过[提交问题](https://github.com/ourbitdevelop/ourbit-api-demo/issues)反馈
-
 ### Postman Collections
 
-现在你可以通过`Postman collection`来快速体验、使用API接口。
-如果想了解更多如何使用Postman，请访问: [Ourbit API Postman](https://github.com/ourbitdevelop/ourbit-api-postman)
+There is now a Postman collection containing the API endpoints for quick and easy use.
 
-## 经纪商申请
+This is recommended for new users who want to get a quick-start into using the API.
 
-OURBIT致力于构建加密货币基础设施，提供有价值服务的API 经纪商合作伙伴是OURBIT生态系统中的重要参与部分。OURBIT推出了OURBIT经纪商权益，包括交易返佣和营销支持，以奖励合作伙伴。
+For more information please refer to this page: [OURBIT API Postman](https://github.com/ourbitdevelop/ourbit-api-postman)
 
-**目前OURBIT支持的经纪商模式：**
+## OURBIT Broker Introduction
 
-**1. API 经纪商：**
-包括集跟单平台、交易机器人、量化策略平台或其他500人以上资产管理平台等，用户可以将API key授权给API经纪商，API经纪商代替用户发送含有经济商ID的交易订单，获取手续费分润。
+OURBIT is committed to building crypto infrastructure, with API broker partners that provide valuable services being an essential part of the OURBIT ecosystem. To reward the partners, OURBIT now provides privileges for OURBIT brokers, including trading rebates and marketing support.
 
-**2. 独立经纪商：**
-包括钱包商、行情资讯平台、聚合交易平台、券商和股票证券交易平台等，有自己独立用户，OURBIT可以提供订单撮合系统、账户管理系统、结算系统以及母子账户系统等，独立经纪商可共享全站流动性和深度，获得高额手续费分润。
+**Broker Modes Supported by OURBIT**
 
-合作请联系：broker@ourbit.com
+**1. API Broker**
 
-## 联系我们
+This includes copy trade platforms, trading bots, quantitative strategy platforms, or other asset management platforms with more than 500 people, etc. Users can authorize the API key to the API broker, and the API broker will send the trading orders containing the broker ID on behalf of the user and receive profit shares from fees.
 
-- OURBIT API电报群 [OURBIT API Support Group](https://t.me/OURBITAPIsupport)
-  - 咨询文档中没有提及的API问题
-  - 咨询API或者websocket性能方面的问题
-  - 咨询做市相关的问题
-- OURBIT 客服 *官网、app中在线客服*
-  - 咨询关于钱包、短信、2FA等问题
+**2. Independent Broker**
 
-# 更新日志
+This includes wallet platforms, market data platforms, aggregation trading platforms, stockbrokers, as well as stock and securities trading platforms, etc., all of which have their own independent users. OURBIT can provide order matching systems, account management systems, settlement systems, as well as main and sub-account systems, etc. Independent brokers can share the trading fluidity and depth over the OURBIT platform and receive profit shares from fees.
 
-## **2024-04-10**
+To apply for a partnership, please contact: **broker@ourbit.com**
 
-- 新版API
+## Contact us
 
-# 常见问题
+- OURBIT API Telegram Group [OURBIT API Support Group](https://t.me/OURBITAPIsupport)
+  - For any general questions about the API not covered in the documentation.
+  - For any MM questions
+- OURBIT Customer Support *website.app online customer server*
+  -  For cases such as missing funds, help with 2FA, etc.
 
-## Q1:一个用户可以申请多少个API Key？
+# Change Log
 
-每个账户最多可以创建30个API Key，未绑定ip地址的API Key有效期只有90天，到期自动失效。每个API Key最多绑定10个ip地址。
+## **2024-04-08**
 
-## Q2:一个母账户可以申请多少个子账户？
+- Update response params of Get Withdraw History endpoint
 
-每个母账户最多可以创建30个子账户，子账户会自动继承母账户费率，通过api创建的子账户无法在web端登陆。
+## **2024-01-12**
 
-## Q3:为什么经常出现断线、超时的情况？
+- Add query sub-account asset endpoint
 
-如果不能够稳定的访问，建议使用日本或者新加坡AWS云服务器进行访问。
+## **2024-01-01**
 
-## Q4:超出限制频率报错后，该怎么做？
+- Kline support interval: week
+- Deposit and withdraw history endpoint update the query timestamp range
 
-超出接口访问频率限制后，无法继续访问接口，10分钟后会恢复正常，要保持低于限制的频率访问接口。
+## **2023-12-11**
 
-## Q5:一个账户最多可以下多少单？
+- Query Sub-account List endpoint add response params:uid
 
-每个账户最大可以同时拥有500个未完全成交的有效订单。
+## **2023-11-10**
 
-## Q6:为什么WebSocket总是断开连接？
+- Add user internal transfer endpoint and query internal transfer history endpoint.
+- Add ws miniTicker and miniTickers channels.
 
-1.如果没有有效订阅的话，会在30s断开链接。
-2.如果订阅成功后，60s内没有流量，会自动断开。
-3.需在接收到服务端发送的Ping信息后回复Pong，保证连接的稳定。
+## **2023-10-17**
 
-## Q7:WebSocket想要订阅多个频道为什么无效？
+- Add Get Affiliate Referral Data endpoint and Get Subaffiliates Data endpoint
 
-目前WebSocket单个链接最多可以订阅30个频道，超过30后则订阅无效，若想要订阅更多的频道，推荐建立多个链接。
+## **2023-09-27**
 
-# 基本信息
+- Add Get Affiliate Withdraw Record endpoint and Get Affiliate Commission Detail Record endpoint
 
-## 接入URL
+## **2023-08-15**
 
-请选用以下的baseurl进行API请求：
+- Add Get Affiliate Commission Record endpoint
+
+## **2023-06-13**
+
+- Add query all listenKey endpoint
+
+## **2023-05-21**
+
+- Add Download Historical Market Data
+
+## **2023-03-16**
+
+- Add:Query User Universal Transfer History (by tranId) endpoint
+
+- ws spot@private.deals.v3.api channel add params:"commission","commissionAsset"and"deals amount"
+
+## 
+
+## **2023-03-12**
+
+- Add:API default symbol,User API default symbol,cancel withdraw,Deposit Address endpoints.
+
+## **2023-03-07**
+
+- ws add channel:Account Update
+
+## **2023-02-13**
+
+- Add:Get Assets That Can Be Converted Into OB,Dust Transfer,Dust Log endpoints
+
+## **2023-02-07**
+
+- ws add channel:Individual Symbol Book Ticker Streams
+
+## **2023-01-06**
+
+- [Update Limits Info](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#limits)
+
+## **2022-12-29**
+
+- [ETF](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#etf) remove some response params:
+
+| Name       | type | Description          |
+| :------------- | :------- | :------------ |
+| preBasket      | string   | preBasket  |
+| preLeverage    | string   | preLeverage  |
+
+## **2022-12-28**
+
+- websocket add Partial Book Depth Streams
+
+## **2022-12-13**
+
+- Add params: avgPrice,cumulativeQuantity,cumulativeAmount for `spot@private.orders.v3.api` channel
+- Add Query ReferCode Endpoint
+
+## **2022-11-24**
+
+- Add OURBIT Broker Introduction
+- Add "Enable OB Deduct" and "Query OB Deduct Status" Endpoints
+
+## **2022-10-14**
+
+- Update Endpoints [Wallet Endpoints](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#wallet-endpoints):
+
+  1.[Withdraw](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#withdraw): When do a withdraw, `address` and `memo` should be passed separate (The previous version the memo is joined with a ":" after address).
+
+  2.[Withdraw History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#withdraw-history-supporting-network): Parameters `address` and `memo` should be returned separate (The previous version the memo is joined with a ":" after address).
+
+  3.[Deposit Address](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#deposit-history-supporting-network): The return parameter  `tag` is changed to `memo`, and the memo required for deposite is returned in the `memo` parameter.
+
+  4.[Deposit History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#deposit-history-supporting-network): The return parameter  `addressTag` is changed to `memo`, and the memo required for deposite is returned in the `memo` parameter.
+
+  5.Add [Generate deposit address](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#withdraw-history-supporting-network)
+
+  6.[Query the currency information](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-the-currency-information): add `withdrawTips` and `depositTips` params。
+
+
+## **2022-09-06**
+
+- Add [Rebate Endpoints](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#rebate-endpoints):
+
+  1.[Get Rebate History Records](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#get-rebate-history-records):Get the rebates from friends you invited and the transactions they make.
+
+  2.[Get Rebate Records Detail](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#get-rebate-records-detail):You can query the records of each rebate generated by contracts and spot (non-leveraged) transactions made by your friends and their sub-accounts.
+
+  3.[Get Self Rebate Records Detail](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#get-self-rebate-records-detail):You can query the each contract and spot (no margin) your invited friend made as the self-commission record generated from it.
+
+## **2022-09-02**
+
+- Add v3 websocket:
+
+  1.Websocket Market Streams:[Trade Streams](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#trade-streams),[Kline Streams](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#kline-streams),[Diff.Depth Stream](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#diff-depth-stream);
+
+  2.Websocket User Data Streams:[Account Deals](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#account-deals),[Account Orders](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#account-orders).
+
+## **2022-08-26**
+
+- [ETF](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#etf) add some response params:
+
+| Name       | type | Description          |
+| :------------- | :------- | :------------ |
+| preBasket      | string   | preBasket  |
+| preLeverage    | string   | preLeverage  |
+| basket         | string   | basket   |
+
+## **2022-08-15**
+
+- Update for Sub-account endpoints:
+
+  1.[Universal Transfer](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#universal-transfer-for-master-account)
+
+  2.[Query Universal Transfer History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-universal-transfer-history-for-master-account)
+
+
+## **2022-08-03**
+
+- Add [Wallet Endpoints](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#wallet-endpoints):
+
+  1.[Query the currency information](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-the-currency-information)
+
+  2.[Withdraw](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#withdraw)
+
+  3.[Deposit History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#deposit-history-supporting-network)
+
+  4.[Withdraw History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#withdraw-history-supporting-network)
+
+  5.[Deposit Address](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#deposit-address-supporting-network)
+
+  6.[User Universal Transfer](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#user-universal-transfer)
+
+  7.[Query User Universal Transfer History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-user-universal-transfer-history)
+
+## **2022-07-27**
+
+- Spot [New Order](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#new-order) Order type add: IOC and FOK
+
+## **2022-07-15**
+
+- [Account Trade List](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#account-trade-list) add params: isSelfTrade
+
+| Name          | Description              |
+| :-------------- | :---------------- |
+| isSelfTrade     | isSelfTrade        |
+
+## **2022-07-08**
+
+- Add [Batch Orders](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#batch-orders) Supports 20 orders in a batch,rate limit: 2 times/s.
+
+## **2022-07-03**
+
+- Add [Query the currency information](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-the-currency-information),Query currency details and the smart contract address.
+
+
+## **2022-05-22**
+
+- Optimize exchangeInfo Endpoints
+- Optimize order Endpoints,add parameter: order id
+
+## **2022-04-25**
+
+- [Exchange Info](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#exchange-information) add parameters:
+
+| Name                     | type | Description                |
+| :------------------------- | :------- | :------------------ |
+| isSpotTradingAllowed       | Boolean  | isSpotTradingAllowed |
+| isMarginTradingAllowed     | Boolean  | isMarginTradingAllowed |
+
+
+- [Current Open Orders](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#current-open-orders) Optimize: Get all open orders on multiple symbols,maximun support 5 symbols for one request.
+
+## **2022-03-29**
+
+- Add [Sub-Account Endpoints](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#sub-account-endpoints):
+
+  1.[Create a Sub-account](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#create-a-sub-account-for-master-account)
+
+  2.[Query Sub-account List](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-sub-account-list-for-master-account)
+
+  3.[Create an APIKey for a sub-account](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#create-an-apikey-for-a-sub-account-for-master-account)
+
+  4.[Query the APIKey of a sub-account](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-the-apikey-of-a-sub-account-for-master-account)
+
+  5.[Delete the APIKey of a sub-account](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#delete-the-apikey-of-a-sub-account-for-master-account)
+
+  6.[Universal Transfer](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#universal-transfer-for-master-account)
+
+  7.[Query Universal Transfer History](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#query-universal-transfer-history-for-master-account)
+
+
+## **2022-03-25**
+
+- Add [Postman collection](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#api-library)
+
+## **2022-03-24**
+
+- Add information of market order
+
+## **2022-03-21**
+
+- Add order status
+
+## **2022-03-18**
+
+- Add new <a href="#order_type">Order Type</a>: Market
+- Add time page info: startTime and endTime need to the same time
+
+## **2022-03-09**
+
+- Add <a href="#kline_interval">kline interval</a>
+
+## **2022-02-19**
+
+- Add [ETF](https://ourbitdevelop.github.io/apidocs/spot_v3_en/#etf)
+
+## **2022-02-11**
+
+- New version API
+
+# FAQs
+
+## Q1: How many API Keys can a user apply?
+
+Each account can create up to 30 API Keys. The validity of an API Key without a linked IP address is 90 days, and the API Key will expire automatically. Each API Key can be linked to a maximum of 10 IP addresses.
+
+## Q2: How many sub-accounts can a main account apply?
+
+Each main account can create up to 30 sub-accounts. The sub-accounts will automatically inherit the main account rates. However, sub-accounts created via API cannot be logged in on Web.
+
+## Q3: Why are there often issues of disconnections and expired sessions?
+
+If stable access is not possible, it is recommended to use Japan or Singapore AWS cloud servers for access.
+
+## Q4: What should I do after an error is reported for exceeding the limit frequency?
+
+After exceeding the interface access frequency limit, you will not be able to continue accessing the interface. It will resume to normal after 10 minutes to keep the interface access frequency below the limit.
+
+## Q5: How many orders can an account place?
+
+Each account can hold up to 500 valid orders that are not completely filled.
+
+## Q6:Why does WebSocket always disconnect?
+
+1. If there is no valid subscription, it will disconnect in 30 seconds.
+2. If the subscription is successful, and there is no traffic in 60 seconds, it will automatically disconnect.
+3. To ensure a stable connection, a Pong reply is required upon receiving the Ping message sent from the server.
+
+## Q7: Why am I unable to subcribe to multiple channels on WebSocket?
+
+WebSocket currently allows subscription to up to 30 channels via a single link. Any subscription will be invalid after the limit is exceeded. To subscribe to more channels, it is recommended to create multiple links.
+
+# General Info
+
+## Base endpoint
+
+The base endpoint is:
 
 - ```https://api.ourbit.com```
 
-## HTTP 返回代码
+## HTTP Return Codes
 
-- HTTP 4XX 错误码用于指示错误的请求内容、行为、格式。问题在于请求者。
-- HTTP 401 表示身份认证、权限错误。
-- HTTP 403 错误码表示违反WAF限制(Web应用程序防火墙)。
-- HTTP 429 错误码表示警告访问频次超限，即将被封IP。
-- HTTP 5XX 错误码用于指示OURBIT服务端的问题。
+- HTTP 4XX return codes are used for malformed requests; the issue is on the sender's side.
+- HTTP 403 return code is used when the WAF Limit (Web Application Firewall) has been violated.
+- HTTP 429 return code is used when breaking a request rate limit.
+- HTTP 5XX return codes are used for internal errors; the issue is on OURBIT's side. It is important to NOT treat this as a failure operation; the execution status is UNKNOWN and could have been a success.
 
-## 请求格式
+## General Information on Endpoints
 
-相应API接受GET，POST或DELETE类型的请求
+The API accepts requests of type GET, POST or DELETE
 
-- GET 方法的接口, 参数必须在 query string中发送。
-- POST, PUT, 和 DELETE 方法的接口,参数可以在内容形式为application/x-www-form-urlencoded的 query string 中发送，也可以在 request body 中以application/json的形式发送。如果你喜欢，也可以混合这两种方式发送参数。
-- 对参数的顺序不做要求。但如果同一个参数名在query string和request body中都有，query string中的会被优先采用。
+- For GET endpoints, parameters must be sent as a query string.
+- For POST, PUT, and DELETE endpoints, the parameters may be sent as a query string with content type application/x-www-form-urlencoded,or in the request body with content type application/json. You may mix parameters between both the query string and request body if you wish to do so.
+- Parameters may be sent in any order.
+- If a parameter sent in both the query string and request body, the query string parameter will be used.
 
-## 返回格式
 
-所有接口的返回数据均为JSON形式
+## Header
 
-## Header操作的组成
+Relevant parameters in the header
 
-请求Header中签名相关参数
-
-| 组成部分            | 说明                   |
-| :------------------- | :---------------------- |
-| ```X-OURBIT-APIKEY``` | API key中的access key  |
+| key                 | Description            |
+| ------------------- | ---------------------- |
+| ```X-OURBIT-APIKEY``` | Access key             |
 | ```Content-Type```  | ```application/json``` |
 
-## 签名
-- 调用SIGNED接口时，除了接口本身所需的参数外，还需要在query string 或 request body中传递 signature, 即签名参数（在批量操作的API中，若参数值中有逗号等特殊符号，这些符号在签名时需要做URL encode，注意**encode只支持大写**）。
-- 签名使用HMAC SHA256算法. API-KEY所对应的API-Secret作为 HMAC SHA256 的密钥，其他所有参数作为HMAC SHA256的操作对象，得到的输出即为签名。
-- 签名 **目前只支持小写**。
-- "totalParams"定义为与"request body"串联的"query string"。
+## SIGNED
 
-### 时间安全
+- SIGNED endpoints require an additional parameter, signature, to be sent in the query string or request body(in the API of batch operation, if there are special symbols such as comma in the parameter value, these symbols need to be URL encoded when signing,and encode only support uppercase).
+- Endpoints use HMAC SHA256 signatures. The HMAC SHA256 signature is a keyed HMAC SHA256 operation. Use your secretKey as the key and totalParams as the value for the HMAC operation.
+- The signature is support lowercase only.
+- totalParams is defined as the query string concatenated with the request body.
 
-> 伪代码示例
+### Timing security
+
+> The logic is as follows:
 
 ```
  if (timestamp < (serverTime + 1000) && (serverTime - timestamp) <= recvWindow)
@@ -169,14 +409,15 @@ OURBIT致力于构建加密货币基础设施，提供有价值服务的API 经�
   }
 ```
 
-- 签名接口均需要传递timestamp参数，其值应当是请求发送时刻的unix时间戳(毫秒)。
-- 服务器收到请求时会判断请求中的时间戳，如果是5000毫秒之前发出的，则请求会被认为无效。这个时间空窗值可以通过发送可选参数recvWindow来定义。
+- A SIGNED endpoint also requires a parameter, timestamp, to be sent which should be the millisecond timestamp of when the request was created and sent.
+- An additional parameter, recvWindow, may be sent to specify the number of milliseconds after timestamp the request is valid for. If recvWindow is not sent, it defaults to 5000.
 
-关于交易时效性互联网状况并不完全稳定可靠,因此你的程序本地到OURBIT服务器的时延会有抖动。这是我们设置recvWindow的目的所在，如果你从事高频交易，对交易时效性有较高的要求，可以灵活设置recvWindow以达到你的要求。
 
-<aside class="notice">推荐使用5秒以下的 recvWindow! 最多不能超过 60秒!</aside>
+Serious trading is about timing. Networks can be unstable and unreliable, which can lead to requests taking varying amounts of time to reach the servers. With recvWindow, you can specify that the request must be processed within a certain number of milliseconds or be rejected by the server.
 
-### POST /api/v3/order 举例
+<aside class="notice"> It is recommended to use a small recvWindow of 5000 or less! The max cannot go beyond 60,000!</aside>
+
+### SIGNED Endpoint Examples for POST /api/v3/order
 
 >  Example 1
 
@@ -230,17 +471,17 @@ curl command:
 
 ```
 
-以下是在linux bash环境下使用 echo openssl 和curl工具实现的一个调用接口下单的示例 apikey、secret仅供示范
+Here is a step-by-step example of how to send a vaild signed payload from the Linux command line using echo, openssl, and curl.
 
 | Key       | Value                            |
-| :--------- | :-------------------------------- |
+| --------- | -------------------------------- |
 | apiKey    | ob0aBYs33eIilxBWC5               |
 | secretKey | 45d0b3c26f2644f19bfb98b07741b2f5 |
 
 
 
-| 参数       | 取值          |
-| :---------- | :------------- |
+| Parameter  | Value         |
+| ---------- | ------------- |
 | symbol     | BTCUSDT       |
 | side       | BUY           |
 | type       | LIMIT         |
@@ -249,17 +490,17 @@ curl command:
 | recvWindow | 5000          |
 | timestamp  | 1644489390087 |
 
-**示例 1: 所有参数通过 request body 发送**
+#### **Example 1: As a request body**
 
 - requestBody:
 symbol=BTCUSDT&side=BUY&type=LIMIT&quantity=1&price=11&recvWindow=5000&timestamp=1644489390087
 
-**所有参数通过 query string 发送**
+**Example 2: As a query string**
 
 - queryString:
 symbol=BTCUSDT&side=BUY&type=LIMIT&quantity=1&price=11&recvWindow=5000&timestamp=1644489390087
 
-**示例 3: 混合使用 query string 和 request body**
+**Example 3: Mixed query string and request body**
 
 - queryString:
 symbol=BTCUSDT&side=BUY&type=LIMIT
@@ -267,205 +508,184 @@ symbol=BTCUSDT&side=BUY&type=LIMIT
 - requestBody:
 quantity=1&price=11&recvWindow=5000&timestamp=1644489390087
 
-请注意，签名与示例3不同。 "LIMIT"和"quantity = 1"之间没有＆。
+Note that the signature is different in example 3. There is no & between "LIMIT" and "quantity=1".
 
-## 限频规则
+## LIMITS
 
-对REST API的访问有频率限制，当超出限制时，返回状态429：请求过于频繁。
+There is rate limit for API access frequency, upon exceed client will get code 429: Too many requests.
+The account is used as the basic unit of speed limit for the endpoints that need to carry access keys. For endpoints that do not need to carry access keys, IP addresses are used as the basic unit of rate limiting.
 
-需要携带access key进行访问的接口，以账号作为限速的基本单位；不需要携带access key进行访问的接口，以IP作为限速的基本单位。
+### Limits Description
 
-### 限频说明
+- According to the two modes of IP and UID (account) limit, each are independent.
+- Endpoints are marked according to IP or UID limit and their corresponding weight value.
+- Each endpoint with IP limits has an independent 20000 per minute limit.
+- Each endpoint with UID limits has an independent 240000 per minute limit.
 
-- 每个接口会标明是按照IP或者按照UID统计, 以及相应请求一次的权重值。不同接口拥有不同的权重，越消耗资源的接口权重就会越大。
-- **按IP和按UID(account)两种模式分别统计, 两者互相独立。按IP权重限频的接口，所有接口共用每分钟20000限制，按照UID统计的单接口权重总额是每分钟240000。**
+### Limits Error
 
-### 超频报错
+- When a 429 is received, it's your obligation as an API to back off and not spam the API.
+- Repeatedly violating rate limits and/or failing to back off after receiving 429s will result in an automated IP ban .
+- IP bans are tracked and scale in duration for repeat offenders, from 2 minutes to 3 days.
+- A Retry-After header is sent with a 418 or 429 responses and will give the number of seconds required to wait, in the case of a 429, to prevent a ban, or, in the case of a 418, until the ban is over.
 
-- 收到429时，您有责任停止发送请求，不得滥用API。
-- **收到429后仍然继续违反访问限制，会被封禁IP。**
-- 频繁违反限制，封禁时间会逐渐延长，**从最短2分钟到最长3天**。
-- `Retry-After`的头会与带有418或429的响应发送，并且会给出**以秒为单位**的等待时长(如果是429)以防止禁令，或者如果是418，直到禁令结束。
+### Websocket Limits
 
-### WEBSOCKET 连接限制
-- Websocket服务器访问频率限制为：100次/s。
-- 如果用户发送的消息超过限制，连接会被断开连接。反复被断开连接的IP有可能被服务器屏蔽。
-- 单个连接最多可以订阅 30 个Streams。
+- The Websocket limits is: 100times/s.
+- A connection that goes beyond the limit will be disconnected; IPs that are repeatedly disconnected may be banned.
+- A single connection can listen to a maximum of 30 streams.
 
-## 错误码
+## Error Code
 
-以下为接口可能返回的错误码信息
+The following error information can be returend
 
-| 错误码     | 说明                    |
-|---------|-----------------------|
-| -2011  |  未知订单                                                     |
-| 26     |  该操作不允许                                                 |
-| 400    |  需要APIKEY                                                   |
-| 401    |  未授权                                                       |
-| 403    |  访问被拒                                                     |
-| 429    |  请求过多                                                     |
-| 500    |  内部错误                                                     |
-| 503    |  服务不可用，请重试                                           |
-| 504    |  网关超时                                                     |
-| 602    |  签名认证失败                                                 |
-| 10001  |  用户不存在                                                   |
-| 10007  |  该交易对不支持api交易                                        |
-| 10015  |  用户id不能为空                                               |
-| 10072  |  无效的access key                                             |
-| 10073  |  无效的请求时间                                               |
-| 10095  |  金额不能为空                                                 |
-| 10096  |  金额小数位过大                                               |
-| 10097  |  金额错误                                                     |
-| 10098  |  因风控原因，无法划转，请稍后重试                             |
-| 10099  |  子站账号未开通                                               |
-| 10100  |  不支持该币种划转                                             |
-| 10101  |  资产余额不足                                                 |
-| 10102  |  金额不能为零或负数                                           |
-| 10103  |  不支持该账户划转                                             |
-| 10200  |  转账操作处理中                                               |
-| 10201  |  用户资金入账失败                                             |
-| 10202  |  用户资金出账失败                                             |
-| 10206  |  转账关闭                                                     |
-| 10211  |  禁止提现                                                     |
-| 10212  |  提币地址不是常用地址或已失效                                 |
-| 10216  |  没有可用地址，请稍后再试                                     |
-| 10219  |  资产流水写入失败请重新尝试                                   |
-| 10222  |  币种不能为空                                                 |
-| 10232  |  币种不存在                                                   |
-| 10259  |  未配置中间账户错误                                           |
-| 10265  |  由于风控原因，暂不支持提币，请稍后再试                       |
-| 10268  |  备注长度过大                                                 |
-| 20001  |  不支持此子系统                                               |
-| 20002  |  内部系统调用错误                                             |
-| 22222  |  记录不存在                                                   |
-| 30000  |  交易对暂停交易                                               |
-| 30001  |  当前交易方向不允许下单                                       |
-| 30002  |  最小交易量不能小过                                           |
-| 30003  |  最大交易量不能大过                                           |
-| 30004  |  持仓不足                                                     |
-| 30005  |  卖出超过持仓                                                 |
-| 30010  |  无效价格                                                     |
-| 30014  | 无效交易对                                                   |
-| 30016  |  无法交易                                                     |
-| 30018  |  暂不支持市价单                                               |
-| 30019  |  暂不支持API市价单                                            |
-| 30020  |  该交易对不支持api                                            |
-| 30021  |  无效交易对                                                   |
-| 30025  |  不存在的对手订单                                             |
-| 30026  |  无效的订单id                                                 |
-| 30027  |  该货币已达到最大持仓限制，买入暂停                           |
-| 30028  |  货币触发平台风控，抛售暂停                                   |
-| 30029  | 不能超过最大订单限制                                         |
-| 30032  | 不能超过最大仓位                                             |
-| 30041  |  目前的订单类型不支持下单                                     |
-| 33333  |  参数错误                                                     |
-| 44444  | 参数不能为空                                                 |
-| 60005  | 您的账号存在异常，暂时无法进行法币交易，请联系客服或稍后再试 |
-| 70011  | 交易对不支持api交易                                          |
-| 700001 |  apikey格式错误                                               |
-| 700002 | 签名无效                                                     |
-| 700003 | 此请求的时间戳在 recvWindow 之外                             |
-| 700004 | 参数'origClientOrderId' 或 'orderId'至少需要一个             |
-| 700005 | recvWindow 必须小于 60000                                    |
-| 700006 |  IP非白名单                                                   |
-| 700007 | 没有访问端点的权限                                           |
-| 700008 | 参数中有无效字节                                             |
-| 730001  | 交易对不存在                |
-| 730002  | 参数不合法                 |
-| 730000  | 请求失败,请联系客服人员          |
-| 730001  | 用户信息错误                |
-| 730002  | 参数错误,请检查              |
-| 730003  | 不支持的操作,请联系客服人员        |
-| 730100  | 用户状态异常                |
-| 730600  | 子账户名称不能为空             |
-| 730601  | 子账户必须是8-32位字母和数字组合    |
-| 730602  | 子账户备注不能为空             |
-| 730700  | 备注不能为空                |
-| 730701  | 权限不能为空                |
-| 730702  | API KEY权限不存在          |
-| 730703  | IP信息错误,超过最大绑定IP数量     |
-| 730704  | 绑定的IP格式错误,请重新填写       |
-| 730705  | 最多允许创建30组Api Key      |
-| 730706  | API KEY 信息不存在         |
-| 730707  | accessKey不能为空         |
-| 730101  | 用户名已存在                |
-| 140001 | 子账号不存在         |
-| 140002 | 禁止子账号访问      |
+| Code      | Description                                                                           |
+|-----------|---------------------------------------------------------------------------------------|
+| -2011  | Unknown order sent                                           | 
+| 26     | operation not allowed                                        | 
+| 400    | api key required                                             | 
+| 401    | No authority                                                 | 
+| 403    | Access Denied                                                | 
+| 429    | Too Many Requests                                            | 
+| 500    | Internal error                                               | 
+| 503    | service not available, please try again                      | 
+| 504    | Gateway Time-out                                             | 
+| 602    | Signature verification failed                                | 
+| 10001  | user does not exist                                          | 
+| 10007  | bad symbol                                                   | 
+| 10015  | user id cannot be null                                       | 
+| 10072  | invalid access key                                           | 
+| 10073  | invalid Request-Time                                         | 
+| 10095  | amount cannot be null                                        | 
+| 10096  | amount decimal places is too long                            | 
+| 10097  | amount is error                                              | 
+| 10098  | risk control system detected abnormal                        | 
+| 10099  | user sub account does not open                               | 
+| 10100  | this currency transfer is not supported                      | 
+| 10101  | Insufficient balance                                         | 
+| 10102  | amount cannot be zero or negative                            | 
+| 10103  | this account transfer is not supported                       | 
+| 10200  | transfer operation processing                                | 
+| 10201  | transfer in failed                                           | 
+| 10202  | transfer out failed                                          | 
+| 10206  | transfer is disabled                                         | 
+| 10211  | transfer is forbidden                                        | 
+| 10212  | This withdrawal address is not on the commonly used address list or has been invalidated | 
+| 10216  | no address available. Please try again later                 | 
+| 10219  | asset flow writing failed please try again                   | 
+| 10222  | currency cannot be null                                      | 
+| 10232  | currency does not exist                                      | 
+| 10259  | Intermediate account does not configured in redisredis       | 
+| 10265  | Due to risk control, withdrawal is unavailable, please try again later | 
+| 10268  | remark length is too long                                    | 
+| 20001  | subsystem is not supported                                   | 
+| 20002  | Internal system error please contact support                 | 
+| 22222  | record does not exist                                        | 
+| 30000  | suspended transaction for the symbol                         | 
+| 30001  | The current transaction direction is not allowed to place an order | 
+| 30002  | The minimum transaction volume cannot be less than :         | 
+| 30003  | The maximum transaction volume cannot be greater than :      | 
+| 30004  | Insufficient position                                        | 
+| 30005  | Oversold                                                     | 
+| 30010  | no valid trade price                                         | 
+| 30014  | invalid symbol                                               | 
+| 30016  | trading disabled                                             | 
+| 30018  | market order is disabled                                     | 
+| 30019  | api market order is disabled                                 | 
+| 30020  | no permission for the symbol                                 | 
+| 30021  | invalid symbol                                               | 
+| 30025  | no exist opponent order                                      | 
+| 30026  | invalid order ids                                            | 
+| 30027  | The currency has reached the maximum position limit, the buying is suspended | 
+| 30028  | The currency triggered the platform risk control, the selling is suspended | 
+| 30029  | Cannot exceed the maximum order limit                        | 
+| 30032  | Cannot exceed the maximum position                           | 
+| 30041  | current order type can not place order                       | 
+| 33333  | param is error                                               | 
+| 44444  | param cannot be null                                         | 
+| 60005  | your account is abnormal                                     | 
+| 70011  | Pair user ban trade apikey                                   | 
+| 700001 | API-key format invalid                                       | 
+| 700002 | Signature for this request is not valid                      | 
+| 700003 | Timestamp for this request is outside of the recvWindow      | 
+| 700004 | Param 'origClientOrderId' or 'orderId' must be sent, but both were empty/null | 
+| 700005 | recvWindow must less than 60000                              | 
+| 700006 | IP non white list                                            | 
+| 700007 | No permission to access the endpoint                         | 
+| 700008 | Illegal characters found in parameter                        |   
+| 730001  | Pair not found                                                                        |
+| 730002  | Your input param is invalid                                                           |
+| 730000  | Request failed, please contact the customer service                                   |
+| 730001  | User information error                                                                |
+| 730002  | Parameter error                                                                       |
+| 730003  | Unsupported operation, please contact the customer service                            |
+| 730100  | Unusual user status                                                                   |
+| 730600  | Sub-account Name cannot be null                                                       |
+| 730601  | Sub-account Name must be a combination of 8-32 letters and numbers                    |
+| 730602  | Sub-account remarks cannot be null                                                    |
+| 730700  | API KEY remarks cannot be null                                                        |
+| 730701  | API KEY permission cannot be null                                                     |
+| 730702  | API KEY permission does not exist                                                     |
+| 730703  | The IP information is incorrect, and a maximum of 10 IPs are allowed to be bound only |
+| 730704  | The bound IP format is incorrect, please refill                                       |
+| 730705  | At most 30 groups of Api Keys are allowed to be created only                            |
+| 730706  | API KEY information does not exist                                                       |
+| 730707  | accessKey cannot be null                                                                 |
+| 730101  | The user Name already exists                                                                  |
+| 140001 | sub account does not exist                                   |
+| 140002 | sub account is forbidden                                     |
 
+# Market Data Endpoints
 
+## Download Historical Market Data
 
-# 行情接口
+Provides kline and trading data for all Spot pairs since 01-01-2023:[Historical Market Data](https://www.ourbit.co/zh-CN/market-data-download)
 
-## 历史行情数据下载
+## Test Connectivity
 
-提供2023年01月01日以来的K线和交易历史数据下载：[历史行情数据下载](https://www.ourbit.co/zh-CN/market-data-download)
-
-## 测试服务器连通性
-
-测试能否联通 Rest API。
-
-> 请求示例
-
-```
-GET /api/v3/ping
-```
-> 返回示例
+> Response
 
 ```json
 {}
 ```
-**HTTP请求**
+
 - **GET** ```/api/v3/ping```
 
-**权重(IP):** 1
+Test connectivity to the Rest API.
 
-**请求参数**
+**Weight(IP):** 1
 
-NONE
-
-**返回参数**
+Parameter:
 
 NONE
 
-## 获取服务器时间
+## Check Server Time
 
-获得服务器当前时间戳
-
-> 请求示例
-
-```
-GET /api/v3/time
-```
-
-> 返回示例
+> Response
 
 ```json
 {
     "serverTime" : 1645539742000
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/time ```
   
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameter:
 
 NONE
 
+## API default symbol
 
-## API交易对
-
-获取平台可API交易的交易对
-
-> 请求示例
+> Request
 
 ```
 GET /api/v3/defaultSymbols
 ```
 
-> 返回示例
+> Response
 
 ```json
 {
@@ -480,219 +700,187 @@ GET /api/v3/defaultSymbols
     "msg": null
 }
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/defaultSymbols ```
   
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
 NONE
 
-**返回参数**
+**Response**
 
-| 参数名       | 数据类型 | 说明                       |
+| Name       | Type | Description                       |
 | :------------ | :-------- |:-------------------------|
-| symbol | string | 返回支持API交易的交易对      |
+| symbol | string | symbol  |
 
+## Exchange Information
 
-## 交易规范信息
-
-获取交易规则和交易对信息。
-
-> 请求示例
-
-```
-GET /api/v3/exchangeInfo?symbol=BTCUSDT
-```
-
-
-> 返回示例
+> Response
 
 ```json
 {
-    "timezone": "CST",
-    "serverTime": 1657256965785,
-    "rateLimits": [],
-    "exchangeFilters": [],
-    "symbols": 
-{
-            "symbol": "TOMO3LUSDT",
-            "status": "ENABLED",
-            "baseAsset": "TOMO3L",
-            "baseAssetPrecision": 2,
-            "quoteAsset": "USDT",
-            "quotePrecision": 3,
-            "quoteAssetPrecision": 3,
-            "baseCommissionPrecision": 2,
-            "quoteCommissionPrecision": 3,
-            "orderTypes": [
-                "LIMIT",
-                "LIMIT_MAKER"
-            ],
-            "quoteOrderQtyMarketAllowed": false,
-            "isSpotTradingAllowed": false,
-            "isMarginTradingAllowed": false,
-            "quoteAmountPrecision": "5",
-            "baseSizePrecision": "0.0001",
-            "permissions": [
-                "SPOT",
-                "Limit"
-            ],
-            "filters": [],
-            "maxQuoteAmount": "5000000",
-            "makerCommission": "0.002",
-            "takerCommission": "0.002"
-        }
+    "symbol": "TOMO3LUSDT",
+    "status": "ENABLED",
+    "baseAsset": "TOMO3L",
+    "baseAssetPrecision": 2,
+    "quoteAsset": "USDT",
+    "quotePrecision": 3,
+    "quoteAssetPrecision": 3,
+    "baseCommissionPrecision": 2,
+    "quoteCommissionPrecision": 3,
+    "orderTypes": [
+        "LIMIT",
+        "LIMIT_MAKER"
+    ],
+    "quoteOrderQtyMarketAllowed": false,
+    "isSpotTradingAllowed": false,
+    "isMarginTradingAllowed": false,
+    "quoteAmountPrecision": "5",
+    "baseSizePrecision": "0.0001",
+    "permissions": [
+        "SPOT",
+        "LIMIT"
+    ],
+    "filters": [],
+    "maxQuoteAmount": "5000000",
+    "makerCommission": "0.002",
+    "takerCommission": "0.002"
 }
 
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/exchangeInfo```
 
-**权重(IP):** 10
+Current exchange trading rules and symbol information
 
-**请求参数**
+**Weight(IP):** 10
 
-三种用法
+**Parameter**:
 
-| 用法         | 举例                                                                          |
-| :------------ | :----------------------------------------------------------------------------- |
-| 不需要交易对 | curl -X GET "https://api.ourbit.com/api/v3/exchangeInfo"                        |
-| 单个交易对   | curl -X GET "https://api.ourbit.com/api/v3/exchangeInfo?symbol=OBUSDT"          |
-| 多个交易对   | curl -X GET "https://api.ourbit.com/api/v3/exchangeInfo?symbols=OBUSDT,BTCUSDT" |
+There are 3 possible options:
 
-**返回参数**
+| Method       | **Example**                                                                   |
+| ------------ | ----------------------------------------------------------------------------- |
+| No parameter | curl -X GET "https://api.ourbit.com/api/v3/exchangeInfo"                        |
+| symbol       | curl -X GET "https://api.ourbit.com/api/v3/exchangeInfo?symbol=OBUSDT"          |
+| symbols      | curl -X GET "https://api.ourbit.com/api/v3/exchangeInfo?symbols=OBUSDT,BTCUSDT" |
 
-| 参数名       | 数据类型 | 说明                       |
+**Response:**
+
+| Name       | Type | Description                      |
 | :------------ | :-------- |:-------------------------|
-| timezone | string | 时区                       |
-| serverTime | long | 服务器时间                    |
-| rateLimits | Array | 频率限制                     |
-| exchangeFilters | Array | 过滤器                      |
-| symbol | String | 交易对                      |
-| status | String | 状态                       |
-| baseAsset | String | 交易币                      |
-| baseAssetPrecision | Int | 交易币精度                    |
-| quoteAsset | String | 计价币                      |
-| quotePrecision | Int | 计价币价格精度                  |
-| quoteAssetPrecision | Int | 计价币资产精度                  |
-| baseCommissionPrecision | Int | 交易币手续费精度                 |
-| quoteCommissionPrecision | Int | 计价币手续费精度                 |
-| orderTypes | Array | <a href="#order_type">订单类型</a> |
-| quoteOrderQtyMarketAllowed | Boolean | 是否允许市价委托                 |
-| isSpotTradingAllowed | Boolean | 是否允许api现货交易              |
-| isMarginTradingAllowed | Boolean | 是否允许api杠杆交易              |
-| permissions | Array | 权限                       |
-| maxQuoteAmount | String | 最大下单金额                   |
-| makerCommission | String | marker手续费                |
-| takerCommission | String | taker手续费                 |
-| quoteAmountPrecision|string| 最小下单金额                   |
-| baseSizePrecision|string| 最小下单数量                   |
-| quoteAmountPrecisionMarket |string| 市价最小下单金额                   |
-| maxQuoteAmountMarket | String | 市价最大下单金额                   |
+| timezone | string | timezone                       |
+| serverTime | long | server Time                    |
+| rateLimits | Array | rate Limits                     |
+| exchangeFilters | Array | exchange Filters                     |
+| symbol | String | symbol                      |
+| status | String | status                       |
+| baseAsset | String | base Asset                      |
+| baseAssetPrecision | Int | base Asset Precision                   |
+| quoteAsset | String | quote Asset                      |
+| quotePrecision | Int | quote Precision                 |
+| quoteAssetPrecision | Int | quote Asset Precision                  |
+| baseCommissionPrecision | Int | base Commission Precision                 |
+| quoteCommissionPrecision | Int | quote Commission Precision                |
+| orderTypes | Array | <a href="#order_type">Order Type</a> |
+| quoteOrderQtyMarketAllowed | Boolean | quoteOrderQtyMarketAllowed                |
+| isSpotTradingAllowed | Boolean |   allow api spot trading            |
+| isMarginTradingAllowed | Boolean | allow api margin trading               |
+| permissions | Array | permissions                       |
+| maxQuoteAmount | String | max Quote Amount                  |
+| makerCommission | String | marker Commission                |
+| takerCommission | String | taker Commission                 |
+| quoteAmountPrecision|string|  min order amount                 |
+| baseSizePrecision|string|  min order quantity                 |
+| quoteAmountPrecisionMarket |string| min order amount  in market order       |
+| maxQuoteAmountMarket | String | max quote Amount in market order       |
 
 
 
 
-## 深度信息
-获取指定交易对的深度信息，默认返回买卖盘各100条信息
+## Order Book
 
-> 请求示例
-
-```
-GET /api/v3/depth?symbol=BTCUSDT&limit=200
-```
-
-> 返回示例
+> Response
 
 ```json
 {
- 
-  "lastUpdateId": 1377043284,
+  "lastUpdateId": 1112416,
   "bids": [
-        ["30225.77","2.132868"],
-        ],
+      ["15.00000", "49999.00000"]
+  ],
   "asks": [
-        ["30225.80","1.130244"],
-        ],
+    ["14.0000", "1.0000"]
+  ]
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/depth```
 
-**权重(IP):** 基于限制调整
+**Weight(IP):** 1
 
-**请求参数**
+Parameter:
 
-| 参数名 | 数据类型 | 是否必须 | 说明       | 取值范围            |
-| :------ | :-------- | :-------- | :---------- | :------------------- |
-| symbol | string   | 是       | 交易对名称 |     如：BTCUSDT      |
-| limit  | integer  | 否       | 返回的条数 | 默认 100; 最大 5000 |
+| Name   | Type    | Mandatory | Description     | Scope                 |
+| ------ | ------- | --------- | --------------- | --------------------- |
+| symbol | string  | YES       | Symbol          |                       |
+| limit  | integer | NO        | Returen  number | default 100; max 5000 |
 
-**返回参数**
+Response:
 
-| 参数名       | 数据类型 | 说明                |
-| :------------ | :-------- | :------------------- |
-| lastUpdateId | long     | 最新更新ID            |
-| bids         | list     | 买盘 [价位, 挂单量] |
-| asks         | list     | 卖盘 [价位, 挂单量] |
+| Name         | Type | Description            |
+| ------------ | ---- | ---------------------- |
+| lastUpdateId | long | Last Update Id       |
+| bids         | list | Bid [Price, Quantity ] |
+| asks         | list | Ask [Price, Quantity ] |
 
-## 近期成交列表
-获取指定交易对的近期成交信息，默认返回最近500条成交信息。
+## Recent Trades List
 
-> 请求示例
-
-```
-GET /api/v3/trades?symbol=BTCUSDT&limit=600
-```
-
-> 返回示例
+> Response
 
 ```json
 [
   {
     "id": null,
-    "price": "29919.62",
-    "qty": "1.292918",
-    "quoteQty": "38683.61525116",
-    "time": 1652848049876,
+    "price": "23",
+    "qty": "0.478468",
+    "quoteQty": "11.004764",
+    "time": 1640830579240,
     "isBuyerMaker": true,
     "isBestMatch": true
-  },
+  }
 ]
 ```
-**HTTP请求**
+
 - **GET** ```/api/v3/trades```
 
-**权重(IP):** 5
+**Weight(IP):** 5
 
-**请求参数**
+Parameter:
 
-| 参数名 | 数据类型 | 是否必须 | 说明       | 取值范围            |
-| :------ | :-------- | :-------- | :---------- | :------------------- |
-| symbol | string   | 是       | 交易对名称 |  如：BTCUSDT         |
-| limit  | integer  | 否       | 返回的条数 | 默认 500; 最大 1000 |
+| Name   | Type    | Mandatory | Description | Scope                  |
+| ------ | ------- | --------- | ----------- | ---------------------- |
+| symbol | string  | YES       |             |                        |
+| limit  | integer | NO        |             | Default  500; max 1000 |
 
 
-**返回参数**
+Response:
 
-| 参数名       | 说明           |
-| :------------ | :-------------- |
-| id           | 成交id         |
-| price        | 价格           |
-| qty          | 数量           |
-| quoteQty     | 成交额         |
-| time         | 成交时间       |
-| isBuyerMaker | 是否为maker单  |
-| isBestMatch  | 是否为最佳匹配 |
+| Name         | Description                         |
+| ------------ | ----------------------------------- |
+| id           | Trade id                            |
+| price        | Price                               |
+| qty          | Number                              |
+| quoteQty     | Trade total                         |
+| time         | Trade time                          |
+| isBuyerMaker | Was the buyer the maker?            |
+| isBestMatch  | Was the trade the best price match? |
 
-<!-- ## 近期成交列表
+<!-- ## Old Trade Lookup
 
-> 返回示例
+> Response
 
 ```json
 [
@@ -710,36 +898,31 @@ GET /api/v3/trades?symbol=BTCUSDT&limit=600
 
 - **GET** ```/api/v3/historicalTrades```
 
-**请求参数**
+**Weight(IP):** 1
 
-| 参数名 | 数据类型 | 是否必须 | 说明       | 取值范围            |
-| :------ | :-------- | :-------- | :---------- | :------------------- |
-| symbol | string   | 是       | 交易对名称 |                     |
-| limit  | integer  | 否       | 返回的条数 | 默认 500; 最大 1000 |
+Parameters:
+
+| Name   | Type    | Mandatory | Description   | Scope                 |
+| ------ | ------- | --------- | ------------- | --------------------- |
+| symbol | string  | YES       | Symbol        |                       |
+| limit  | integer | NO        | Return number | Default 500; max 1000 |
 
 
-**返回参数**
+Response:
 
-| 参数名       | 说明           |
-| :------------ | :-------------- |
-| id           | 成交id         |
-| price        | 价格           |
-| qty          | 数量           |
-| quoteQty     | 成交额         |
-| time         | 成交时间       |
-| isBuyerMaker | 是否为maker单  |
-| isBestMatch  | 是否为最佳匹配 | :-->
+| Name         | Description                         |
+| ------------ | ----------------------------------- |
+| id           | Trade id                            |
+| price        | Price                               |
+| qty          | Number                              |
+| quoteQty     | Trade total                         |
+| time         | Trade time                          |
+| isBuyerMaker | Was the buyer the maker?            |
+| isBestMatch  | Was the trade the best price match? | -->
 
-## 近期成交(归集) 
-归集交易与逐笔交易的区别在于，同一价格、同一方向、同一时间的trade会被聚合为一条
+## Compressed/Aggregate Trades List
 
-> 请求示例
-
-```
-GET /api/v3/aggTrades?symbol=BTCUSDT
-```
-
-> 返回示例
+> Response
 
 ```json
 [
@@ -747,416 +930,426 @@ GET /api/v3/aggTrades?symbol=BTCUSDT
     "a": null,
     "f": null,
     "l": null,
-    "p": "29881.4",
-    "q": "0.010068",
-    "T": 1652848230000,
+    "p": "46782.67",
+    "q": "0.0038",
+    "T": 1641380483000,
     "m": false,
     "M": true
-  },
+  }
 ]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/aggTrades```
+  
+**Weight(IP):** 1
 
-**权重(IP):** 1
+Get compressed, aggregate trades. Trades that fill at the time, from the same order, with the same price will have the quantity aggregated.
 
-**请求参数**
+Parameters:
 
+| Name      | Type    | Mandatory | Description                                              | Scope                  |
+| --------- | ------- | --------- | -------------------------------------------------------- | ---------------------- |
+| symbol    | string  | YES       |                                                          |                        |
+| startTime | long    | NO        | Timestamp in ms to get aggregate trades from INCLUSIVE.  |                        |
+| endTime   | long    | NO        | Timestamp in ms to get aggregate trades until INCLUSIVE. |                        |
+| limit     | integer | NO        |                                                          | Default 500; max 1000. |
 
-| 参数名    | 数据类型 | 是否必须 | 说明                               | 取值范围            |
-| :--------- | :-------- | :-------- | :---------------------------------- | :------------------- |
-| symbol    | string   | 是       | 交易对名称   如：BTCUSDT          |                     |
-| startTime | long     | 否       | 从该时刻之后的成交记录开始返回结果 |                     |
-| endTime   | long     | 否       | 返回该时刻为止的成交记录           |                     |
-| limit     | integer  | 否       | 返回的条数                         | 默认 500; 最大 1000 |
+startTime and endTime must be used at the same time.
 
-注意：startTime和endTime需同时使用
+Response:
 
-**返回参数**
+| Name | Description                         |
+| ---- | ----------------------------------- |
+| a    | Aggregate tradeId                   |
+| f    | First tradeId                       |
+| l    | Last tradeId                        |
+| p    | Price                               |
+| q    | Quantity                            |
+| T    | Timestamp                           |
+| m    | Was the buyer the maker?            |
+| M    | Was the trade the best price match? |
 
-| 参数名 | 说明                                       |
-| :------ | :------------------------------------------ |
-| a      | 归集成交ID                                 |
-| f      | 被归集的首个成交ID                         |
-| l      | 被归集的末个成交ID                         |
-| p      | 成交价                                     |
-| q      | 成交量                                     |
-| T      | 成交时间                                   |
-| m      | 是否为主动卖出单                           |
-| M      | 是否为最优撮合单(可忽略，目前总为最优撮合) |
+## Kline/Candlestick Data
 
-## K线数据
-获取指定交易对的k线数据，每根K线代表一个交易对。每根K线的开盘时间可视为唯一ID。
-
-> 请求示例
-
-```
-GET /api/v3/klines?symbol=BTCUSDT&interval=1m&startTime=1652848049876&endTime=1652848650458
-```
-
-> 返回示例
+> Response
 
 ```json
 [
   [
-    1652818380000,
-    "30082.28",
-    "30105.66",
-    "30082.28",
-    "30084.65",
-    "5.838067",
-    1652818440000,
-    "175741.13"
-  ],
+    1640804880000, 
+    "47482.36", 
+    "47482.36", 
+    "47416.57", 
+    "47436.1", 
+    "3.550717", 
+    1640804940000, 
+    "168387.3"
+  ]
 ]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/klines```
   
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Kline/candlestick bars for a symbol.
+Klines are uniquely identified by their open time.
 
-| 参数名    | 数据类型 | 是否必须 | 说明                                   |
-| :--------- | :-------- | :-------- |:-------------------------------------|
-| symbol    | string   | 是       | 交易对名称  如：BTCUSDT                     |
-| interval  | ENUM     | 是       | 见枚举定义：<a href="#kline">k线间隔</a> 如：1m |
-| startTime | long     | 否       | 如：1652848049876                      |
-| endTime  | long     | 否       | 如：1652848650458                      |
-| limit     | integer  | 否       | 默认 500; 最大 1000                      |
+Parameters:
 
-注意：startTime和endTime需同时使用
+| Name      | Type    | Mandatory | Description                                        |
+| --------- | ------- | --------- |----------------------------------------------------|
+| symbol    | string  | YES       |                                                    |
+| interval  | ENUM    | YES       | ENUM: <a href="#kline_interval">Kline Interval</a> |
+| startTime | long    | NO        |                                                    |
+| endTime   | long    | NO        |                                                    |
+| limit     | integer | NO        | Default 500; max 1000.                             |
 
-**返回参数**
 
-| 索引 | 说明     |
-| :---- | :-------- |
-| 0    | 开盘时间 |
-| 1    | 开盘价   |
-| 2    | 最高价   |
-| 3    | 最低价   |
-| 4    | 收盘价   |
-| 5    | 成交量   |
-| 6    | 收盘时间 |
-| 7    | 成交额   |
+Response:
 
-## 当前平均价格
-获取指定交易对在一定时间范围内的平均价格。
+| Index | Description        |
+| ----- | ------------------ |
+| 0     | Open time          |
+| 1     | Open               |
+| 2     | High               |
+| 3     | Low                |
+| 4     | Close              |
+| 5     | Volume             |
+| 6     | Close time         |
+| 7     | Quote asset volume |
 
-> 请求示例
+## Current Average Price
 
-```
-GET /api/v3/avgPrice?symbol=BTCUSDT
-```
 
-> 返回示例
+> Response
 
 ```json
 {
   "mins": 5,
-  "price": "29869.882"
+  "price": "9.35751834"
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/avgPrice```
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters:
 
-| 参数名 | 数据类型 | 是否必须 | 说明       |
-| :------ | :-------- | :-------- | :---------- |
-| symbol | string   | 是       | 交易对名称。如：BTCUSDT  |
-
-
-**返回参数**
-
-| 参数名 | 说明         |
-| :------ | :------------ |
-| mins   | 均价时间范围 |
-| price  | 价格         |
-
-## 24小时价格滚动情况
-获取指定交易对或者所有交易对在24小时内的价格滚动（5分钟为单位）
-
-> 请求示例
-
-```
-GET /api/v3/ticker/24hr?symbol=BTCUSDT
-```
+| Name   | Type   | Mandatory | Description |
+| ------ | ------ | --------- | ----------- |
+| symbol | string | YES       |             |
 
 
-> 返回示例
+Response:
+
+| Name  | Description              |
+| ----- | ------------------------ |
+| mins  | Average price time frame |
+| price | Price                    |
+
+## 24hr Ticker Price Change Statistics
+
+
+> Response
 
 ```json
 {
     "symbol": "BTCUSDT",
-    "priceChange": "1588.47",
-    "priceChangePercent": "0.07791949",
-    "prevClosePrice": "20386.04",
-    "lastPrice": "21974.51",
-    "bidPrice": "21974.48",
-    "bidQty": "0.645732",
-    "askPrice": "21974.51",
-    "askQty": "5.801688",
-    "openPrice": "20386.04",
-    "highPrice": "22508.06",
-    "lowPrice": "20269.12",
-    "volume": "6381.884246",
-    "quoteVolume": "135594952.21",
-    "openTime": 1657258200000,
-    "closeTime": 1657258407860,
+    "priceChange": "184.34",
+    "priceChangePercent": "0.00400048",
+    "prevClosePrice": "46079.37",
+    "lastPrice": "46263.71",
+    "bidPrice": "46260.38",
+    "bidQty": "",
+    "askPrice": "46260.41",
+    "askQty": "",
+    "openPrice": "46079.37",
+    "highPrice": "47550.01",
+    "lowPrice": "45555.5",
+    "volume": "1732.461487",
+    "quoteVolume": null,
+    "openTime": 1641349500000,
+    "closeTime": 1641349582808,
     "count": null
 }
+or
+[
+  {
+    "symbol": "BTCUSDT",
+    "priceChange": "184.34",
+    "priceChangePercent": "0.00400048",
+    "prevClosePrice": "46079.37",
+    "lastPrice": "46263.71",
+    "bidPrice": "46260.38",
+    "bidQty": "",
+    "askPrice": "46260.41",
+    "askQty": "",
+    "openPrice": "46079.37",
+    "highPrice": "47550.01",
+    "lowPrice": "45555.5",
+    "volume": "1732.461487",
+    "quoteVolume": null,
+    "openTime": 1641349500000,
+    "closeTime": 1641349582808,
+    "count": null
+  },
+  {
+    "symbol": "ETHUSDT",
+    "priceChange": "184.34",
+    "priceChangePercent": "0.00400048",
+    "prevClosePrice": "46079.37",
+    "lastPrice": "46263.71",
+    "bidPrice": "46260.38",
+    "bidQty": "",
+    "askPrice": "46260.41",
+    "askQty": "",
+    "openPrice": "46079.37",
+    "highPrice": "47550.01",
+    "lowPrice": "45555.5",
+    "volume": "1732.461487",
+    "quoteVolume": null,
+    "openTime": 1641349500000,
+    "closeTime": 1641349582808,
+    "count": null
+  }
+]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/ticker/24hr```
 
-**权重(IP):** 1单交易对/40所有交易对
+**Weight(IP):** 
 
-**请求参数**
+| Parameter	   | Symbols Provided   |  Weight  |
+| ------ | ------ | ------  |
+| symbol | 1 |  1 |
+| symbols | all |  40 |
 
-| 参数名 | 数据类型 | 是否必须 | 说明                              |
-| :------ | :-------- | :-------- | :--------------------------------- |
-| symbol | string   | 否       | 交易对名称 不传查全部（谨慎使用） 如：BTCUSDT |
+Parameters:
+
+| Name   | Type   | Mandatory | Description                                                                      |
+| ------ | ------ | --------- | -------------------------------------------------------------------------------- |
+| symbol | string | NO        | If the symbol is not sent, tickers for all symbols will be returned in an array. |
 
 
-**返回参数**
+Response:
 
-| 参数名             | 说明       |
-| :------------------ | :---------- |
-| symbol             | 交易对     |
-| priceChange        | 价格变化   |
-| priceChangePercent | 价格变化比 |
-| prevClosePrice     | 前一收盘价 |
-| lastPrice          | 最新价     |
-| lastQty            | 最新量     |
-| bidPrice           | 买盘价格   |
-| bidQty             | 买盘数量   |
-| askPrice           | 卖盘价格   |
-| askQty             | 卖盘数量   |
-| openPrice          | 开始价     |
-| highPrice          | 最高价     |
-| lowPrice           | 最低价     |
-| volume             | 成交量     |
-| quoteVolume        | 成交额     |
-| openTime           | 开始时间   |
-| closeTime          | 结束时间   |
-| count              |            |
+| Name               | Description           |
+| ------------------ | --------------------- |
+| symbol             | Symbol                |
+| priceChange        | price Change          |
+| priceChangePercent | price change percent  |
+| prevClosePrice     | Previous  close price |
+| lastPrice          | Last price            |
+| lastQty            | Last quantity         |
+| bidPrice           | Bid best price        |
+| bidQty             | Bid best quantity     |
+| askPrice           | Ask best price        |
+| askQty             | Ask best quantity     |
+| openPrice          | Open                  |
+| highPrice          | High                  |
+| lowPrice           | Low                   |
+| volume             | Deal volume           |
+| quoteVolume        | Quote asset volume    |
+| openTime           | Start time            |
+| closeTime          | Close time            |
+| count              |                       |
 
-## 最新价格
-获取指定交易对或者所有交易对的最新价格
+## Symbol Price Ticker
 
-> 请求示例
-
-```
-GET /api/v3/ticker/price?symbol=BTCUSDT
-```
-
-> 返回示例
+> Response
 
 ```json
 {
     "symbol": "BTCUSDT",
-    "price": "29805.02"
+    "price": "184.34"
 }
+or
+[
+  {
+    "symbol": "BTCUSDT",
+    "price": "6.65"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "price": "5.65"
+  }
+]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/ticker/price```
 
-**权重(IP):**1 单一交易对;**2** 交易对参数缺失
+**Weight(IP):** 
 
-**请求参数**
+| Parameter	   | Symbols Provided   |  Weight  |
+| ------  | ------ | ------  |
+| symbol  | 1      |  1      |
+| symbols | all    |  2      |
 
-| 参数名 | 数据类型 | 是否必须 | 说明                  |
-| :------ | :-------- | :-------- | :--------------------- |
-| symbol | string   | 否       | 交易对名称 不传查全部 如：BTCUSDT|
+Parameters:
+
+| Name   | Type   | Mandatory | Description                                                          |
+| ------ | ------ | --------- | -------------------------------------------------------------------- |
+| symbol | string | NO        | If the symbol is not sent, all symbols will be returned in an array. |
 
 
-**返回参数**
+Response:
 
-| 参数名 | 说明     |
-| :------ | :-------- |
-| symbol | 交易对   |
-| price  | 最新价格 |
+| Name   | Description |
+| ------ | ----------- |
+| symbol |             |
+| price  | Last price  |
 
-## 当前最优挂单
-获取当前最优的挂单(最高买单，最低卖单)
+## Symbol Order Book Ticker
 
-> 请求示例
-
-```
-GET /api/v3/ticker/bookTicker?symbol=BTCUSDT
-```
-
-> 返回示例
+> Response
 
 ```json
 {
-    "symbol": "BTCUSDT",
-    "bidPrice": "29820.79",
-    "bidQty": "2.241948",
-    "askPrice": "29820.82",
-    "askQty": "2.301948"
+  "symbol": "AEUSDT",
+  "bidPrice": "0.11001",
+  "bidQty": "115.59",
+  "askPrice": "0.11127",
+  "askQty": "215.48"
 }
+OR
+[
+  {
+    "symbol": "AEUSDT",
+    "bidPrice": "0.11001",
+    "bidQty": "115.59",
+    "askPrice": "0.11127",
+    "askQty": "215.48"
+  },
+  {
+    "symbol": "AEUSDT",
+    "bidPrice": "0.11001",
+    "bidQty": "115.59",
+    "askPrice": "0.11127",
+    "askQty": "215.48"
+  }
+]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/ticker/bookTicker```
 
-**权重(IP):**1 单一交易对;**2** 交易对参数缺失;
+**Weight(IP):** 1
 
-**请求参数**
+Best price/qty on the order book for a symbol or symbols.
 
-| 参数名 | 数据类型 | 是否必须 | 说明                  |
-| :------ | :-------- | :-------- | :--------------------- |
-| symbol | string   | 否       | 交易对名称 不传查全部 如：BTCUSDT |
+Parameters:
 
-
-**返回参数**
-
-| 参数名   | 说明         |
-| :-------- | :------------ |
-| symbol   | 交易对       |
-| bidPrice | 最高买盘价   |
-| bidQty   | 最高买盘数量 |
-| askPrice | 最低卖盘价   |
-| askQty   | 最低卖盘数量 |
+| Name   | Type   | Mandatory | Description                                                          |
+| ------ | ------ | --------- | -------------------------------------------------------------------- |
+| symbol | string | NO        | If the symbol is not sent, all symbols will be returned in an array. |
 
 
-# 母子账户接口
+Response:
 
-## 创建子账户
-获取您的母账户生成一个虚拟子账户
+| Name     | Description       |
+| -------- | ----------------- |
+| symbol   | Symbol            |
+| bidPrice | Best bid price    |
+| bidQty   | Best bid quantity |
+| askPrice | Best ask price    |
+| askQty   | Best ask quantity |
 
-> 请求示例
 
-```
-POST /api/v3/sub-account/virtualSubAccount?subAccount=subAccount1&note=1&timestamp={{timestamp}}&signature={{signature}}
-```
+# Sub-Account Endpoints
 
-> 返回示例
+## Create a Sub-account(For Master Account)
 
-```
+Create a sub-account from the master account.
+
+> Response
+
+```json
 {
-    "subAccount":"subAccount1",
+    "subAccount":"ourbit1",
     "note":"1"
 }
-
 ```
 
-**HTTP请求**
+- POST / api/v3/sub-account/virtualSubAccount  
 
-- **POST** ```/api/v3/sub-account/virtualSubAccount```  
+**Permission:** SPOT_ACCOUNT_READ
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R 
+**Weight(IP):** 1
 
-**权重(IP):** 1
+Parameters:
 
-**请求参数**
+| Name       | Type   | Mandatory | Description       |
+| ---------- | ------ | --------- | ----------------- |
+| subAccount | STRING | YES       | Sub-account Name  |
+| note       | STRING | YES       | Sub-account notes |
+| recvWindow | LONG   | NO        |                   |
+| timestamp  | LONG   | YES       |                   |
 
-| 参数名       | 数据类型   | 是否必需 | 说明       |
-| :--------- | :----- | :------- | :--------- |
-| subAccount | string | 是      | 子账户名称（8-32个字母加数字）如：subAccount1 |
-| note       | string | 是      | 备注  如：1     |
-| recvWindow | long   | 否       |            |
-| timestamp  | long   | 是      |     |
 
-**返回参数**
 
-| 参数名       | 数据类型 | 说明                |
-| :------------ | :-------- | :------------------- |
-| subAccount | string | 子账户名称（8-32个字母加数字）如：subAccount1 |
-| note       | string | 备注  如：1     |
+## Query Sub-account List (For Master Account)
 
-## 查看子账户列表
-获取您的母账户下所有子账户信息
+Get details of the sub-account list
 
-> 请求示例
+> Response
 
-```
-GET /api/v3/sub-account/list?timestamp={{timestamp}}&signature={{signature}}
-```
-
-> 返回示例
-
-```
+```json
 {
     "subAccounts":[
         {
-            "subAccount":"subAccount1",
-            "isFreeze":false,//是否冻结
+            "subAccount":"ourbit666",
+            "isFreeze":false,
             "createTime":1544433328000,
             "uid": "49910511"
         },
         {
-            "subAccount":"subAccount2",
+            "subAccount":"ourbit888",
             "isFreeze":false,
             "createTime":1544433328000,
             "uid": "91921059"
         }
     ]
 }
-
 ```
 
- **HTTP请求**
+- GET / api/v3/sub-account/list   
 
-- **GET**  ```/api/v3/sub-account/list```
+**Permission:** SPOT_ACCOUNT_READ
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R  
+**Weight(IP):** 1
 
-**权重(IP):** 1
+Parameters:
 
-**请求参数**
+| Name       | Type   | Mandatory | Description                       |
+| ---------- | ------ | --------- | --------------------------------- |
+| subAccount | STRING | NO        | Sub-account Name                  |
+| isFreeze   | STRING | NO        | true or false                     |
+| page       | INT    | NO        | Default value: 1                  |
+| limit      | INT    | NO        | Default value: 10, Max value: 200 |
+| timestamp  | LONG   | YES       |                                   |
+| recvWindow | LONG   | NO        |                                   |
 
-| 名称       | 类型   | 是否必需 | 说明                |
-| :--------- | :----- | :------- | :------------------ |
-| subAccount | string | 否       | 子账户名称 如：subAccount1          |
-| isFreeze   | string | 否       | true or false       |
-| page       | int    | 否       | 默认: 1             |
-| limit      | int    | 否       | 默认: 10, 最大: 200 |
-| timestamp  | long   | 是      |                     |
-| recvWindow | long   | 否       |                     |
+Response:
 
-**返回参数**
-
-| 参数名       | 数据类型 | 说明                |
-| :------------ | :-------- | :------------------- |
-| subAccount | string | 子账户名称 |
-| isFreeze | string | 是否冻结 |
-| createTime | long | 创建时间 |
-| uid | string | 子账户uid |
+| Name     | Description       |
+| -------- | ----------------- |
+| subAccount | subAccount name            |
+| isFreeze  | isFreeze   |
+| createTime   | createTime  |
+| uid  | subaccount uid    |
 
 
 
-## 创建子账户的APIkey
-为子账户创建APIkey
 
-> 请求示例
 
-```
-POST /api/v3/sub-account/apiKey
-body
-[
-        {
-            "subAccount":"subAccount1",
-            "permissions":"SPOT_ACCOUNT_READ",
-            "ip":"135.181.193",
-            "note":"1"
-        }
-]
-```
-> 返回示例
+## Create an APIKey for a sub-account (For Master Account)
 
-```
+> Response
+
+```json
     {
-        "subAccount": "subAccount1",
+        "subAccount": "ourbit1",
         "note": "1",
         "apiKey": "arg13sdfgs",
         "secretKey": "nkjwn21973ihi",
@@ -1164,206 +1357,150 @@ body
         "ip": "135.181.193",
         "creatTime": 1597026383085
     }
-
-```
-**HTTP请求**
-
-- **POST** ```/api/v3/sub-account/apiKey```  
-
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R  
-
-**权重(IP):** 1
-
-**请求参数**
-
-| 参数名      | 类型   | 是否必须 | 说明                                                         |
-| :----------- | :------ | :-------- | :------------------------------------------------------------ |
-| subAccount  | string | 是       | 子账户名称 如：subAccount1                                   |
-| note        | string | 是       | APIKey的备注                                                 |
-| permissions | string | 是       | APIKey权限:<br/>账户读/SPOT_ACCOUNT_READ,<br/>账户写/SPOT_ACCOUNT_WRITE,<br/>现货交易信息读/SPOT_DEAL_READ,<br/>现货交易信息写/SPOT_DEAL_WRITE,<br/>合约账户信息读/CONTRACT_ACCOUNT_READ,<br/>合约账户信息写/CONTRACT_ACCOUNT_WRITE,<br/>合约交易信息读/CONTRACT_DEAL_READ,<br/>合约交易信息写/CONTRACT_DEAL_WRITE,<br/>资金划转读/SPOT_TRANSFER_READ,<br/>资金划转写/SPOT_TRANSFER_WRITE|
-| ip          | string | 否       | 绑定ip地址，多个ip用半角逗号隔开，最多支持20个ip。    如：135.181.193    |
-| recvWindow  | long   | 否       |                                                              |
-| timestamp   | long   | 是       |                                                              |
-
-
-
-**返回参数**
-
-| 参数名      | 类型   | 说明               |
-| :----------- | :------ | :------------------ |
-| subAccount  | string | 子账户名称         |
-| note        | string | APIKey的备注       |
-| apiKey      | string | API公钥            |
-| secretKey   | string | API的私钥          |
-| permissions | string | APIKey权限         |
-| ip          | string | APIKey绑定的ip地址 |
-| creatTime   | long   | 创建时间           |
-
-
-
-## 查询子账户的APIKey
-获取指定子账户的APIkey信息
-
-> 请求示例
-
-```
-GET/api/v3/sub-account/apiKey?subAccount=subAccount1&timestamp=1597026383085
 ```
 
-> 返回示例
+- POST /api/v3/sub-account/apiKey   
 
-```
-{
-  "subAccount":[
-    {
-      "note":"v5",
-      "apiKey":"arg13sdfgs",
-      "permissions":"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE",
-      "ip":"135.181.193",
-      "creatTime":1597026383085
-    },
-    {
-      "note":"v5.1",
-      "apiKey":"arg13sdfgs",
-      "permissions":"read_only",
-      "ip":"135.181.193",
-      "creatTime":1597026383085
-    }
-   ]
-}
-```
-**HTTP请求**
+**Permission:** SPOT_ACCOUNT_READ
 
-- **GET** ```/api/v3/sub-account/apiKey```  
+**Weight(IP):** 1
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R 
+Parameters:
 
-**权重(IP):** 1
-
-**请求参数**
-
-| 参数名     | 类型   | 是否必须 | 说明       |
-| :--------- | :----- | :------- | :--------- |
-| subAccount | string | 是       | 子账户名称 如：subAccount1|
-| recvWindow | long   | 否       |            |
-| timestamp  | long   | 是       |            |
-
-
-**返回参数**
-
-| 参数名  | 类型 | 说明          |
-| :---------- | :------- | :----------------- |
-| note        | string   | APIKey的备注       |
-| apiKey      | string   | API公钥            |
-| permissions | string   | APIKey权限         |
-| ip          | string   | APIKey绑定的ip地址 |
-| creatTime   | long     | 创建时间           |
+| Name        | Type   | Mandatory | Description                                                  |
+| ----------- | ------ | --------- | ------------------------------------------------------------ |
+| subAccount  | STRING | YES       | Sub-account Name                                             |
+| note        | STRING | YES       | APIKey note                                                  |
+| permissions | STRING | YES       | Permission of APIKey:<br/>SPOT_ACCOUNT_READ,<br/>SPOT_ACCOUNT_WRITE,<br/>SPOT_DEAL_READ,<br/>SPOT_DEAL_WRITE,<br/>CONTRACT_ACCOUNT_READ,<br/>CONTRACT_ACCOUNT_WRITE,<br/>CONTRACT_DEAL_READ,<br/>CONTRACT_DEAL_WRITE,<br/>SPOT_TRANSFER_READ,<br/>SPOT_TRANSFER_WRITE| 
+| ip          | STRING | NO        | Link IP addresses, separate with commas if more than one. Support up to 20 addresses. |
+| recvWindow  | LONG   | NO        |                                                              |
+| timestamp   | LONG   | YES       |                                                              |
 
 
 
-## 删除子账户的APIKey
 
-> 请求示例
+## Query the APIKey of a sub-account (For Master Account)
 
-```
-DELETE /api/v3/sub-account/apiKey
-body
-[
+Applies to master accounts only
+
+> Response
+
+```json
+   {
+       "subAccount":[
         {
-            "subAccount":"subAccount1",
-            "apiKey":"ghytfugy2168hjksaj"
+            "note":"v5",
+            "apiKey":"arg13sdfgs",
+            "permissions":"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE",
+            "ip":"1.1.1.1,2.2.2.2",
+            "creatTime":1597026383085
+        },
+        {
+            "note":"v5.1",
+            "apiKey":"arg13sdfgs12",
+            "permissions":"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE",
+            "ip":"1.1.1.1,2.2.2.2",
+            "creatTime":1597026383085
         }
-]
+        ]
+   }
 ```
-> 返回示例
 
-```
-{
-           "subAccount":"subAccount1"
+- GET/api/v3/sub-account/apiKey  
+
+**Permission:** SPOT_ACCOUNT_READ
+
+**Weight(IP):** 1
+
+Parameters:
+
+| Name       | Type   | Mandatory | Description      |
+| ---------- | ------ | --------- | ---------------- |
+| subAccount | STRING | YES       | Sub-account Name |
+| recvWindow | LONG   | NO        |                  |
+| timestamp  | LONG   | YES       |                  |
+
+
+
+
+## Delete the APIKey of a sub-account (For Master Account)
+
+> Response
+
+```json
+  {
+           "subAccount":"ourbit1"
 }
-
 ```
-**HTTP请求**
 
-- **DELETE** ```/api/v3/sub-account/apiKey```  
+- DELETE /api/v3/sub-account/apiKey  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R 
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters:
 
-| 参数名     | 类型   | 是否必须 | 说明       |
-| :--------- | :----- | :------- | :--------- |
-| subAccount | string | 是       | 子账户名称 如：subAccount1|
-| apiKey     | string | 是       | API的公钥 如：ghytfugy2168hjksaj |
-| recvWindow | long   | 否       |            |
-| timestamp  | long   | 是       |            |
-
+| Name       | Type   | Mandatory | Description      |
+| ---------- | ------ | --------- | ---------------- |
+| subAccount | STRING | YES       | Sub-account Name |
+| apiKey     | STRING | YES       | API public key   |
+| recvWindow | LONG   | NO        |                  |
+| timestamp  | LONG   | YES       |                  |
 
 
-**返回参数**
+## Universal Transfer (For Master Account)
 
-| 参数名   | 类型   | 说明    |
-| :--------- | :------- | :--------- |
-| subAccount | string   | 子账户名称 |
-
-## 母子用户万向划转
-
-> 请求示例
+> Request
 
 ```
 post /api/v3/capital/sub-account/universalTransfer
 ```
-> 返回示例
+
+> Response
 
 ```json
-[
-  {
+ {
     "tranId":11945860693 
-  }
-]
+ }
 ```
-**HTTP请求**
 
 - **POST** ```/api/v3/capital/sub-account/universalTransfer```  
 
-**接口权限要求:** 资金划转写 / SPOT_TRANSFER_W 
+**Permission:**  SPOT_TRANSFER_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Parameters:**
 
-| 参数名 | 数据类型| 是否必须  | 说明                                                                 | 
-| :------ | :-------- | :-------- |:-------------------------------------------------------------------|
-|fromAccount|string|否| 母子账户，可填subAccout账户名，不填默认母账户                                        |
-|toAccount|string|否| 母子账户，可填subAccout账户名，不填默认母账户                                        |
-|fromAccountType|string|是| 划出账户类型，现货/合约，枚举值："SPOT","FUTURES",划转规则见上描述 |
-|toAccountType|string|是| 划出账户类型，现货/合约，枚举值："SPOT","FUTURES",划转规则见上描述 |
-|asset|string|是| 资产，eg：USDT                                                         |
-|amount|string|是| 数量，eg：1.82938475                                                   |
-|timestamp|string|是| 时间戳                                                                |
-|signature|string|是| 签名                                                                 |
+| Name | Type| Mandatory  | Description |  
+| :------ | :-------- | :-------- | :---------- |
+|fromAccount|string|NO|Transfer from master account by default if fromAccount is not sent|
+|toAccount|string|NO|Transfer to master account by default if toAccount is not sent|
+|fromAccountType|string|YES|fromAccountType:"SPOT","FUTURES"|
+|toAccountType|string|YES|toAccountType:"SPOT","FUTURES"|
+|asset|string|YES|asset,eg:USDT|
+|amount|string|YES|amount,eg:1.82938475|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|sign|
 
+**Response:**
 
-
-**返回参数**
-
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|tranId|string|划转ID|
+|tranId|string|transfer ID|
 
-## 查询母子万向划转历史
+## Query Universal Transfer History (For Master Account)
 
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/sub-account/universalTransfer
 ```
-> 返回示例
+
+> Response
 
 ```json
-[
   {
     "tranId":"11945860693",
     "fromAccount":"master@test.com",
@@ -1378,58 +1515,53 @@ get /api/v3/capital/sub-account/universalTransfer
     "status":"SUCCESS",
     "timestamp":1544433325000
   }
-]
 ```
-**HTTP请求**
-
 - **GET** ```/api/v3/capital/sub-account/universalTransfer```  
 
-**接口权限要求:** 资金划转读 / SPOT_TRANSFER_R
+**Permission:** SPOT_TRANSFER_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Parameters:**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|fromAccount|string|否|母子账户，可填subAccout账户名，不填默认母账户|
-|toAccount|string|否|母子账户，可填subAccout账户名，不填默认母账户|
-|fromAccountType|string|是|划出账户类型，现货/合约，枚举值："SPOT","FUTURES",划转规则见上描述|
-|toAccountType|string|是|划出账户类型，现货/合约，枚举值："SPOT","FUTURES",划转规则见上描述|
-|startTime|string|否|起始时间|
-|endTime|string|否|截止时间|
-|page|string|否|默认 1|
-|limit|string|否|默认 500, 最大 500|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|fromAccount|string|NO|Transfer from master account by default if fromAccount is not sent|
+|toAccount|string|NO|Transfer to master account by default if toAccount is not sent|
+|fromAccountType|string|YES|fromAccountType:"SPOT","FUTURES"|
+|toAccountType|string|YES|toAccountType:"SPOT","FUTURES"|
+|startTime|string|NO|startTime|
+|endTime|string|NO|endTime|
+|page|string|NO|default 1|
+|limit|string|NO|default 500, max 500|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|sign|
 
+**Response:**
 
-**返回参数**
-
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|tranId|string|划转ID|
-|fromAccount|string|划出账户|
-|toAccount|string|划入账户|
-|clientTranId|string|客户自定义划转ID|
-|asset|string|币种|
-|amount|string|划转数量|
-|fromAccountType|string|转出业务账户|
-|toAccountType|string|划入业务账户|
-|fromSymbol|string|杠杆转入交易对|
-|toSymbol|string|杠杆转出交易对|
-|status|string|划转状态:成功，失败，划转中，中断|
-|timestamp|number|划转时间|
+|tranId|string|transfer ID|
+|fromAccount|string|fromAccount|
+|toAccount|string|toAccount|
+|clientTranId|string|clientTranId|
+|asset|string|asset|
+|amount|string|transfer amount|
+|fromAccountType|string|fromAccountType|
+|toAccountType|string|toAccountType|
+|fromSymbol|string|fromSymbol|
+|toSymbol|string|toSymbol|
+|status|string|status|
+|timestamp|number|timestamp|
 
+## Query Sub-account Asset
 
-## 查询子账户资产
-
-> 请求示例
+> request
 
 ```
 get /api/v3/sub-account/asset?subAccount=account1&accountType=SPOT&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -1447,48 +1579,136 @@ get /api/v3/sub-account/asset?subAccount=account1&accountType=SPOT&timestamp={{t
     ]
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/sub-account/asset```  
 
-**接口权限要求:** 资金划转读 / SPOT_TRANSFER_R
+**Permission:** SPOT_TRANSFER_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| subAccount | string | 是       | 子账户名称，仅支持单个子账户查询       |
-| accountType|string|是|账户类型，现货/合约，枚举值："SPOT","FUTURES",当前仅支持SPOT|
-| timestamp|string|是|时间戳|
-| signature|string|是|签名|
+| subAccount | string | Yes       | subAccount name,only support query for single subaccount|
+| accountType|string|Yes|account type:"SPOT","FUTURES",only support SPOT currently|
+| timestamp|string|Yes|timestamp|
+| signature|string|Yes|signature|
 
 
-**返回参数**
+**response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|balances|string|余额|
-|asset|string|币种|
-|free|string|可用数量|
-|locked|string|冻结数量|
+|balances|string|balance|
+|asset|string|asset|
+|free|string|free|
+|locked|string|locked|
 
 
 
-# 现货账户和交易接口
 
-## 用户API交易对
+<!-- ## Enable Futures for Sub-account (For Master Account)
 
-获取用户可API交易的交易对
+> Request
 
-> 请求示例
+```
+post /api/v3/sub-account/futures
+```
+
+> Response
+
+```json
+  {
+    "code": "0",
+    "message": "",
+    "data": [{
+        "subAccount": "ourbit1",
+        "isFuturesEnabled": true,
+        "timestamp": "1597026383085"
+    }]
+  }
+```
+
+- **POST** ```/api/v3/sub-account/futures```  
+
+**Permission:** SPOT_ACCOUNT_READ
+
+**Weight(IP):** 1
+
+**Parameters:**
+
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|subAccount|string|YES|subaccount Name|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|sign|
+
+**Response:**
+
+| Name  |Type | Description|
+| :------------ | :-------- | :--------|
+|subAccount|string|subaccount Name|
+|isFuturesEnabled|boolean|isFuturesEnabled:true|
+|timestamp|string|response time| -->
+
+<!-- ## Enable Margin for Sub-account (For Master Account)
+
+> Request
+
+```
+post /api/v3/sub-account/margin
+```
+
+> Response
+
+```json
+{
+  "code": "0",
+  "message": "",
+  "data": [{
+      "subAccount": "ourbit1",
+      "isMarginEnabled": true,
+      "timestamp": "1597026383085"
+  }]
+}
+```
+
+- **POST** ```/api/v3/sub-account/margin```  
+
+**Permission:** SPOT_ACCOUNT_READ
+
+**Weight(IP):** 1
+
+**Parameters:**
+
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|subAccount|string|YES|subaccount Name|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|sign|
+
+**Response:**
+
+| Name  |Type | Description|
+| :------------ | :-------- | :--------|
+|subAccount|string|subaccount Name|
+|isMarginEnabled|booleanisMarginEnabled:true or false|
+|timestamp|string|response time|
+
+ -->
+
+# Spot Account/Trade
+
+## User API default symbol
+
+> Request
 
 ```
 GET /api/v3/selfSymbols?timestamp={{timestamp}}&signature={{signature}}
 ```
 
-> 返回示例
+> Response
 
 ```json
 {
@@ -1503,59 +1723,55 @@ GET /api/v3/selfSymbols?timestamp={{timestamp}}&signature={{signature}}
     "msg": null
 }
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/selfSymbols ```
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:**  SPOT_ACCOUNT_R
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
 NONE
 
-**返回参数**
+**Response**
 
-| 参数名       | 数据类型 | 说明                       |
+| Name       | Type | Description                       |
 | :------------ | :-------- |:-------------------------|
-| symbol | string | 返回支持API交易的交易对      |
+| symbol | string | api trade symbol      |
 
 
-## 测试下单
-用于测试订单请求，但不会提交到撮合引擎
 
-> 请求示例
+## Test New Order
 
-```
-POST /api/v3/order/test
-```
-> 返回示例
+> Response
 
 ```json
 {}
 ```
-**HTTP请求**
 
 - **POST** ```/api/v3/order/test```  
 
-**接口权限要求:** 现货交易信息写 / SPOT_DEAL_W
+**Permission:** SPOT_DEAL_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Creates and validates a new order but does not send it into the matching engine.
 
-同于 POST /api/v3/order
+Parameters:
 
-## 下单
-只有当您的账户有足够的资金才能下单。
+equaled POST /api/v3/order
 
-> 请求示例
+## New Order
+
+> Request
 
 ```
 POST /api/v3/order?symbol=OBUSDT&side=BUY&type=LIMIT&quantity=50&price=0.1&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+
+> Response
 
 ```json
 {
@@ -1569,162 +1785,155 @@ POST /api/v3/order?symbol=OBUSDT&side=BUY&type=LIMIT&quantity=50&price=0.1&times
     "transactTime": 1666676533741
 }
 ```
-**HTTP请求**
 
 - **POST** ```/api/v3/order```  
 
-**接口权限要求:** 现货交易信息写 / SPOT_DEAL_W
+**Permission:** SPOT_DEAL_WRITE
 
-**权重(IP):** 1/**权重(UID):** 1
+**Weight(IP):** 1, **Weight(UID):** 1
 
-**请求参数**
+Parameters:
 
-| 名称             | 类型    | 是否必需 | 说明                   |
-| :---------------- | :------- | :-------- | :---------------------- |
-| symbol           | string  | 是      | 交易对                 |
-| side             | ENUM    | 是      | 详见枚举定义：<a href="#order_side">订单方向</a> |
-| type             | ENUM    | 是      | 详见枚举定义：<a href="#order_type">订单类型</a> |
-| quantity         | decimal | 否       | 委托数量               |
-| quoteOrderQty    | decimal | 否       | 委托总额               |
-| price            | decimal | 否       | 委托价格               |
-| newClientOrderId | string  | 否       | 客户自定义的唯一订单ID |
-| recvWindow       | long    | 否       | 赋值不能大于 60000     |
-| timestamp        | long    | 是      |                        |
+| Name             | type    | Mandatory | Description                               |
+| ---------------- | ------- | --------- |-------------------------------------------|
+| symbol           | STRING  | YES       |                                           |
+| side             | ENUM    | YES       | ENUM:<a href="#order_side">Order Side</a> |
+| type             | ENUM    | YES       | ENUM:<a href="#order_type">Order Type</a> |
+| quantity         | DECIMAL | NO        | Quantity                                  |
+| quoteOrderQty    | DECIMAL | NO        | Quote order quantity                      |
+| price            | DECIMAL | NO        | Price                                     |
+| newClientOrderId | STRING  | NO        |                                           |
+| recvWindow       | LONG    | NO        | Max 60000                                 |
+| timestamp        | LONG    | YES       |                                           |
 
-基于订单 `type`不同，强制要求某些参数:
+Response:
 
-| 类型     | 强制要求的参数                |
-| :------- | :---------------------------- |
-| `LIMIT`  | `quantity`, `price`           |
-| `MARKET` | `quantity` or `quoteOrderQty` |
-
-其他说明：
-
-MARKET：当type是market时，若为买单，则quoteOrderQty，为必填参数。
-若为卖单，quantity为必填参数，
-
-- 比如在`BTCUSDT`上下一个市价买单, 明确的是买入时想要花费的计价资产数量。此时的报单数量将会以市场流动性和`quoteOrderQty`被计算出来（实际成交数量以最终订单详情为准）。
-  以`BTCUSDT`为例，`quoteOrderQty=100`:下买单的时候, 订单会尽可能的买进价值100USDT的BTC.
-
-- 比如在`BTCUSDT`上下一个市价卖单, `quantity`为用户指明能够卖出多少BTC。
-
-**返回参数**
+| Name         | Description                          |
+|--------------|--------------------------------------|
+| symbol       | Symbol                               |
+| orderId      | order id                             |
+| orderListId  | order list id                        |
+| price        | Price                                |
+| origQty      | Original order quantity              |
+| type         | <a href="#order_type">Order type</a> |
+| side         | <a href="#order_side">order side</a> |
+| transactTime | transactTime                         |
 
 
-| 参数名       | 数据类型 | 说明                |
-| :------------ | :-------- | :------------------- |
-| symbol | string | 交易对 |
-| orderId | string | 订单id |
-| orderListId|string|客户端订单列表 |
-| price | string | 订单id |
-| origQty | string | 委托数量 |
-| type | string | <a href="#order_type">订单类型</a>|
-| side | string | <a href="#order_side">订单方向</a> |
-| transactTime | long | 下单时间 |
+Additional mandatory parameters based on `type`:
 
+| Type     | Additional mandatory parameters |
+| :------- | :------------------------------ |
+| `LIMIT`  | `quantity`, `price`             |
+| `MARKET` | `quantity` or `quoteOrderQty`   |
 
-## 批量下单
-支持单次批量下20单,要求必须是同一交易对。
+Other info:
 
-> 请求示例
+MARKET: When type is market, if it is a buy order, `quoteOrderQty` is a required. If it is a sell order, `quantity` is a required.
+
+- `MARKET` orders using the `quantity` field specifies the amount of the `base asset` the user wants to sell at the market price
+  - For example, sending a `MARKET` order on BTCUSDT will specify how much BTC the user is selling.
+- `MARKET` orders using `quoteOrderQty` specifies the amount the user wants to spend (when buying) the `quote` asset; the correct `quantity` will be determined based on the market liquidity 
+  - Using BTCUSDT as an example:
+    - On the `BUY` side, the order will buy as many BTC as `quoteOrderQty` USDT can.
+    - On the `SELL` side, the order will sell the `quantity` of  BTC.
+
+## Batch Orders
+
+Supports 20 orders with a same symbol in a batch,rate limit:2 times/s.
+
+> Request
 
 ```
 POST /api/v3/batchOrders?batchOrders=[{"type": "LIMIT_ORDER","price": "40000","quantity": "0.0002","symbol": "BTCUSDT","side": "BUY","newClientOrderId": 9588234},{"type": "LIMIT_ORDER","price": "4005","quantity": "0.0003","symbol": "BTCUSDT","side": "SELL"}]
 ```
-> 返回示例
+
+> Response
 
 ```json
-{ //成功返回：
-  [
-    {   
-      "symbol": "BTCUSDT",   
-      "orderId": "1196315350023612316",   
-      "orderListId": -1 
-    },
-    {   
-      "symbol": "BTCUSDT",   
-      "orderId": "1196315350023612318",   
-      "orderListId": -1 
-    }
-  ],
-  //有失败的返回：
-  [
-    { 
-      "symbol": "BTCUSDT", 
-      "orderId": "1196315350023612316", 
-      "newClientOrderId": "hio8279hbdsds", 
-      "orderListId": -1 
-    },
-    { 
-      "newClientOrderId": "123456",
-      "msg": "The minimum transaction volume cannot be less than：0.5USDT", 
-      "code": 30002
-    },
-    { 
-      "symbol": "BTCUSDT", 
-      "orderId": "1196315350023612318", 
-      "orderListId": -1 
-    }
-  ] 
+{
+  { //success response:
+   [
+     {   
+       "symbol": "BTCUSDT",   
+       "orderId": "1196315350023612316",   
+       "orderListId": -1 
+     },
+     {   
+       "symbol": "BTCUSDT",   
+       "orderId": "1196315350023612318",   
+       "orderListId": -1 
+     }
+   ],
+   //error response:
+   [
+     { 
+       "symbol": "BTCUSDT", 
+       "orderId": "1196315350023612316", 
+       "newClientOrderId": "hio8279hbdsds", 
+       "orderListId": -1 
+     },
+     { 
+       "newClientOrderId": "123456",
+       "msg": "The minimum transaction volume cannot be less than:0.5USDT", 
+       "code": 30002
+     },
+     { 
+       "symbol": "BTCUSDT", 
+       "orderId": "1196315350023612318", 
+       "orderListId": -1 
+     }
+   ] 
+ }
 }
 ```
-**HTTP请求**
 
 - **POST** ```/api/v3/batchOrders```  
 
-**接口权限要求:** 现货交易信息写 / SPOT_DEAL_W
+**Permission:** SPOT_DEAL_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1,**Weight(UID):** 1
 
-**请求参数**
+Parameters:
 
+| Name             | type    | Mandatory | Description                                |
+| :--------------- | :------ | :------- |:-------------------------------------------|
+| batchOrders      | LIST  | YES      | list of batchOrders,supports max 20 orders |
+| symbol           | STRING  | YES      | symbol                                     |
+| side             | ENUM    | YES      | <a href="#order_side">order side</a>       |
+| type             | ENUM    | YES      | <a href="#order_type">order type</a>       |
+| quantity         | DECIMAL | NO       | quantity                                   |
+| quoteOrderQty    | DECIMAL | NO       | quoteOrderQty                              |
+| price            | DECIMAL | NO       | order price                                |
+| newClientOrderId | STRING  | NO       | ClientOrderId                              |
+| recvWindow       | LONG    | NO       | less than 60000                            |
+| timestamp        | LONG    | YES      | order time                                 |
 
-| 名称             | 类型    | 是否必需 | 说明                   |
-| :--------------- | :------ | :------- | :--------------------- |
-| batchOrders      | LIST  | 是      | 订单列表，最多支持20个订单(list of JSON格式填写订单参数,参考请求示例) |
-| symbol           | string  | 是      | 交易对                 |
-| side             | ENUM    | 是      | 详见枚举定义：<a href="#order_side">订单方向</a> |
-| type             | ENUM    | 是      | 详见枚举定义：<a href="#order_type">订单类型</a> |
-| quantity         | decimal | 否       | 委托数量               |
-| quoteOrderQty    | decimal | 否       | 委托总额               |
-| price            | decimal | 否       | 委托价格               |
-| newClientOrderId | string  | 否       | 客户自定义的唯一订单ID |
-| recvWindow       | long    | 否       | 赋值不能大于 60000     |
-| timestamp        | long    | 是      |                        |
+base on different`type`,some params are mandatory:
 
-基于订单 `type`不同，强制要求某些参数:
-
-| 类型     | 强制要求的参数                |
+| type     | Mandatory   params      |
 | :------- | :---------------------------- |
 | `LIMIT`  | `quantity`, `price`           |
 | `MARKET` | `quantity` or `quoteOrderQty` |
 
-**返回参数**
+Response
 
-| 参数名       | 数据类型 | 说明                |
+| Name       | type | Description       |
 | :------------ | :-------- | :------------------- |
-| symbol | string | 交易对 |
-| orderId | string | 订单id |
+| symbol | STRING | symbol |
+| orderId | STRING | orderId |
 
-## 撤销订单
+## Cancel Order
 
-取消有效订单。
-
-> 请求示例
-
-```
-DELETE /api/v3/order?symbol=BTCUSDT&orderId=135598325645746176&timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+> Response
 
 ```json
 {
-  "symbol": "BTCUSDT",
+  "symbol": "LTCBTC",
   "origClientOrderId": "myOrder1",
   "orderId": 4,
-  "orderListId": -1, // OCO订单ID，否则为 -1
   "clientOrderId": "cancelMyOrder1",
-  "price": "29000.0000",
+  "price": "2.00000000",
   "origQty": "1.00000000",
   "executedQty": "0.00000000",
   "cummulativeQuoteQty": "0.00000000",
@@ -1734,54 +1943,48 @@ DELETE /api/v3/order?symbol=BTCUSDT&orderId=135598325645746176&timestamp={{times
   "side": "BUY"
 }
 ```
-**HTTP请求**
 
 - **DELETE** ```/api/v3/order```  
 
-**接口权限要求:** 现货交易信息写 / SPOT_DEAL_W
+**Permission:** SPOT_DEAL_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Cancel an active order.
 
-| 参数名            | 数据类型 | 是否必须 | 说明                   |
-| :----------------- | :-------- | :-------- | :---------------------- |
-| symbol            | string   | 是       | 交易对名称             |
-| orderId           | string   | 否       | 订单Id                 |
-| origClientOrderId | string   | 否       | 初始自定义订单Id       |
-| newClientOrderId  | string   | 否     | 客户自定义的唯一订单ID |
-| recvWindow        | long     | 否       |                        |
-| timestamp         | long     | 是       |                        |
+Parameters:
 
+| Name              | Type   | Mandatory | Description |
+| ----------------- | ------ | --------- | ----------- |
+| symbol            | string | YES       |             |
+| orderId           | string | NO        | Order id    |
+| origClientOrderId | string | NO        |             |
+| newClientOrderId  | string | NO        |             |
+| recvWindow        | long   | NO        |             |
+| timestamp         | long   | YES       |             |
 
-<aside class="notice">orderId 或 origClientOrderId 必须至少发送一个.</aside>
+Either `orderId` or `origClientOrderId` must be sent.
 
+Response:
 
-**返回参数**
+| Name                | Description                          |
+| ------------------- |--------------------------------------|
+| symbol              | Symbol                               |
+| origClientOrderId   | Original client order id             |
+| orderId             | order id                             |
+| clientOrderId       | client order id                      |
+| price               | Price                                |
+| origOty             | Original order quantity              |
+| executedQty         | Executed order quantity              |
+| cummulativeQuoteQty | Cummulative quote quantity           |
+| status              | <a href="#order_status">order status</a> |
+| timeInForce         |                                      |
+| type                | <a href="#order_type">Order type</a> |
+| side                | <a href="#order_side">order side</a> |
 
-| 参数名                 | 说明             |
-|:--------------------| :---------------- |
-| symbol              | 交易对           |
-| origClientOrderId   | 原始客户端订单id |
-| orderId             | 订单id           |
-| clientOrderId       | 客户端id         |
-| price               | 价格             |
-| origOty             | 初始数量         |
-| executedQty         | 已成交数量   |
-| cummulativeQuoteQty | 已成交金额     |
-| status              | 当前状态       |
-| timeInForce         | 订单有效方式     |
-| type                | <a href="#order_type">订单类型</a>         |
-| side                | <a href="#order_side">订单方向</a>         |
+## Cancel all Open Orders on a Symbol 
 
-## 撤销单一交易对所有订单
-撤销单一交易对下所有挂单, 包括OCO的挂单。
-> 请求示例
-
-```
-DELETE /api/v3/openOrders?symbol=BTCUSDT&timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+> Response
 
 ```json
 [
@@ -1817,125 +2020,110 @@ DELETE /api/v3/openOrders?symbol=BTCUSDT&timestamp={{timestamp}}&signature={{sig
   }
 ]
 ```
-**HTTP请求**
 
 - **DELETE** ```/api/v3/openOrders```  
 
-**接口权限要求:** 现货交易信息写 / SPOT_DEAL_W
+**Permission:** SPOT_DEAL_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Cancel all pending orders for a single  symbol, including OCO pending orders.
 
-| 参数名     | 数据类型 | 是否必须 | 说明   |
-| :---------- | :-------- | :-------- | :------ |
-| symbol     | string   | 是       | 交易对 |
-| recvWindow | long     | 否       |        |
-| timestamp  | long     | 是       |        |
+Parameters:
+
+| Name       | Type   | Mandatory | Description |
+| ---------- | ------ | --------- | ----------- |
+| symbol     | string | YES       | maximum input 5 symbols,separated by ",". e.g. "BTCUSDT,OBUSDT,ADAUSDT"|
+| recvWindow | long   | NO        |             |
+| timestamp  | long   | YES       |             |
 
 
-**返回参数**
+Response:
 
-| 参数名                 | 说明           |
-|:--------------------|:-------------|
-| symbol              | 交易对          |
-| origClientOrderId   | 原始客户端订单id    |
-| orderId             | 订单id         |
-| clientOrderId       | 客户端id        |
-| price               | 价格           |
-| origQty             | 初始数量         |
-| executedQty         | 已成交数量        |
-| cummulativeQuoteQty | 已成交金额        |
-| status              | 状态           |
-| timeInForce         | 订单有效方式       |
-| type                | <a href="#order_type">订单类型</a>          |
-| side                | <a href="#order_side">订单方向</a>          |
+| Name                | Description                |
+| ------------------- | -------------------------- |
+| symbol              | Symbol                     |
+| origClientOrderId   | Original client order id   |
+| orderId             | order id                   |
+| clientOrderId       | client order id            |
+| price               | Price                      |
+| origOty             | Original order quantity    |
+| executedQty         | Executed order quantity    |
+| cummulativeQuoteQty | Cummulative quote quantity |
+| status              | <a href="#order_status">order status</a>               |
+| timeInForce         |                            |
+| type                | <a href="#order_type">Order type</a>                 |
+| side                | <a href="#order_side">order side</a>                 |
 
-## 查询订单
+## Query Order
 
-查询指定交易对订单状态，最多查询7天内的订单记录，超过7天的可在web客户端查看和导出。
-
-> 请求示例
-
-```
-GET /api/v3/order?symbol=BTCUSDT&orderId=129402018493145088&timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+> Response
 
 ```json
 {
-  "symbol": "LTCBTC", // 交易对
-  "orderId": 1, // 系统的订单ID
-  "orderListId": -1, // OCO订单的ID，不然就是-1
-  "clientOrderId": "myOrder1", // 客户自己设置的ID
-  "price": "0.1", // 订单价格
-  "origQty": "1.0", // 用户设置的原始订单数量
-  "executedQty": "0.0", // 交易的订单数量
-  "cummulativeQuoteQty": "0.0", // 累计交易的金额
-  "status": "NEW", // 订单状态
-  "timeInForce": "GTC", // 订单的时效方式
-  "type": "LIMIT", // 订单类型， 比如市价单，现价单等
-  "side": "BUY", // 订单方向，买还是卖
-  "stopPrice": "0.0", // 止损价格
-  "icebergQty": "0.0", // 冰山数量
-  "time": 1499827319559, // 订单时间
-  "updateTime": 1499827319559, // 最后更新时间
-  "isWorking": true, // 订单是否出现在orderbook中
-  "origQuoteOrderQty": "0.000000" // 原始的交易金额
+  "symbol": "LTCBTC",
+  "orderId": 1,
+  "orderListId": -1,
+  "clientOrderId": "myOrder1",
+  "price": "0.1",
+  "origQty": "1.0",
+  "executedQty": "0.0",
+  "cummulativeQuoteQty": "0.0",
+  "status": "NEW",
+  "timeInForce": "GTC",
+  "type": "LIMIT",
+  "side": "BUY",
+  "stopPrice": "0.0",
+  "time": 1499827319559,
+  "updateTime": 1499827319559,
+  "isWorking": true,
+  "origQuoteOrderQty": "0.000000"
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/order```  
 
-**接口权限要求:** 现货交易信息读 / SPOT_DEAL_R
+**Permission:** SPOT_DEAL_READ
 
-**权重(IP):** 2
+**Weight(IP):** 2
 
-**请求参数**
+Check an order's status.
 
-| 参数名            | 数据类型         | 是否必须 | 说明 |
-| :----------------- | :---------------- | :-------- | :---- |
-| symbol            | 交易对           | 是       |      |
-| origClientOrderId | 原始客户端订单id | 否       |      |
-| orderId           | 订单id           | 否       |      |
-| recvWindow        | long             | 否       |      |
-| timestamp         | long             | 是       |      |
+Parameters:
+
+| Name              | Type   | Mandatory | Description |
+| ----------------- | ------ | --------- | ----------- |
+| symbol            | String | YES       |             |
+| origClientOrderId | String | NO        |             |
+| orderId           | String | NO        |             |
+| recvWindow        | long   | NO        |             |
+| timestamp         | long   | YES       |             |
 
 
-**返回参数**
+Response:
 
-| 参数名              | 说明                               |
-| :------------------- |:---------------------------------|
-| symbol              | 交易对                              |
-| origClientOrderId   | 原始客户端订单id                        |
-| orderId             | 系统订单id                           |
-| clientOrderId       | 客户自定义id                          |
-| price               | 价格                               |
-| origOty             | 原始订单数量                           |
-| executedQty         | 交易的订单数量                          |
-| cummulativeQuoteQty | 累计订单金额                           |
-| status              | <a href="#order_status">订单状态</a> |
-| timeInForce         | 订单的时效方式                          |
-| type                | <a href="#order_type">订单类型</a>   |
-| side                | <a href="#order_side">订单方向</a>   |
-| stopPrice           | 止损价格                             |
-| icebergQty          | 冰山数量                             |
-| time                | 订单时间                             |
-| updateTime          | 最后更新时间                           |
-| isWorking           | 是否在orderbook中                    |
-| origQuoteOrderQty   | 原始的交易金额                          |
+| Name                | Description                          |
+| ------------------- |--------------------------------------|
+| symbol              | Symbol                               |
+| origClientOrderId   | Original client order id             |
+| orderId             | order id                             |
+| clientOrderId       | client order id                      |
+| price               | Price                                |
+| origOty             | Original order quantity              |
+| executedQty         | Executed order quantity              |
+| cummulativeQuoteQty | Cummulative quote quantity           |
+| status              | <a href="#order_status">order status</a>                         |
+| timeInForce         |                                      |
+| type                | <a href="#order_type">Order type</a>                           |
+| side                | <a href="#order_side">Order side</a> |
+| stopPrice           | stop price                           |
+| time                | Order created time                   |
+| updateTime          | Last update time                     |
+| isWorking           | is orderbook                         |
 
-## 当前挂单
-获取当前挂单支持查询多交易对，每次最多可以传5个symbol。  
-若批量查5个交易对，最多也只返回1000条挂单
+## Current Open Orders
 
-> 请求示例
-
-```
-GET /api/v3/openOrders?symbol=BTCUSDT&timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+> Response
 
 ```json
 [
@@ -1961,55 +2149,48 @@ GET /api/v3/openOrders?symbol=BTCUSDT&timestamp={{timestamp}}&signature={{signat
   }
 ]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/openOrders```  
 
-**接口权限要求:** 现货交易信息读 / SPOT_DEAL_R
+**Permission:** SPOT_DEAL_READ
 
-**权重(IP):** 3
+**Weight(IP):** 3
 
-**请求参数**
+Get all open orders on a symbol. **Careful** when accessing this with no symbol.
 
-| 参数名     | 数据类型 | 是否必须 | 说明   |
-| :---------- | :-------- | :-------- | :------ |
-| symbol     | string   | 是       | 交易对,【最多可以传5个symbol, 由","分隔的字符串表示. e.g. "BTCUSDT,OBUSDT,ADAUSDT"】 |
-| recvWindow | long     | 否       |        |
-| timestamp  | long     | 是       |        |
+Parameters:
+
+| Name       | Type   | Mandatory | Description |
+| ---------- | ------ | --------- | ----------- |
+| symbol     | string | YES       |             |
+| recvWindow | long   | NO        |             |
+| timestamp  | long   | YES       |             |
 
 
-**返回参数**
+Response:
 
-| 参数名              | 说明                                                             |
-| :------------------- |:---------------------------------------------------------------|
-| symbol              | 交易对                                                            |
-| origClientOrderId   | 原始客户端订单id                                                      |
-| orderId             | 系统订单id                                                         |
-| clientOrderId       | 客户自定义id                                                        |
-| price               | 价格                                                             |
-| origOty             | 原始订单数量                                                         |
-| executedQty         | 交易的订单数量                                                        |
-| cummulativeQuoteQty | 累计订单金额                                                         |
-| status              | <a href="#order_status">订单状态</a>                                                           |
-| timeInForce         | 订单的时效方式                                                        |
-| type                | <a href="#order_type">订单类型</a>                                 |
-| side                | <a href="#order_side">订单方向</a>                                    |
-| stopPrice           | 止损价格                                                           |
-| icebergQty          | 冰山数量                                                           |
-| time                | 订单时间                                                           |
-| updateTime          | 最后更新时间                                                         |
-| isWorking           | 是否在orderbook中                                                  |
-| origQuoteOrderQty   | 原始的交易金额                                                        |
+| Name                | Description                         |
+| ------------------- |-------------------------------------|
+| symbol              | Symbol                              |
+| origClientOrderId   | Original client order id            |
+| orderId             | order id                            |
+| clientOrderId       | client order id                     |
+| price               | Price                               |
+| origOty             | Original order quantity             |
+| executedQty         | Executed order quantity             |
+| cummulativeQuoteQty | Cummulative quote quantity          |
+| status              | <a href="#order_status">order status</a>                        |
+| timeInForce         |                                     |
+| type                | <a href="#order_type">Order type</a>                           |
+| side                | <a href="#order_side">Order side</a> |
+| stopPrice           | stop price                          |
+| time                | Order created time                  |
+| updateTime          | Last update time                    |
+| isWorking           | is orderbook                        |
 
-## 查询所有订单
-获取所有有效，已取消或已完成的帐户订单(查询时间段默认最近24小时)，最多查询最近7天数据。
+## All Orders
 
-> 请求示例
-
-```
-GET /api/v3/allOrders?symbol=BTCUSDT&timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2035,61 +2216,52 @@ GET /api/v3/allOrders?symbol=BTCUSDT&timestamp={{timestamp}}&signature={{signatu
   }
 ]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/allOrders```  
 
-**接口权限要求:** 现货交易信息读 / SPOT_DEAL_R
+**Permission:** SPOT_DEAL_READ
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
+Get all account orders including active, cancelled or completed orders(the query period is the latest 24 hours by default). You can query a maximum of the latest 7 days.
 
-| 参数名     | 数据类型 | 是否必须 | 说明                 |
-| :---------- | :-------- | :-------- | :-------------------- |
-| symbol     | string   | 是       | 交易对               |
-| startTime  | long     | 否       |                      |
-| endTime    | long     | 否       |                      |
-| limit      | int      | 否       | 默认 500; 最大 1000; |
-| recvWindow | long     | 否       |                      |
-| timestamp  | long     | 是       |                      |
+Parameters:
 
-<aside class="notice">startTime和endTime需同时使用.</aside>
+| Name       | Type   | Mandatory | Description             |
+| ---------- | ------ | --------- | ----------------------- |
+| symbol     | string | YES       | Symbol                  |
+| startTime  | long   | NO        |                         |
+| endTime    | long   | NO        |                         |
+| limit      | int    | NO        | Default  500; max 1000; |
+| recvWindow | long   | NO        |                         |
+| timestamp  | long   | YES       |                         |
 
 
+Response:
 
-**返回参数**
+| Name                | Description                          |
+| ------------------- |--------------------------------------|
+| symbol              | Symbol                               |
+| origClientOrderId   | Original client order id             |
+| orderId             | order id                             |
+| clientOrderId       | client order id                      |
+| price               | Price                                |
+| origOty             | Original order quantity              |
+| executedQty         | Executed order quantity              |
+| cummulativeQuoteQty | Cummulative quote quantity           |
+| status              | <a href="#order_status">order status</a>                         |
+| timeInForce         |                                      |
+| type                | <a href="#order_type">Order type</a>                           |
+| side                | <a href="#order_side">Order side</a> |
+| stopPrice           | stop price                           |
+| time                | Order created time                   |
+| updateTime          | Last update time                     |
+| isWorking           | is orderbook                         |
+| origQuoteOrderQty   |                                      |
 
-| 参数名              | 说明                                     |
-| :------------------- |:---------------------------------------|
-| symbol              | 交易对                                    |
-| origClientOrderId   | 原始客户端订单id                              |
-| orderId             | 系统订单id                                 |
-| clientOrderId       | 客户自定义id                                |
-| price               | 价格                                     |
-| origOty             | 原始订单数量                                 |
-| executedQty         | 交易的订单数量                                |
-| cummulativeQuoteQty | 累计订单金额                                 |
-| status              | <a href="#order_status">订单状态</a>                                    |
-| timeInForce         | 订单的时效方式                                |
-| type                | <a href="#order_type">订单类型</a>         |
-| side                | <a href="#order_side">订单方向</a>         |
-| stopPrice           | 止损价格                                   |
-| icebergQty          | 冰山数量                                   |
-| time                | 订单时间                                   |
-| updateTime          | 最后更新时间                                 |
-| isWorking           | 是否在orderbook中                          |
-| origQuoteOrderQty   | 原始的交易金额                                |
+## Account Information
 
-## 账户信息
-获取当前账户信息。
-
-> 请求示例
-
-```
-GET /api/v3/account?timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+> Response
 
 ```json
 {
@@ -2098,134 +2270,125 @@ GET /api/v3/account?timestamp={{timestamp}}&signature={{signature}}
     "canDeposit": true,
     "updateTime": null,
     "accountType": "SPOT",
-    "balances": [
-        {
-            "asset": "OB",
-            "free": "3",
-            "locked": "0"
-        },
-        {
-            "asset": "BTC",
-            "free": "0.0003",
-            "locked": "0"
-        }
-    ],
-    "permissions": [
-        "SPOT"
-    ]
+    "balances": [{
+        "asset": "NBNTEST",
+        "free": "1111078",
+        "locked": "33"
+    }, {
+        "asset": "MAIN",
+        "free": "1020000",
+        "locked": "0"
+    }],
+    "permissions": ["SPOT"]
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/account```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
+Get current account information,rate limit:2 times/s.
 
-| 参数名     | 数据类型 | 是否必须 | 说明 |
-| :---------- | :-------- | :-------- | :---- |
-| recvWindow | long     | 否       |      |
-| timestamp  | long     | 是       |      |
+Parameters:
 
-
-**返回参数**
-
-| 参数名           | 说明       |
-| :---------------- | :---------- |
-| canTrade         | 是否可交易 |
-| canWithdraw      | 是否可提现 |
-| canDeposit       | 是否可充值 |
-| updateTime       | 更新时间   |
-| accountType      | 账户类型   |
-| balances         | 余额       |
-| asset            | 资产币种   |
-| free             | 可用数量   |
-| locked           | 冻结数量   |
-| permissions      | 权限       |
-
-## 账户成交历史
-获取账户指定交易对的成交历史，仅可查询近1月成交记录，如需查看更多成交记录，请使用web端导出功能，最多支持导出近3年成交记录。
+| Name       | Type | Mandatory | Description |
+| ---------- | ---- | --------- | ----------- |
+| recvWindow | long | NO        |             |
+| timestamp  | long | YES       |             |
 
 
-> 请求示例
+Response:
 
-```
-GET /api/v3/myTrades?symbol=OBUSDT&timestamp={{timestamp}}&signature={{signature}}
-```
-> 返回示例
+| Name             | Description     |
+| ---------------- | --------------- |
+| canTrade         | Can Trade       |
+| canWithdraw      | Can Withdraw    |
+| canDeposit       | Can Deposit     |
+| updateTime       | Update Time     |
+| accountType      | Account type    |
+| balances         | Balance         |
+| asset            | Asset coin      |
+| free             | Available  coin |
+| locked           | Forzen coin     |
+| permissions      | Permission      |
+
+## Account Trade List
+
+> Response
 
 ```json
 [
   {
-      "symbol": "OBUSDT",
-      "id": "fad2af9e942049b6adbda1a271f990c6",
-      "orderId": "bb41e5663e124046bd9497a3f5692f39",
-      "orderListId": -1,
-      "price": "2.044",
-      "qty": "3",
-      "quoteQty": "6.132",
-      "commission": "0.012264",
-      "commissionAsset": "USDT",
-      "time": 1651980451000,
-      "isBuyer": true,
-      "isMaker": false,
-      "isBestMatch": true,
-      "isSelfTrade": null,
-      "clientOrderId": null
+    "symbol": "BNBBTC",
+    "id": "fad2af9e942049b6adbda1a271f990c6",
+    "orderId": "bb41e5663e124046bd9497a3f5692f39",
+    "orderListId": -1,
+    "price": "4.00000100", 
+    "qty": "12.00000000", 
+    "quoteQty": "48.000012", 
+    "commission": "10.10000000", 
+    "commissionAsset": "BNB", 
+    "time": 1499865549590, 
+    "isBuyer": true, 
+    "isMaker": false, 
+    "isBestMatch": true,
+    "isSelfTrade": true,
+    "clientOrderId": null
   }
 ]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/myTrades```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
+Get trades for a specific account and symbol,Only the transaction records in the past 1 month can be queried. If you want to view more transaction records, please use the export function on the web side, which supports exporting transaction records of the past 3 years at most.
 
-| 参数名     | 数据类型 | 是否必须 | 说明                 |
-| :---------- | :-------- | :-------- | :-------------------- |
-| symbol     | string   | 是       | 交易对               |
-| orderId    | string   | 否       | 必须和symbol一起使用 |
-| startTime  | long     | 否       |                      |
-| endTime    | long     | 否       |                      |
-| limit      | int      | 否       | 默认 500; 最大 1000; |
-| recvWindow | long     | 否       |                      |
-| timestamp  | long     | 是       |                      |
+Parameters:
+
+| Name       | Type   | Mandatory | Description            |
+| ---------- | ------ | --------- | ---------------------- |
+| symbol     | string | YES       |                        |
+| orderId    | string | NO        | order Id               |
+| startTime  | long   | NO        |                        |
+| endTime    | long   | NO        |                        |
+| limit      | int    | NO        | Default 500; max 1000; |
+| recvWindow | long   | NO        |                        |
+| timestamp  | long   | YES       |                        |
 
 
-**返回参数**
+Response:
 
-| 参数名          | 说明              |
-| :--------------- | :----------------- |
-| symbol          | 交易对            |
-| id              | 成交id            |
-| orderId         | 订单id            |
-| price           | 价格              |
-| qty             | 数量              |
-| quoteQty        | 成交金额           |
-| time            | 成交时间           |
-| commission      | 手续费             |
-| commissionAsset | 手续费币种          |
-| isBuyerMaker    | 是否为买方maker单    |
-| isBestMatch     | 是否为最佳匹配       |
-| isSelfTrade     | 是否自成交           |
-| clientOrderId   | 用户自定义id|
+| Name            | Description   |
+| --------------- | ------------- |
+| symbol          |               |
+| id              | deal id       |
+| orderId         | order id      |
+| price           | Price         |
+| qty             | Quantity      |
+| quoteQty        | Deal quantity |
+| time            | Deal time     |
+| commission      |               |
+| commissionAsset |               |
+| time            | trade time    |
+| isBuyerMaker    |               |
+| isBestMatch     |               |
+| isSelfTrade     |   isSelfTrade |
+| clientOrderId   | clientOrderId |
 
-## 开启OB抵扣
-调用该接口，开启或者关闭现货OB抵扣手续费设置
+## Enable OB Deduct
+Enable or disable OB deduct for spot commission fee
 
-> 请求示例
+> Request
 
 ```
 post api/v3/obDeduct/enable
 ```
-> 返回示例
+> Response
 
 ```json
 {
@@ -2237,40 +2400,40 @@ post api/v3/obDeduct/enable
   "timestamp":1669109672280
 } 
 ```
-**HTTP请求**
+
 
 - **POST** ```api/v3/obDeduct/enable```  
 
-**接口权限要求:** 现货交易信息写 / SPOT_DEAL_W
+**Permission:** SPOT_DEAL_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Parameters:**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|obDeductEnable|boolean|yes|是否开启OB抵扣,true:开启, false:关闭|
-|recvWindow|long|no|同步时间|
-|timestamp|long|yes|时间戳|
-|signature|string|yes|签名|
+|obDeductEnable|boolean|yes|true:enable,false:disable|
+|recvWindow|long|no|recvWindow|
+|timestamp|long|yes|timestamp|
+|signature|string|yes|signature|
 
-**返回参数**
+**Response:**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|obDeductEnable|boolean|是否开启了OB抵扣,true:已开启,false:已关闭.|
+|obDeductEnable|boolean|true:enable,false:disable|
 
-<aside class="notice">合约账户的OB抵扣：将OB转入合约账户, 即可使用OB抵扣USDT本位合约手续费, 享受10%手续费折扣</aside>
+<aside class="notice">For Futures:Enjoy 10% off trading fees when you transfer OB into your futures account.</aside>
 
 
-## 查看OB抵扣状态
+## Query OB Deduct Status
 
-> 请求示例
+> Request
 
 ```
 get api/v3/obDeduct/enable
 ```
-> 返回示例
+> Response
 
 ```json
 {
@@ -2282,53 +2445,51 @@ get api/v3/obDeduct/enable
   "timestamp":1669109672717
 }
 ```
-**HTTP请求**
 
 - **GET** ```api/v3/obDeduct/enable```  
 
-**接口权限要求:** 现货交易信息读 / SPOT_DEAL_R
+**Permission:** SPOT_DEAL_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Parameters:**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|recvWindow|long|no|同步时间|
-|timestamp|long|yes|时间戳|
-|signature|string|yes|签名|
+|recvWindow|long|no|recvWindow|
+|timestamp|long|yes|timestamp|
+|signature|string|yes|signature|
 
 
-**返回参数**
+**Response:**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|obDeductEnable|boolean|是否开启了OB抵扣,true:已开启,false:已关闭.|
+|obDeductEnable|boolean|true:enable,false:disable|
 
-# 钱包接口
+# Wallet Endpoints
 
-## 查询币种信息
-返回币种详细信息以及智能合约地址
+## Query the currency information
 
-> 请求示例
+> Request
 
 ```
 Get /api/v3/capital/config/getall
 ```
-> 返回示例
+> Response
 
 ```json
 [
   {
     "coin": "EOS",
-    "name": "EOS",
+    "Name": "EOS",
     "networkList": [
       {
           "coin": "EOS",
           "depositDesc": null,
           "depositEnable": true,
           "minConfirm": 0,
-          "name": "EOS",
+          "Name": "EOS",
           "network": "EOS",
           "withdrawEnable": false,
           "withdrawFee": "0.000100000000000000",
@@ -2345,7 +2506,7 @@ Get /api/v3/capital/config/getall
           "depositDesc": null,
           "depositEnable": true,
           "minConfirm": 0,
-          "name": "BTC-BSC",
+          "Name": "BTC-BSC",
           "network": "BEP20(BSC)",
           "withdrawEnable": true,
           "withdrawFee": "0.000010000000000000",
@@ -2361,42 +2522,43 @@ Get /api/v3/capital/config/getall
   },
 ]
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/capital/config/getall```  
 
-**接口权限要求:** 钱包提现相关读 / SPOT_WITHDRAW_R
+**Permission:** SPOT_WITHDRAW_READ
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
-
-| 参数名 | 数据类型| 是否必须  | 说明 | 
-| :------ | :-------- | :-------- | :---------- |
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+Query currency details and the smart contract address
 
 
-**返回参数**
+Parameters:  
 
-| 参数名 | 说明  | 
-| :------------ | :------------ |
-|depositEnable|是否可充值|
-|network|币种所支持的网络| 
-|withdrawEnable|是否可提币|
-|withdrawFee|提币手续费| 
-|withdrawMax|最大提币限额|
-|withdrawMin|最小提币限额|
-|contract|币种智能合约地址|
+  None
 
-## 提币
 
-> 请求示例
+Response:
+
+| Name | Description  | 
+| :------------ | :-------- | 
+|depositEnable|depositEnable|
+|network|withdraw network|
+|withdrawEnable|withdrawEnable|
+|withdrawFee|withdrawFee|
+|withdrawMax|Max withdraw amount|
+|withdrawMin|Min withdraw amount|
+|contract|coin contract|
+|withdrawTips|withdrawTips|
+|depositTips|depositTips|
+
+## Withdraw
+
+> Request
 
 ```
 post /api/v3/capital/withdraw/apply?coin=EOS&address=zzqqqqqqqqqq&amount=10&network=EOS&memo=OB10086&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2405,80 +2567,78 @@ post /api/v3/capital/withdraw/apply?coin=EOS&address=zzqqqqqqqqqq&amount=10&netw
   }
 ]
 ```
-**HTTP请求**
+
 
 - **POST** ```/api/v3/capital/withdraw/apply```  
 
-**接口权限要求:** 钱包提现相关写 / SPOT_WITHDRAW_W
+**Permission:** SPOT_WITHDRAW_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须 | 说明               | 
-| :------ | :-------- |:-----|:-----------------|
-|coin|string| 是    | 币种               |
-|withdrawOrderId|string| 否    | 自定义提币ID   |
-|network|string| 否    | 提币网络             |
-|address|string| 是    | 提币地址             |
-|memo|string| 否    | 如地址中需求memo，则此处必传 |
-|amount|string| 是    | 数量               |
-|remark|string| 否    | 备注               |
-|timestamp|string| 是    | 时间戳              |
-|signature|string| 是    | 签名               |
+| Name | Type| Mandatory | Description                                                    | 
+| :------ | :-------- |:----------|:---------------------------------------------------------------|
+|coin|string| YES       | coin                                                           |
+|withdrawOrderId|string| NO        | withdrawOrderId                                                |
+|network|string| NO        | withdraw network                                               |
+|address|string| YES       | withdraw address                                               |
+|memo|string| NO        | memo(If memo is required in the address, it must be passed in) |
+|amount|string| YES       | withdraw amount                                                |
+|remark|string| NO        | remark                                                         |
+|timestamp|string| YES       | timestamp                                                      |
+|signature|string| YES       | signature                                                      |
  
+Can get `network` via endpoints `Get /api/v3/capital/config/getall`'s response params `networkList`.
 
-可以在接口 `Get /api/v3/capital/config/getall`的返回值中某币种的`networkList`获取`network`网络字段。
+Response:
 
-
-**返回参数**
-
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- | 
-|id|提币ID|
+|id|withdraw ID|
 
-## 取消提币
+## Cancel withdraw
 
-> 请求示例
+> Request
 
 ```
 delete /api/v3/capital/withdraw?id=ca7bd51895134fb5bd749f1cf875b8af&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 {
     "id": "ca7bd51895134fb5bd749f1cf875b8af"
 }
 ```
-**HTTP请求**
+
 
 - **DELETE** ```/api/v3/capital/withdraw```  
 
-**接口权限要求:** 钱包提现相关写 / SPOT_WITHDRAW_W
+**Permission:** SPOT_WITHDRAW_W
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须 | 说明               | 
+| Name | Type| Mandatory | Description               | 
 | :------ | :-------- |:-----|:-----------------|
-|id|string| 是    | 提币ID              |
+|id|string| Yes    | withdraw id              |
 
-**返回参数**
+**Response**
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- | 
-|id|提币ID|
+|id|withdraw id|
 
-## 获取充值历史(支持多网络)
+## Deposit History(supporting network) 
 
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/deposit/hisrec?coin=EOS&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2496,53 +2656,54 @@ get /api/v3/capital/deposit/hisrec?coin=EOS&timestamp={{timestamp}}&signature={{
   }
 ]
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/deposit/hisrec```  
 
-**接口权限要求:** 钱包提现相关读 / SPOT_WITHDRAW_R
+**Permission:** SPOT_WITHDRAW_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须 | 说明 | 
-| :------ | :-------- |:-----| :---------- |
-|coin|string| 否    |币种|
-|status|string| 否    |状态|
-|startTime|string| 否    |默认当前时间7天前的时间|
-|endTime|string| 否    |默认当前时间戳，13位|
-|limit|string| 否    |默认：1000，最大1000|
-|timestamp|string| 是    |时间戳|
-|signature|string| 是    |签名|
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|coin|string|NO|coin |
+|status|string|NO|status|
+|startTime|string|NO|default: 7 days ago from current time|
+|endTime|string|NO|default:current time|
+|limit|string|NO|default:1000,max:1000|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-1. 默认返回最近7天的记录.
-2. `startTime` 与 `endTime` 的默认时间戳，保证请求时间间隔不超过7天.
-3. 做多可查询90天内的记录.
-**返回参数**
+1. default return the records of the last 7 days.
+2. Ensure that the default timestamp of 'startTime' and 'endTime' does not exceed 7 days.
+3. can query 90 days data at most.
 
-| 参数名 | 说明  |
+Response:
+
+| Name | Description  |
 | :------------ | :-------- |
-|amount|数量|
-|coin|币种|
-|network|链类型|
-|status|充值状态，1:小额充值，2:延遲到賬，3:大額充值，4:等待中，5:入账成功，6:审核中，7:驳回|
-|address|地址|
-|addressTag|地址标签|
-|txId|交易编号|
-|insertTime|插入时间/创建时间|
-|unlockConfirm| 解锁需要的网络确认次数|
-|confirmTimes|已解锁次数|
+|amount|deposit amount|
+|coin|coin |
+|network|deposit network|
+|status|deposit status,1:SMALL,2:TIME_DELAY,3:LARGE_DELAY,<br/>4:PENDING,5:SUCCESS,6:AUDITING,7:REJECTED|
+|address|deposit adress|
+|addressTag|addressTag|
+|txId|txId|
+|insertTime|insertTime|
+|unlockConfirm| unlockConfirm|
+|confirmTimes|confirmTimes|
 |memo|memo|
 
-## 获取提币历史 (支持多网络)
+## Withdraw History (supporting network) 
 
-> 请求示例
+> Request
 
 ```
-get /api/v3/capital/withdraw/history?coin=EOS&timestamp={{timestamp}}&signature={{signature}}
+get /api/v3/capital/withdraw/history?coin=USDT&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2560,111 +2721,122 @@ get /api/v3/capital/withdraw/history?coin=EOS&timestamp={{timestamp}}&signature=
         "applyTime": 1665300874000,
         "remark": "",
         "memo": "OB10086",
-        "transHash": "0x0ced593b8b5adc9f6003a934d0d7335456a7ed772ea5547beda4f33a065c",
+        "transHash": "0x0ced593b8b5adc9f600334d0d7335456a7ed772ea5547beda7ffc4f33a065c",
         "updateTime": 1712134082000,
-        "coinId": "128f589271cb491b03e71e6323eb7be",
-        "vcoinId": "af42c6414b9a43869ce30fd51660f"
+        "coinId": "128f589271cb495b03e71e6323eb7be",
+        "vcoinId": "af42c6414b9a46c8869ce30fd51660f"
   }
 ]
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/withdraw/history```  
 
-**接口权限要求:** 钱包提现相关读 / SPOT_WITHDRAW_R
+**Permission:** SPOT_WITHDRAW_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须 | 说明 | 
-| :------ | :-------- |:-----| :---------- |
-|coin|string| 否    |币种|
-|status|string| 否    |提币状态|
-|limit|string| 否    |默认：1000， 最大：1000|
-|startTime|string| 否    |默认当前时间7天前的时间戳|
-|endTime|string| 否    |默认当前时间戳|
-|timestamp|string| 是    |时间戳|
-|signature|string| 是    |签名|
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|coin|string|NO|coin |
+|status|string|NO|withdraw status|
+|limit|string|NO|default:1000, max:1000|
+|startTime|string|NO|default: 7 days ago from current time|
+|endTime|string|NO|default:current time|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-1. 默认返回最近7天的记录.
-2. `startTime` 与 `endTime` 的默认时间戳，保证请求时间间隔不超过7天.
-3. 做多可查询90天内的记录.
-4. 支持多网络提币前的历史记录可能不会返回`network`字段.
-**返回参数**
+1. default return the records of the last 7 days.
+2. Ensure that the default timestamp of 'startTime' and 'endTime' does not exceed 7 days.
+3. can query 90 days data at most.
+4. Supported multiple network coins's withdraw history may not return the 'network' field.
 
-| 参数名 | 说明  |
+
+
+Response:
+
+| Name | Description  |
 | :------------ | :-------- | 
-|address|地址|
-|amount| 提现转出金额|
-|applyTime| 申请时间|
-|coin|币种|
-|id|该笔提现的id|
-|withdrawOrderId| 自定义ID，如果没有则不返回该字段|
-|network|链类型|
-|transferType| 0: 站外转账，1: 站内转账  |
-|status|提币状态，1:提交申请，2:审核中，3:等待处理，4:处理中，5:等待打包，6:等待确认，7:提现成功，8:提现失败，9:已取消，10:手动入账|
-|transactionFee| 手续费|
-|confirmNo| 提现确认数|
-|txId| 提现交易id|
-|remark|提现记录备注|
+|address|withdraw address|
+|amount| withdraw amount|
+|applyTime| apply time||
+|coin|coin |
+|id|withdraw id|
+|withdrawOrderId| withdrawOrderId|
+|network|withdraw network|
+|transferType|transferType, 0: outside transfer,1: inside transfer  |
+|status|withdraw status,1:APPLY,2:AUDITING,3:WAIT,4:PROCESSING,5:WAIT_PACKAGING,<br/>6:WAIT_CONFIRM,7:SUCCESS,8:FAILED,9:CANCEL,10:MANUAL|
+|transactionFee| transactionFee|
+|confirmNo| confirmNo|
+|txId|txId|
+|remark|remark|
 |memo|memo|
-|transHash|交易hash|
-|coinId|资产id|
-|vcoinId|币种id|
+|transHash|transaction Hash|
+|coinId|asset id|
+|vcoinId|currency id|
 
-## 生成充值地址 (支持多网络)
 
-> 请求示例
+## Generate deposit address (supporting network) 
+
+> Request
 
 ```
 post /api/v3/capital/deposit/address?coin=EOS&network=EOS&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
-{
-    "coin": "EOS",
-    "network": "EOS",
-    "address": "zzqqqqqqqqqq",
-    "memo": "OB10068"
-}
+[
+  {
+      "coin": "USDT",
+      "network": "TRC20",
+      "address": "TXobiKkdciupZrhdvZyTSSLjE8CmZAufS",
+      "tag": null
+  },
+  {
+     "coin": "EOS",
+     "network": "EOS",
+     "address": "zzqqqqqqqqqq",
+     "memo": "OB10068"
+  }
+]
 ```
-**HTTP请求**
+
 
 - **POST** ```/api/v3/capital/deposit/address```  
 
-**接口权限要求:** 钱包提现相关写 / SPOT_WITHDRAW_W  
+**Permission:** SPOT_WITHDRAW_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须 | 说明 | 
-| :------ | :-------- |:-----| :---------- |
-|coin|string| 是    |币种|
-|network|string| 是    |充值网络|
-|timestamp|string| 是    |时间戳|
-|signature|string| 是    |签名|
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|coin|string|YES|coin |
+|network|string|YES|deposit network|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
+Response:
 
-**返回参数**
+| Name | Description  |
+| :------------ | :-------- |
+|address|deposit address|
+|coin|coin |
+|memo|memo|
+|network|network|
 
-| 参数名 | 说明  |
-| :------------ | :-------- | 
-|address|地址|
-|coin|币种|
-|network|链类型|
-|memo|memo值|
+## Deposit Address (supporting network) 
 
-## 获取充值地址 (支持多网络)
-
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/deposit/address?coin=USDT&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2688,40 +2860,40 @@ get /api/v3/capital/deposit/address?coin=USDT&timestamp={{timestamp}}&signature=
   }
 ]
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/deposit/address```  
 
-**接口权限要求:** 钱包提现相关读 / SPOT_WITHDRAW_R
+**Permission:** SPOT_WITHDRAW_READ
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|coin|string|是|币种|
-|network|string|否||
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|coin|string|YES|coin |
+|network|string|NO|deposit network|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-**返回参数**
+Response:
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- |
-|address|地址|
-|coin|币种|
+|address|deposit address|
+|coin|coin |
 |memo|memo|
-|network|网络|
+|network|network|  
 
-## 获取提币地址 (支持多网络)
+## Withdraw Address (supporting network)
 
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/withdraw/address?coin=USDT&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 {
@@ -2746,45 +2918,45 @@ get /api/v3/capital/withdraw/address?coin=USDT&timestamp={{timestamp}}&signature
     "totalPageNum": 1
 }
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/withdraw/address```  
 
-**接口权限要求:** 钱包提现相关读 / SPOT_WITHDRAW_R
+**Permission:**  SPOT_WITHDRAW_R
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|coin|string|否|币种|
-|page|number|否|页数，默认1|
-|limit|number|否|条数|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|coin|string|No|coin|
+|page|number|No|page,default 1|
+|limit|number|No|limit for per page|
+|timestamp|string|Yes|timestamp|
+|signature|string|Yes|signature|
 
-**返回参数**
+**Response**
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- |
-|coin|币种|
-|network|链名称|
-|address|地址|
-|addressTag|地址标签|
+|coin|coin|
+|network|network|
+|address|address|
+|addressTag|addressTag|
 |memo|memo|
-|totalRecords|总条数|
-|totalPageNum|总页数|
-|page|当前页|
+|totalRecords|totalRecords|
+|totalPageNum|totalPageNum|
+|page|page|
 
-## 用户万向划转【母母账户】
+## User Universal Transfer
 
-> 请求示例
+> Request
 
 ```
 post /api/v3/capital/transfer?fromAccountType=FUTURES&toAccountType=SPOT&asset=USDT&amount=1&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2793,119 +2965,121 @@ post /api/v3/capital/transfer?fromAccountType=FUTURES&toAccountType=SPOT&asset=U
   }
 ]
 ```
-**HTTP请求**
+
 
 - **POST** ```/api/v3/capital/transfer```  
 
-**接口权限要求:** 资金划转写 / SPOT_TRANSFER_W
+**Permission:** SPOT_TRANSFER_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|fromAccountType|string|是|划出账户类型，现货/合约，枚举值："SPOT","FUTURES"|
-|toAccountType|string|是|划入账户类型，现货/合约，枚举值："SPOT","FUTURES"|
-|asset|string|是|资产|
-|amount|string|是|数量|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|fromAccountType|string|YES|fromAccountType:"SPOT","FUTURES"|
+|toAccountType|string|YES|toAccountType:"SPOT","FUTURES"|
+|asset|string|YES|asset|
+|amount|string|YES|amount|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
 
-**返回参数**
+Response:
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- | 
-|tranId|划转ID|
+|tranId|tranId|
 
-## 查询用户万向划转历史
+## Query User Universal Transfer History 
 
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/transfer
 ```
-> 返回示例
+> Response
 
 ```json
 [
   {
     "rows":[
     {
-      "tranId":"11945860693",//划转ID
-      "clientTranId":"test",//client ID
-      "asset":"BTC",//币种
-      "amount":"0.1",//划转数量
-      "fromAccountType":"SPOT",//转出业务账户
-      "toAccountType":"FUTURE",//划入业务账户
-      "fromSymbol":"SPOT",//转出交易对
-      "toSymbol":"FUTURE",//划入交易对
-      "status":"SUCCESS",//划转状态
-      "timestamp":1544433325000//划转时间
+      "tranId":"11945860693",
+      "clientTranId":"test",
+      "asset":"BTC",
+      "amount":"0.1",
+      "fromAccountType":"SPOT",
+      "toAccountType":"FUTURE",
+      "fromSymbol":"SPOT",
+      "toSymbol":"FUTURE",
+      "status":"SUCCESS",
+      "timestamp":1544433325000
     },
     {
-      "tranId":"11945860693",//划转ID
-      "clientTranId":"test",//client ID
-      "asset":"BTC",//币种
-      "amount":"0.1",//划转数量
-      "fromAccountType":"SPOT",//转出业务账户
-      "toAccountType":"FUTURE",//划入业务账户
-      "fromSymbol":"SPOT",//转出交易对
-      "toSymbol":"FUTURE",//划入交易对
-      "status":"SUCCESS",//划转状态
-      "timestamp":1544433325000//划转时间
+      "tranId":"11945860693",
+      "clientTranId":"test",
+      "asset":"BTC",
+      "amount":"0.1",
+      "fromAccountType":"SPOT",
+      "toAccountType":"FUTURE",
+      "fromSymbol":"SPOT",
+      "toSymbol":"FUTURE",
+      "status":"SUCCESS",
+      "timestamp":1544433325000
     }],
-    "total": 2,//总数
+    "total": 2,
   }
 ]
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/transfer```  
 
-**接口权限要求:** 资金划转读 / SPOT_TRANSFER_R
+**Permission:** SPOT_TRANSFER_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters: 
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|fromAccountType|string|是|划出账户类型，现货/合约，枚举值："SPOT","FUTURES"|
-|toAccountType|string|是|划入账户类型，现货/合约/，枚举值："SPOT","FUTURES"|
-|startTime|string|否||
-|endTime|string|否||
-|page|string|否|默认1|
-|size|string|否|默认 10, 最大 100|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|fromAccountType|string|YES|fromAccountType:"SPOT","FUTURES"|
+|toAccountType|string|YES|toAccountType:"SPOT","FUTURES"|
+|startTime|string|NO|startTime|
+|endTime|string|NO|endTime|
+|page|string|NO|default:1|
+|size|string|NO|default:10, max:100|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-1. 仅支持查询最近半年（6个月）数据
-2. 若`startTime`和`endTime`没传，则默认返回最近7天数据
-**返回参数**
+1. Only can quary the data for the last six months
+2. If 'startTime' and 'endTime' are not send, will return the last seven days' data by default
 
-| 参数名 | 说明  |
+Response:
+
+| Name | Description  |
 | :------------ | :-------- | 
-|total|总数|
-|tranId|划转ID|
+|total|total|
+|tranId|tranId|
 |clientTranId|client ID|
-|asset|币种|
-|amount|划转数量|
-|fromAccountType|转出业务账户|
-|toAccountType|划入业务账户|
-|symbol|转出交易对|
-|status|划转状态|
-|timestamp|划转时间|
+|asset|coin |
+|amount|amount|
+|fromAccountType|fromAccountType|
+|toAccountType|toAccountType|
+|symbol|symbol|
+|status|status|
+|timestamp|timestamp|
 
-## 查询用户万向划转历史（根据tranId）
+## Query User Universal Transfer History （by tranId）
 
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/transfer/tranId?tranId=cb28c88cd20c42819e4d5148d5fb5742&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+
+> Response
 
 ```json
 {
@@ -2920,47 +3094,46 @@ get /api/v3/capital/transfer/tranId?tranId=cb28c88cd20c42819e4d5148d5fb5742&time
     "timestamp": 1678603205000
 }
 ```
-**HTTP请求**
 
 - **GET** ```/api/v3/capital/transfer/tranId```  
 
-**接口权限要求:** 资金划转读 / SPOT_TRANSFER_R
+**Permission:**  SPOT_TRANSFER_R
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
-| :------ | :-------- | :-------- | :---------- |
-|tranId|string|是|划转id|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+| Name    | Type | Mandatory | Description   |
+| :-------- | :------- | :------- | :----- |
+| tranId    | string   | YES       | tranId  |
+| timestamp | string   | YES       | timestamp |
+| signature | string   | YES       | signature   |
 
-仅支持查询最近半年（6个月）数据
+Only can quary the data for the last six months
 
-**返回参数**
+**response**
 
-| 参数名 | 说明  |
-| :------------ | :-------- | 
-|tranId|划转ID|
+| Name          | Description         |
+| :-------------- | :----------- |
+|tranId|tranId|
 |clientTranId|client ID|
-|asset|币种|
-|amount|划转数量|
-|fromAccountType|转出业务账户|
-|toAccountType|划入业务账户|
-|symbol|转出交易对|
-|status|划转状态|
-|timestamp|划转时间|
+|asset|coin |
+|amount|amount|
+|fromAccountType|fromAccountType|
+|toAccountType|toAccountType|
+|symbol|symbol|
+|status|status|
+|timestamp|timestamp|
 
 
-## 获取小额资产可兑换列表
+## Get Assets That Can Be Converted Into OB
 
-> 请求示例
+> Request
 
 ```
 get {{api_url}}/api/v3/capital/convert/list?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 [
@@ -2982,40 +3155,40 @@ get {{api_url}}/api/v3/capital/convert/list?timestamp={{timestamp}}&signature={{
  }
 ]
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/convert/list```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters:
   
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-**返回参数**
+Response:
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- | 
-| convertOb|余额ob值预估(扣除手续费后)|
-| convertUsdt | 余额usdt估值      |
-| balance|币种余额|
-| asset|币种|
-| code    | 无法兑换原因code     |
-| message | 无法兑换原因message  |
+| convertOb|OB amount（Deducted commission fee）|
+| convertUsdt | usdt amount     |
+| balance|Convertible balance|
+| asset|asset|
+| code    | code     |
+| message | message  |
 
-## 小额资产兑换
+## Dust Transfer
 
-> 请求示例
+> Request
 
 ```
 post {{api_url}}/api/v3/capital/convert?asset=BTC,FIL,ETH&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 {
@@ -3025,42 +3198,41 @@ post {{api_url}}/api/v3/capital/convert?asset=BTC,FIL,ETH&timestamp={{timestamp}
   "convertFee":"0.00071571"
   }
 ```
-**HTTP请求**
 
 - **POST** ```/api/v3/capital/convert```  
 
-**接口权限要求:** 账户写 / SPOT_ACCOUNT_W
+**Permission:** SPOT_ACCOUNT_W
 
-**权重(IP):** 10
+**Weight(IP):** 10
 
-**请求参数**
+Parameters:
   
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|asset|string|是|要兑换ob的小额资产(最多可以传15个)如:asset=BTC,FIL,ETH|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|asset|string|YES|The asset being converted.(max 15 assert)eg:asset=BTC,FIL,ETH|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-**返回参数**
+Response:
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- | 
-|totalConvert|转换后的ob数量(扣除ob手续费)|
-| convertFee  | 扣除ob手续费     |
-| successList | 兑换成功币种列表 |
-| failedList  | 兑换失败币种列表 |
-| -asset     | 资产名称         |
-| -message   | 兑换失败错误信息 |
-| -code      | 兑换失败错误码   |
+|totalConvert|Convert OB amount(Deducted commission fee)|
+| convertFee  | convertFee     |
+| successList | convert success List |
+| failedList  | convert failed List |
+| -asset     | asset         |
+| -message   | message  |
+| -code      | code   |
 
-## 查询小额资产兑换历史
+## DustLog
 
-> 请求示例
+> Request
 
 ```
 get {{api_url}}/api/v3/capital/convert?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
 {
@@ -3109,52 +3281,51 @@ get {{api_url}}/api/v3/capital/convert?timestamp={{timestamp}}&signature={{signa
     "totalPageNum": 1
 }
 ```
-**HTTP请求**
+
 
 - **GET** ```/api/v3/capital/convert```  
 
-**接口权限要求:** 现货交易信息读 / SPOT_DEAL_R
+**Permission:** SPOT_DEAL_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Parameters:
   
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-|startTime|long|否|开始时间|
-|endTime|long|否|结束时间|
-|page|int|否|页数,默认 1|
-|limit|int|否|返回的条数,默认 1; 最大 1000|
-|timestamp|string|是|时间戳|
-|signature|string|是|签名|
+|startTime|long|NO|startTime|
+|endTime|long|NO|endTime|
+|page|int|NO|page,default 1|
+|limit|int|NO|limit,default 1; max 1000|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|signature|
 
-**返回参数**
+Response:
 
-| 参数名 |  数据类型|说明  |
+| Name |  Type|Description  |
 | :------------ | :-------- | :-------- |
-|totalConvert|string|转换后的ob数量(扣除ob手续费)|
-|totalFee|string|本次兑换的总手续费|
-|convertTime|long|本次兑换时间|
-|convertDetails|object|本次转换的细节|
-|id|string|兑换id|
-|convert|string|兑换后的ob|
-|fee|string|兑换手续费|
-|amount|string|币种数量|
-|time|long|兑换时间|
-|asset|string|币种|
-|page|int|当前页|
-|totalRecords|int|总记录数|
-|totalPage|int|总页数|
+|totalConvert|string|Convert OB amount(Deducted commission fee)|
+|totalFee|string|Total fee amount|
+|convertTime|long|Convert time|
+|convertDetails|object|Convert details|
+|id|string|Convert id|
+|convert|string|Convert ob|
+|fee|string|fee amount|
+|amount|string|amount|
+|time|long|Convert time|
+|asset|string|asset|
+|page|int|page|
+|totalRecords|int|totalRecords|
+|totalPage|int|totalPage|
 
+<!-- ## Internal Transfer
 
-<!-- ## 用户站内转账接口
-
-> 请求示例
+> Request
 
 ```
 post /api/v3/capital/transfer/internal?&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
   {
@@ -3162,121 +3333,113 @@ post /api/v3/capital/transfer/internal?&timestamp={{timestamp}}&signature={{sign
   }
 
 ```
-**HTTP请求**
 
 - **POST** ```/api/v3/capital/transfer/internal```  
 
-**接口权限要求:** 钱包提现相关写 / SPOT_WITHDRAW_W
+**Permission:** SPOT_WITHDRAW_WRITE
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Parameters**
 
-| 参数名 | 数据类型| 是否必须 | 说明               | 
+| Name | Type| Mandatory | Description               | 
 | :------ | :-------- |:-----|:-----------------|
-|toAccountType|string| 是    | 收款账户类型，支持填入手机号/邮箱或者UID  |
-|toAccount|string| 是    | 收款账户地址，支持填入手机号/邮箱或者UID   |
-|areaCode|string| 否    | 如果toAccount为手机号，该字段为该手机号的必填区号            |
-|asset|string| 是    | 资产            |
-|amount|string| 是    | 数量           |
-|timestamp|string| 是    | 时间戳              |
-|signature|string| 是    | 签名               |
+|toAccountType|string| Yes    | toAccountTyp:EMAIL/UID/MOBILE  |
+|toAccount|string| Yes    | toAccount:EMAIL/UID/MOBILE   |
+|areaCode|string| No    | areaCode of mobile            |
+|asset|string| Yes    | asset        |
+|amount|string| Yes    | amount       |
+|timestamp|string| Yes    | timestamp        |
+|signature|string| Yes    | signature      |
 
-**返回参数**
+**Response**
 
-| 参数名 | 说明  |
+| Name | Description  |
 | :------------ | :-------- | 
-|tranId|划转ID|
+|tranId|tranId|
  -->
 
-## 查询用户内部转账历史接口
+## Query Internal Transfer history
 
-> 请求示例
+> Request
 
 ```
 get /api/v3/capital/transfer/internal?&timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> Response
 
 ```json
   {
-    "page": 1,  //当前页
-    "totalRecords": 1,  //总记录数
-    "totalPageNum": 1,  //总页数
+    "page": 1,  
+    "totalRecords": 1,  
+    "totalPageNum": 1,  
     "data": [
              {
-      "tranId":"11945860693",//划转ID
-      "asset":"BTC",//币种
-      "amount":"0.1",//划转数量
-      "toAccountType":"EMAIL",//收款账户类型
-      "toAccount":"156283619@outlook.com",//收款账户
-      "fromAccount":"156283618@outlook.com",//付款账户
-      "status":"SUCCESS",//划转状态
-      "timestamp":1544433325000//划转时间
+      "tranId":"11945860693",
+      "asset":"BTC",
+      "amount":"0.1",
+      "toAccountType":"EMAIL",
+      "toAccount":"156283619@outlook.com",
+      "fromAccount":"156283618@outlook.com",
+      "status":"SUCCESS",
+      "timestamp":1544433325000
     },
     {
-      "tranId":"",//划转ID
-      "asset":"BTC",//币种
-      "amount":"0.8",//划转数量
-      "toAccountType":"UID",//收款账户类型
-      "fromAccount":"156283619@outlook.com",//付款账户
-      "toAccount":"87658765",//收款账户
-      "status":"SUCCESS",//划转状态
-      "timestamp":1544433325000//划转时间
+      "tranId":"",
+      "asset":"BTC",
+      "amount":"0.8",
+      "toAccountType":"UID",
+      "fromAccount":"156283619@outlook.com",
+      "toAccount":"87658765",
+      "status":"SUCCESS",
+      "timestamp":1544433325000
     }
     ]
 }
 
 ```
-**HTTP请求**
 
-- **GET** ```/api/v3/capital/transfer/internal```  
+- **GET** ``` /api/v3/capital/transfer/internal```  
 
-**接口权限要求:** 钱包提现相关读 / SPOT_WITHDRAW_R
+**Permission:** SPOT_WITHDRAW_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Parameters**
 
-|参数名	|数据类型	|是否必须	|说明|
+|Name	|Type	|Mandatory	|Description|
 | :------ | :-------- |:-----|:-----------------|
-|startTime|	long|	否	|
-|endTime|	long|	否	|
-|page	|int|	否|	默认1|
-|limit|	int	|否|	默认10|
-|tranId|	string|	否	|划转id|
-|timestamp|	string|	是|	时间戳|
-|signature|	string|	是|	签名|
+|startTime|	long|	No	|
+|endTime|	long|	No	|
+|page	|int|	No|	default 1|
+|limit|	int	|No|	default 10|
+|tranId|	string|	No	|tranid|
+|timestamp|	string|	Yes|	timestamp|
+|signature|	string|	Yes|	signature|
 
-若startTime和endTime没传，则默认返回最近7天数据 
+If startTime and endTime are not provided, will default to returning data from the last 7 days.
 
-**返回参数**
 
-| 参数名 | 说明  |
+**Response**
+
+| Name | Description  |
 | :------------ | :-------- | 
-|page	|当前页|
-|totalRecords	|总记录数|
-|totalPage	|总页数|
-|tranId	|划转ID|
-|asset	|币种|
-|amount	|划转数量|
-|fromAccountType	|转出业务账户|
-|toAccountType	|划入业务账户|
-|status	|划转状态|
-|timestamp	|划转时间|
+|page	|page|
+|totalRecords	|totalRecords|
+|totalPage	|totalPage|
+|tranId	|tranId|
+|asset	|asset|
+|amount	|amount|
+|fromAccountType	|fromAccountType|
+|toAccountType	|toAccountType|
+|status	|status|
+|timestamp	|timestamp|
 
+# ETF
 
-# ETF接口
+## Get ETF info
 
-## 获取ETF基础信息
-获取ETF的基础信息，如可交易币对、最新净值和管理费率。
-
-> 请求示例
-
-```
-GET /api/v3/etf/info
-```
-> 返回示例
+> Response
 
 ```json
 {
@@ -3292,53 +3455,57 @@ GET /api/v3/etf/info
 }
 
 ```
-**HTTP请求**
 
-- **GET** ```api/v3/etf/info```  
+- **GET** ```api/v3/etf/info```
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+Get information on ETFs, such as symbol, netValue and fund fee.
 
-| 参数   | 数据类型 | 是否必须 | 默认值 | 描述                    |
-| :------ | :-------- | :-------- | :------ | :----------------------- |
-| symbol | string   | 否       | NA     | ETF交易对，不填返回所有 |
+Parameters:
 
-
-
-**返回参数**
-
-| 字段名称  | 数据类型 | 描述          |
-| :--------- | :-------- | :------------- |
-| symbol     | string   | ETF交易对 |
-| netValue   | string   | 最新净值      |
-| feeRate    | string   | 管理费率      |
-| timestamp  | long     | 系统时间      |
-|leverage    |string    | 目标杠杆      |
-|realLeverage|string    | 当前杠杆      |
-|mergedTimes |string    | 合并次数      |
-|lastMergedTime|long   | 最近合并时间   |
-|basket     |string    | 再平衡后篮子   |
+| Name   | Type   | Mandatory | Description |
+| ------ | ------ | --------- | ----------- |
+| symbol | string | No        | ETF symbol  |
 
 
-# Websocket 行情推送
+Response:
 
-- 本篇所列出的所有wss接口的baseurl为: **wss://wbs.ourbit.com/ws**
-- 每个到 **wbs.ourbit.com** 的链接有效期不超过24小时，请妥善处理断线重连
-- symbol名称中所有交易对均为**大写**，如：`spot@public.deals.v3.api@<symbol>`</br>实例：`spot@public.deals.v3.api@BTCUSDT`
-- websocket没有有效订阅的话，服务器会在**30秒**时主动断开连接，如果订阅成功但是没有流量，服务器会在**一分钟**时主动断开，客户端可以发送ping来保持链接
-- 1个 ws 连接最多30个订阅
-- 请按照文档返回的参数进行处理数据，文档没有返回的参数近期将进行优化处理，请勿使用
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| symbol    | string | ETF symbol  |
+| netValue  | string | Net Value   |
+| feeRate   | string | Fund Fee    |
+| timestamp | long   |             |
+|leverage    |string | target leverage  |
+|realLeverage|string | real leverage    |
+|mergedTimes |string | mergedTimes      |
+|lastMergedTime|long | lastMergedTime   |
+|basket     |string  | Basket After  |
 
-## 实时订阅/取消数据流
+# Websocket Market Streams
 
-- 以下数据可以通过websocket发送以实现订阅或取消订阅数据流。示例如下。
-- 响应内容中的`id`是无符号整数，作为往来信息的唯一标识。
-- 如果相应内容中的 `msg` 为相应的请求字段，表示请求发送成功。
+- The base endpoint is: **wss://wbs.ourbit.com/ws**.
 
-### 订阅一个信息流
+- A single connection to **wbs.ourbit.com** is only valid for 24 hours; expect to be disconnected at the 24 hour mark.
 
-> **订阅频道响应**
+- All symbols are **Uppercase** <br/>eg:`spot@public.deals.v3.api@<symbol>`</br>->`spot@public.deals.v3.api@BTCUSDT`.
+
+- If there is no valid websocket subscription, the server will disconnect in **30 seconds**. If the subscription is successful but there is no streams, the server will disconnect in **1 minute**. The client can send `PING` to maintain the connection.
+
+- Every websocket connection maximun support 30 subscriptions at one time.
+
+## Live Subscribing/Unsubscribing to streams
+
+- The following data can be sent through the websocket instance in order to subscribe/unsubscribe from streams. Examples can be seen below.
+
+- The id used in the JSON payloads is an unsigned INT used as an identifier to uniquely identify the messages going back and forth.
+
+- In the response, if the `msg`  received is same as request params, this means the request sent was a success.
+
+### Subscribe to a stream
+
+> **Subscribe Response**
 
 ```
  {
@@ -3348,7 +3515,7 @@ GET /api/v3/etf/info
  }
 ```
 
-- **请求**
+- **Request**
 
 
 {
@@ -3356,9 +3523,9 @@ GET /api/v3/etf/info
  "params":["spot@public.deals.v3.api@BTCUSDT"]
 }
 
-### 取消订阅一个信息流
+### Unsubscribe to a stream
 
-> **取消订阅响应**
+> **Unsubscribe Response**
 
 ```
  {
@@ -3368,16 +3535,16 @@ GET /api/v3/etf/info
  }
 ```
 
-- **请求**
+- **Request**
 
 {
  "method":"UNSUBSCRIPTION",
  "params":["spot@public.deals.v3.api@BTCUSDT","spot@public.increase.depth.v3.api@BTCUSDT"]
 }
 
-### PING/PONG机制
+### PING/PONG
 
-> **PING/PONG响应**
+> **PING/PONG Response**
 
 ```
  {
@@ -3387,11 +3554,11 @@ GET /api/v3/etf/info
  }
 ```
 
-- **请求**
+- **Request**
 
 {"method":"PING"}
 
-## 逐笔交易(实时)
+## Trade Streams
 
 >**request:**
 
@@ -3410,34 +3577,34 @@ GET /api/v3/etf/info
 	"c":"spot@public.deals.v3.api@BTCUSDT",    
 	"d":{
 			"deals":[{
-					"S":2,                             //交易类型tradeType
-					"p":"20233.84",                    //成交价格price
-					"t":1661927587825,  				       //成交时间dealTime
-					"v":"0.001028"}],  						     //成交数量quantity
-			"e":"spot@public.deals.v3.api"},        //事件类型eventType			         
-	"s":"BTCUSDT",  								           //交易对symbol
-	"t":1661927587836                          //事件时间eventTime
+					"S":2,                             //tradeType
+					"p":"20233.84",                    //price
+					"t":1661927587825,  				       //dealTime
+					"v":"0.001028"}],  						     //quantity
+			"e":"spot@public.deals.v3.api"},        //eventType			         
+	"s":"BTCUSDT",  								           //symbol
+	"t":1661927587836                          //eventTime
 } 								         
 ```
 
-**请求参数：**   `spot@public.deals.v3.api@<symbol>`
+**Request:**   `spot@public.deals.v3.api@<symbol>`
 
-逐笔交易推送每一笔成交的信息。**成交**，或者说交易的定义是仅有一个吃单者与一个挂单者相互交易
+The Trade Streams push raw trade information; each trade has a unique buyer and seller.
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| deals | array | 成交信息  |
-| > S | int | 交易类型 1:买 2:卖 |
-| > p | string | 成交价格 |
-| > t | long | 成交时间 |
-| > v | string | 成交数量 |
-| e | string | 事件类型 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| deals | array | dealsInfo  |
+| > S | int | tradeType 1:buy 2:sell |
+| > p | string | price |
+| > t | long | dealTime |
+| > v | string | quantity |
+| e | string | eventType |
+| s | string | symbol |
+| t | long | eventTime |
 
-## K线 Streams
+## Kline Streams
 
 >**request:**
 
@@ -3457,48 +3624,46 @@ GET /api/v3/etf/info
 	"c":"spot@public.kline.v3.api@BTCUSDT@Min15",  
 	"d":{
 			"k":{
-				"T":1661931900,      //这根K线的结束时间                      
-				"a":29043.48804658,	 //这根K线期间成交额
-				"c":20279.43,				 //这根K线期间末一笔成交价
-				"h":20284.93,				 //这根K线期间最高成交价
-				"i":"Min15",				 //K线间隔
-				"l":20277.52,				 //这根K线期间最低成交价
-				"o":20284.93,				 //这根K线期间第一笔成交价
-				"s":"BTCUSDT",			 //交易对
-				"t":1661931000,			 //这根K线的起始时间
-				"v":1.43211},				 //这根K线期间成交量
-			"e":"spot@public.kline.v3.api"},					 //事件类型
-	"s":"BTCUSDT",						 //交易对
-	"t":1661931016878					 //事件时间
+				"T":1661931900,                     
+				"a":29043.48804658,	 
+				"c":20279.43,				 
+				"h":20284.93,				 
+				"i":"Min15",				 
+				"l":20277.52,				 
+				"o":20284.93,				 
+				"t":1661931000,			 
+				"v":1.43211},				 
+			"e":"spot@public.kline.v3.api"},					
+	"s":"BTCUSDT",						
+	"t":1661931016878					 
 }
 
 ```
 
-K线逐秒推送所请求的K线种类(最新一根K线)的更新。
+The Kline/Candlestick Stream push updates to the current klines/candlestick every second.
 
-**请求参数：** `spot@public.kline.v3.api@<symbol>@<interval>`
+**Request:** `spot@public.kline.v3.api@<symbol>@<interval>`
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| e | string | 事件类型 |
-| k | object| k线信息 |
-| > T | long | 这根K线的结束时间 |
-| > a | bigDecimal | 这根K线期间成交额 |
-| > c | bigDecimal | 这根K线期间末一笔成交价 |
-| > h | bigDecimal | 这根K线期间最高成交价 |
-| > i | interval | K线间隔 |
-| > l | bigDecimal | 这根K线期间最低成交价 |
-| > o | bigDecimal | 这根K线期间第一笔成交价 |
-| > t | long | 这根K线的起始时间 |
-| > v | bigDecimal | 这根K线期间成交量 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| k | object| klineInfo |
+| > T | long | endTime |
+| > a | bigDecimal | volume |
+| > c | bigDecimal | closingPrice |
+| > h | bigDecimal | highestPrice |
+| > i | interval | interval |
+| > l | bigDecimal | lowestPrice |
+| > o | bigDecimal | openingPrice |
+| > t | long | stratTime |
+| > v | bigDecimal | quantity |
+| s | string | symbol |
+| t | long | eventTime |
 
-**K线图间隔参数:**
+**Kline chart intervals:**
 
-Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
+Min -> minutes; Hour -> hours; Day -> days; Week -> weeks, M -> months
 
 - Min1
 - Min5
@@ -3511,9 +3676,9 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 - Week1
 - Month1
 
-## 增量深度信息(实时)
+## Diff.Depth Stream
 
->**request:**
+> **request:**
 
 ```
 {
@@ -3531,34 +3696,33 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 {
 	"c":"spot@public.increase.depth.v3.api@BTCUSDT",  
 	"d":{
-		"asks":[{									//bids:买单,asks:卖单
-			"p":"20290.89",		//变动的价格档位
-			"v":"0.000000"}], //数量
-		"e":"spot@public.increase.depth.v3.api",  //事件类型
-    "r":"3407459756"},	 //版本号
-	"s":"BTCUSDT",							//交易对
-	"t":1661932660144						//事件时间
+		"asks":[{									
+			"p":"20290.89",		
+			"v":"0.000000"}], 
+		"e":"spot@public.increase.depth.v3.api", 
+    "r":"3407459756"},	 
+	"s":"BTCUSDT",						
+	"t":1661932660144					
 }
 ```
 
-如果某个价格对应的挂单量(v)为0，表示该价位的挂单已经撤单或者被吃，应该移除这个价位。
+If the quantity is 0, it means that the order of the price has been cancel or traded,remove the price level.
 
-**请求参数:** `spot@public.increase.depth.v3.api@<symbol>`
+**Request:** `spot@public.increase.depth.v3.api@<symbol>`
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| p | string | 变动的价格档位 |
-| v | string | 数量 |
-| e | string | 事件类型 |
-| r | string | 版本号 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| p | string | price |
+| v | string | quantity |
+| e | string | eventType |
+| r | string | version |
+| s | string | symbol |
+| t | long | eventTime |
 
-
-## 有限档位深度信息
-推送有限档深度信息，levels表示几档买卖单信息, 可选 5/10/20档。
+## Partial Book Depth Streams
+Top bids and asks, Valid are 5, 10, or 20.
 
 >**request:**
 
@@ -3579,34 +3743,34 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 {
   "c":"spot@public.limit.depth.v3.api@BTCUSDT@5",  
   "d":{
-    "asks":[{                 //bids:买单,asks:卖单
-            "p":"20290.89",   //变动的价格档位
-            "v":"0.000000"}], //数量
-    "e":"spot@public.limit.depth.v3.api",  //事件类型
-    "r":"3407459756"},  //版本号 
-  "s":"BTCUSDT",              //交易对
-  "t":1661932660144           //事件时间
+    "asks":[{                 
+            "p":"20290.89",   
+            "v":"0.650000"}], 
+    "e":"spot@public.limit.depth.v3.api",  
+    "r":"3407459756"},  
+  "s":"BTCUSDT",             
+  "t":1661932660144          
 }
 ```
 
 
-**请求参数:** `spot@public.limit.depth.v3.api@<symbol>@<level>`
+**Request:** `spot@public.limit.depth.v3.api@<symbol>@<level>`
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| p | string | 变动的价格档位 |
-| v | string | 数量 |
-| e | string | 事件类型 |
-| r | string | 版本号 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| p | string | price |
+| v | string | quantity |
+| e | string | eventType |
+| r | string | version |
+| s | string | symbol |
+| t | long | eventTime |
 
-## 按Symbol的最优挂单信息
-实时推送指定交易对最优挂单信息。
+## Individual Symbol Book Ticker Streams
+Pushes any update to the best bid or ask's price or quantity in real-time for a specified symbol.
 
->**request:**
+> **request:**
 
 ```
 {
@@ -3624,29 +3788,29 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 {
  "c":"spot@public.bookTicker.v3.api@<BTCUSDT>",
  "d":{
-    "A":"40.66000000"},  //卖单最优挂单数量
-    "B":"31.21000000",  //买单最优挂单数量
-    "a":"25.36520000", //卖单最优挂单价格
-    "b":"25.35190000", // 买单最优挂单价格 
-  },  
- "s":"BTCUSDT", //交易对
- "t":1661932660144 //事件时间
+    
+    "A":"40.66000000" 
+    "B":"31.21000000",  
+    "a":"25.36520000",
+    "b":"25.35190000",},  
+ "s":"BTCUSDT", 
+ "t":1661932660144 
 }
 ```
 
 
-**请求参数:** `spot@public.bookTicker.v3.api@<symbol>`
+**Request:** `spot@public.bookTicker.v3.api@<symbol>`
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| A | string | 卖单最优挂单数量 |
-| B | string | 买单最优挂单数量 |
-| a | string | 卖单最优挂单价格 |
-| b | string | 买单最优挂单价格 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| A | string | best ask qty |
+| B | string | best bid qty |
+| a | string | best ask price |
+| b | string | best bid price |
+| s | string | symbol |
+| t | long | eventTime |
 
 ## MiniTicker
 
@@ -3683,26 +3847,26 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 }								         
 ```
 
-**请求参数：**   `spot@public.miniTicker.v3.api@<symbol>@<timezone>`
+**Request:**   `spot@public.miniTicker.v3.api@<symbol>@<timezone>`
 
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name     | Type   | Description |
 | :-------- | :----- | :--- |
-| c	| string	| 订阅频道名称| 
+| c	| string	| channel name| 
 | d	| data| data| 
-| >s	| string	|交易对symbol|
-| >p	| string	|交易对最新成交价|
-| >r	| string	|交易对的订阅utc8时区涨跌幅|
-| >tr	| string	|交易对的订阅时区涨跌幅|
-| >h	| string	|交易对的24小时最高价|
-| >l	| string	|交易对的24小时最低价|
-| >v	| string	|交易对的24小时交易额|
-| >q	| string	|交易对的24小时交易量|
-| >lastRT	| string	|ETF最近合并时间|
-| >MT	| string	|ETF合并次数|
-| >NV	| string	|ETF净值|
+| >s	| string	|symbol|
+| >p	| string	|deal price|
+| >r	| string	|price Change Percent in utc8|
+| >tr	| string	|price Change Percent in time zone|
+| >h	| string	|24h high price |
+| >l	| string	|24h low price |
+| >v	| string	|24h volume|
+| >q	| string	|24h quote Volume|
+| >lastRT	| string	|etf Last Rebase Time|
+| >MT	| string	|etf Merge Times|
+| >NV	| string	|etf Net Value|
 
 
 ## MiniTickers
@@ -3749,60 +3913,65 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 }								         
 ```
 
-**请求参数：**   `spot@public.miniTickers.v3.api@<timezone>`
+**Request:**   `spot@public.miniTickers.v3.api@<timezone>`
 
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name     | Type   | Description |
 | :-------- | :----- | :--- |
-| c	| string	| 订阅频道名称| 
+| c	| string	| channel name| 
 | d	| data| data| 
-| >s	| string	|交易对symbol|
-| >p	| string	|交易对最新成交价|
-| >r	| string	|交易对的订阅utc8时区涨跌幅|
-| >tr	| string	|交易对的订阅时区涨跌幅|
-| >h	| string	|交易对的24小时最高价|
-| >l	| string	|交易对的24小时最低价|
-| >v	| string	|交易对的24小时交易额|
-| >q	| string	|交易对的24小时交易量|
-| >lastRT	| string	|ETF最近合并时间|
-| >MT	| string	|ETF合并次数|
-| >NV	| string	|ETF净值|
-
-
-## 如何正确在本地维护一个orderbook副本
-
-1. 通过订阅 **spot@public.increase.depth.v3.api@<symbol>**获取全量深度信息，保存当前version。
-2. 订阅ws深度信息，收到更新后，如果收到的数据version>当前version,同一个价位，后收到的更新覆盖前面的。
-3. 访问Rest接口 **https://api.ourbit.com/api/v3/depth?symbol=OBBTC&limit=1000** 获得一个1000档的深度快照
-4. 将目前缓存的深度信息中同一价格，version<步骤3获取到的快照中的version的数据丢弃。
-5. 将深度快照中的内容更新至本地缓存，并从ws接收到的event开始继续更新。
-6. 每一个新event的version应该恰好等于上一个event的version+1，否则可能出现了丢包，如出现丢包或者获取到的event的version不连续,请从步骤3重新进行初始化。
-7. 每一个event中的挂单量代表这个价格目前的挂单量**绝对值**，而不是相对变化。
-8. 如果某个价格对应的挂单量为0，表示该价位的挂单已经撤单或者被吃，应该移除这个价位。
-
-注意: 因为深度快照对价格档位数量有限制，初始快照之外的价格档位并且没有数量变化的价格档位不会出现在增量深度的更新信息内。因此，即使应用来自增量深度的所有更新，这些价格档位也不会在本地 order book 中可见，所以本地的 order book 与真实的 order book 可能会有一些差异。 不过对于大多数用例，5000 的深度限制足以有效地了解市场和交易。
+| >s	| string	|symbol|
+| >p	| string	|deal price|
+| >r	| string	|24h price Change Percent in utc8|
+| >tr	| string	|24h price Change Percent in time zone|
+| >h	| string	|24h high price |
+| >l	| string	|24h low price |
+| >v	| string	|24h volume|
+| >q	| string	|24h quote Volume|
+| >lastRT	| string	|etf Last Rebase Time|
+| >MT	| string	|etf Merge Times|
+| >NV	| string	|etf Net Value|
 
 
 
-# Websocket账户信息推送
+**How is incremental depth information maintained:**
 
-- 本篇所列出API接口的base url : **https://api.ourbit.com**
-- 用于订阅账户数据的 `listenKey` 从创建时刻起有效期为60分钟
-- 可以通过 `PUT` 一个 `listenKey` 延长60分钟有效期
-- 可以通过`DELETE`一个 `listenKey` 立即关闭当前数据流，并使该`listenKey` 无效
-- websocket接口的baseurl: **wss://wbs.ourbit.com/ws**
-- 订阅账户数据流的stream名称为 **/ws?listenKey=listenKey** <br/>  如：**wss://wbs.ourbit.com/ws?listenKey=pqia91ma19a5s61cv6a81va65sd099v8a65a1a5s61cv6a81va65sdf19v8a65a1**
-- 每个链接有效期不超过24小时，请妥善处理断线重连
-- 每个UID，最多申请60个listen key（不包含已失效listen key）
-- ws链接数的数量限制：每个listen key最多5个ws链接（即：每个uid最多申请的60个listen key，300个ws链接）
+1. Though **spot@public.increase.depth.v3.api@<symbol>** to get full amount of depth information, save the current version.
+2. Subscribe to ws depth information, if the received data version more than the current version after update,  the later received update cover the previous one at the same price.
+3. Through **https://api.ourbit.com/api/v3/depth?symbol=OBBTC&limit=1000** get  the latest 1000 depth snapshots.
+4. Discard version data from the snapshot obtained by Version (less than step 3 )for the same price in the current cached depth information
+5. Update the contents of the deep snapshots to the local cache and keep updating from the event received by the WS
+6. The version of each new event should be exactly equal to version+1 of the previous event, otherwise packet loss may occur. In case of packet loss or discontinuous version of the event retrieved, please re-initialize from Step 3.
+7. The amount of hanging orders in each event represents the **absolute value** of the current hanging orders of the price, rather than the relative change.
+8. If the amount of a hanging order corresponding to a certain price is 0, it means that the hanging order at that price has been cancelled, the price should be removed.
+
+# Websocket User Data Streams
+
+- The base API endpoint is: **https://api.ourbit.com**
+
+- A User Data Stream `listenKey` is valid for 60 minutes after creation.
+
+- Doing a `PUT` on a `listenKey` will extend its validity for 60 minutes.
+
+- Doing a `DELETE` on a `listenKey` will close the stream and invalidate the `listenKey`.
+
+- websocket baseurl: **wss://wbs.ourbit.com/ws**
+
+- User Data Streams are accessed at **/ws?listenKey=listenKey** <br/>eg:**wss://wbs.ourbit.com/ws?listenKey=pqia91ma19a5s61cv6a81va65sd099v8a65a1a5s61cv6a81va65sdf19v8a65a1**
+
+- A single connection is only valid for 24 hours; expect to be disconnected at the 24 hour mark.
+
+- Each UID can apply for a maximum of 60 listen keys (excluding invalid listen keys).
+
+- Each listen key maximum support  5 websocket connection (which means each uid can applies for a maximum of 60 listen keys and 300 ws links).
 
 ## Listen Key 
 
-### 生成 Listen Key 
+### Create a ListenKey
 
-> **响应**
+> **Response**
 
 ```
 {
@@ -3810,21 +3979,21 @@ Min -> 分钟; Hour -> 小时; Day -> 天; Week -> 周, M -> 月
 }
 ```
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R 
+**Permission:**  SPOT_ACCOUNT_R
 
-**HTTP请求**
+**HTTP**
 
 - **POST**  ` /api/v3/userDataStream`
 
-开始一个新的数据流。除非发送 keepalive，否则数据流于60分钟后关闭。
+Start a new user data stream. The stream will close after 60 minutes unless a keepalive is sent. 
 
-**参数:**
+**request:**
 
 NONE
 
-### 获取有效 Listen Key 
+### Query all ListenKey
 
-> **响应**
+> **Response**
 
 ```
 {
@@ -3836,65 +4005,60 @@ NONE
 }
 ```
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R 
+**Permission:**  SPOT_ACCOUNT_R
 
-**HTTP请求**
+**HTTP**
 
 - **GET**  ` /api/v3/userDataStream`
 
-获取当前所有有效的listenKey
+get all valid listenKey
 
-**参数:**
+**request:**
 
 NONE
 
 
-### 延长 Listen Key 有效期 
+### Keep-alive a ListenKey 
 
-> **响应**
+> **Response**
 
 ```
 {
     "listenKey": "pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1"
 }
 ```
-
-**HTTP请求**
+**HTTP**
 
 - **PUT**  ` /api/v3/userDataStream`
 
-有效期延长至本次调用后60分钟,建议每30分钟发送一次请求。
+Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 
-**请求参数:**
+**Request:**
 
-| 参数名    | 数据类型 | 是否必需 | 说明 |
+| Name    | Type | Mandatory | Description |
 | :-------- | :------- | :------- | :--- |
-| listenKey | string   | 是      |      |
+| listenKey | STRING   | YES      |      |
 
-### 关闭 Listen Key  
+ ### Close a ListenKey  
 
-> **响应**
+ > **Response**
 
-```
-{
-    "listenKey": "pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1"
-}
-```
+ ```
+ {
+     "listenKey": "pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1"
+ }
+ ```
 
-**HTTP请求**
+ **HTTP**
 
-- **DELETE**  ` /api/v3/userDataStream`
+ - **DELETE**  ` /api/v3/userDataStream`
 
-关闭用户数据流。
+ Close out a user data stream.
 
-**请求参数:**
 
-| 参数名    | 数据类型 | 是否必需 | 说明 |
-| :-------- | :------- | :------- | :--- |
-| listenKey | string   | 是      |      |  
+## Spot Account Upadte  
 
-## 现货账户信息(实时)  
-在订阅成功后，每当账户余额发生变动或可用余额发生变动时，服务器将推送账户资产的更新。  
+The server will push an update of the account assets when the account balance changes.  
 
 >**request:**
 
@@ -3925,23 +4089,25 @@ NONE
 }
 ```
 
-**请求参数：** `spot@private.account.v3.api`
+**Request:** `spot@private.account.v3.api`
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| d | json | 账户信息 |
-| > a | string | 资产名称 |
-| > c | long | 结算时间 |
-| > f | string | 可用余额 |
-| > fd | string | 可用变动金额 |
-| > l | string | 冻结余额 |
-| > ld | string | 冻结变动金额 |
-| > o | string | <a href="#account_position">变动类型</a>|
-| t | long | 事件时间 |
+| d | json | account updates |
+| > a | string | asset |
+| > c | long | change time |
+| > f | string | free balance |
+| > fd | string | free changed amount |
+| > l | string | frozen amount |
+| > ld | string | frozen changed amount|
+| > o | string | <a href="#account_position">changed type</a>|
+| t | long | eventTime |
 
-## 现货账户成交(实时)
+
+
+## Spot Account Deals
 
 >**request:**
 
@@ -3965,9 +4131,9 @@ NONE
         "a": "0.55924",
         "S": 1,
         "T": 1678901086198,
-        "t": "5bbb6ad8b4474570b155610e3960cd",
+        "t": "5bbb6ad8b4474570b155610e30d960cd",
         "c": "",
-        "i": "2dd9655f9fa2438fa1709510d7afd9",
+        "i": "2dd9655f9fa2438fa1709510d7c1afd9",
         "m": 0,
         "st": 0,
         "n": "0.000248206380027431",
@@ -3978,29 +4144,29 @@ NONE
 }
 ```
 
-**请求参数：** `spot@private.deals.v3.api`
+**Request:** `spot@private.deals.v3.api`
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| d | json | 账户成交信息 |
-| > S | int | 交易类型 1:买 2:卖 |
-| > T | long | 成交时间 |
-| > c | string | 用户自定义订单id: clientOrderId |
-| > i | string | 订单id: orderId |
-| > m | int | 是否是挂单: isMaker |
-| > p | string | 交易价格 |
-| > st | byte | 是否自成交：isSelfTrade |
-| > t | string | 成交id: tradeId |
-| > v | string | 交易数量 |
-| > a | string | 交易金额 |
-| > n | string | 手续费数量 |
-| > N | string | 手续费币种 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| d | json | dealsInfo |
+| > S | int | tradetype 1:buy 2:sell |
+| > T | long | tradeTime |
+| > c | string | clientOrderId |
+| > i | string | orderId |
+| > m | int | isMaker |
+| > p | string | price |
+| > st | byte | isSelfTrade |
+| > t | string | tradeId |
+| > v | string | quantity |
+| > a | string | deals amount |
+| > n | string | commission fee|
+| > N | string | commissionAsset）|
+| s | string | symbol |
+| t | long |eventTime |
 
-## 现货账户订单(实时)
+## Spot Account Orders
 
 >**request:**
 
@@ -4013,9 +4179,9 @@ NONE
 }
 ```
 
-**请求参数：** `spot@private.orders.v3.api`
+**Request:** `spot@private.orders.v3.api`
 
-### a.限价/市价订单 (实时)
+### 1. Limit/Market Orders 
 
 > **response:**
 
@@ -4037,37 +4203,37 @@ NONE
         "v":10,
         "ap":0,  
         "cv":0, 	
-        "ca":0  
+        "ca":0 
   },
   "s": "OBUSDT",
   "t": 1661938138193
 }
 ```
 
-**返回参数:**
+**Response:**
 
-| 参数名      | 数据类型   | 说明 |
+| Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| d | json | 账户订单信息 |
-| > A | bigDecimal | 实际剩余金额: remainAmount |
-| > O | long | 订单创建时间 |
-| > S | int | 交易类型 1:买 2:卖 |
-| > V | bigDecimal | 实际剩余数量: remainQuantity |
-| > a | bigDecimal | 下单总金额 |
-| > c | string | 用户自定义订单id: clientOrderId |
-| > i | string | 订单id |
-| > m | int | 是否是挂单: isMaker |
-| > o | int | 订单类型LIMIT_ORDER(1),POST_ONLY(2),IMMEDIATE_OR_CANCEL(3),<br />FILL_OR_KILL(4),MARKET_ORDER(5); 止盈止损（100） |
-| > p | bigDecimal | 下单价格 |
-| > s | int | 订单状态 1:未成交 2:已成交 3:部分成交 4:已撤单 5:部分撤单 |
-| > v | bigDecimal | 下单数量 |
-| > ap | bigDecimal | 平均成交价 |
-| > cv | bigDecimal | 累计成交数量 |
-| > ca | bigDecimal | 累计成交金额 |
-| t | long | 事件时间 |
-| s | string | 交易对 |
+| d | json | orderInfo |
+| > A | bigDecimal | remainAmount |
+| > O | long | createTime|
+| > S | int | tradetype 1:buy 2:sell |
+| > V | bigDecimal | remainQuantity |
+| > a | bigDecimal | amount |
+| > c | string | clientOrderId |
+| > i | string | orderId |
+| > m | int | isMaker |
+| > o | int | LIMIT_ORDER(1),POST_ONLY(2),IMMEDIATE_OR_CANCEL(3),<br />FILL_OR_KILL(4),MARKET_ORDER(5);STOP_LIMIT(100) |
+| > p | bigDecimal | PRICE |
+| > s | int | status 1:New order 2:Filled 3:Partially filled 4:Order canceled 5:Order filled partially, and then the rest of the order is canceled |
+| > v | bigDecimal | quantity |
+| > ap | bigDecimal | avgPrice |
+| > cv | bigDecimal | cumulativeQuantity |
+| > ca | bigDecimal | cumulativeAmount |
+| t | long | eventTime |
+| s | string | symbol |
 
-### b.账户止盈止损订单(实时)
+### 2. Stop Limit Order
 
 > **response:**
 
@@ -4091,288 +4257,289 @@ NONE
 }
 ```
 
-**返回参数:**
+**Response:**
 
-|  参数名      | 数据类型   | 说明 |
+|  Name      | Type   | Description |
 | :-------- | :----- | :--- |
-| d            | json | 账户订单信息 |
-| > N | string | 手续费资产类别 |
-|  > O | long | 订单创建时间 |
-|  > P | bigDecimal | 触发价格 |
-|  > S | int | 交易类型 1: 买 2: 卖 |
-|  > T | int | 0: GE(买入价大过触发价) 1: LE(买入价小于触发价) |
-|  > i | string | 订单id |
-| >  o | int | 订单类型 LIMIT_ORDER(1),POST_ONLY(2),IMMEDIATE_OR_CANCEL(3),<br />FILL_OR_KILL(4),MARKET_ORDER(5); 止盈止损（100） |
-|  > p | bigDecimal | 下单价格 |
-| > s | string | 订单状态  NEW ,CANCELED ,EXECUTED, FAILED |
-|  > v | bigDecimal | 下单数量 |
-| s | string | 交易对 |
-| t | long | 事件时间 |
+| d            | json | orderInfo |
+| > N | string | commissionAsset |
+|  > O | long | createTime |
+|  > P | bigDecimal | triggerPrice |
+|  > S | int | tradetype 1:buy 2:sell |
+|  > T | int | 0: GE(price is higher than triggerPrice) 1: LE(price is lower than triggerPrice) |
+|  > i | string | orderId |
+| >  o | int | orderType LIMIT_ORDER(1),POST_ONLY(2),IMMEDIATE_OR_CANCEL(3),<br />FILL_OR_KILL(4),MARKET_ORDER(5);STOP_LIMIT(100) |
+|  > p | bigDecimal | price |
+| > s | string | state  NEW,CANCELED,EXECUTED,FAILED |
+|  > v | bigDecimal | quantity |
+| s | string | symbol |
+| t | long | eventTime |
 
-# 邀请返佣接口
 
-## 获取邀请返佣记录
+# Rebate Endpoints
 
-> 请求示例
+## Get Rebate History Records
+
+> request
 
 ```
 get /api/v3/rebate/taxQuery?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
-    "page": 1,  //当前页
-    "totalRecords": 1,  //总记录数
-    "totalPageNum": 1,  //总页数
+    "page": 1,  
+    "totalRecords": 1,  
+    "totalPageNum": 1,  
     "data": [
         {
-            "spot": "0.00082273",  // 现货返佣，以usdt计
-            "futures":"0.00022487",        // 合约返佣，以usdt计
-            "total": "0.00012126",  //累积奖励金额，以usdt计
-            "uid": "221827",  // 受邀人UID
-            "account": "154****291@qq.com",  // 受邀人账号
-            "inviteTime": 1637651320000//邀请时间
+            "spot": "0.00082273",  
+            "futures":"0.00022487",       
+            "total": "0.00012126",  
+            "uid": "221827",  
+            "account": "154****291@qq.com",  
+            "inviteTime": 1637651320000
         },
         ...
         {
-            "spot": "0.00082273",  // 现货返佣，以usdt计
-            "futures":"0.00022487",        // 合约返佣，以usdt计
-            "total": "0.00012126",  //累积奖励金额，以usdt计
-            "uid": "82937",  // 受邀人UID
-            "account": "338****291@qq.com",  // 受邀人账号
-            "inviteTime": 1637651320000//邀请时间
+            "spot": "0.00082273",  
+            "futures":"0.00022487",    
+            "total": "0.00012126",  
+            "uid": "82937",  
+            "account": "338****291@qq.com",  
+            "inviteTime": 1637651320000
         }
     ]
 }
 ```
-**HTTP请求**
+**Http Request**
 
 - **GET** ```/api/v3/rebate/taxQuery```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type|  Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long | 否       |        |
-| endTime    | long | 否       |        |
-| page       | int  | 否       | 默认 1  |
-| recvWindow | long | 否       |        |
-| timestamp  | long | 是       |        |
-| signature  | string | 是     |        |
+| startTime  | long | NO       |        |
+| endTime    | long | NO       |        |
+| page       | int  | NO       | default 1  |
+| recvWindow | long | NO       |        |
+| timestamp  | long | YES       |        |
+| signature  | string | YES     |        |
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-| spot |string|现货返佣，以usdt计|
-| futures |string|合约返佣，以usdt计|
-| total |string|累积奖励金额，以usdt计|
-| uid |string|受邀人UID|
-| account |string|受邀人账号|
-| inviteTime |long|邀请时间|
+| spot |string|spot rebate,unit:usdt|
+| futures |string|futures rebate,unit:usdt|
+| total |string|total rebate,unit:usdt|
+| uid |string|Invitee uid|
+| account |string|Invitee account|
+| inviteTime |long|invite time|
 
-若startTime和endTime均未发送,返回最近一年的数据。
+If startTime and endTime are not sent, the recent 1 year's data will be returned.
 
-## 获取返佣记录明细 （奖励记录）
+## Get Rebate Records Detail
 
-> 请求示例
+> request
 
 ```
 get /api/v3/rebate/detail?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
-     "page": 1, //当前页
-     "totalRecords": 1, //总记录数
-     "totalPageNum": 1, //总页数
+     "page": 1, 
+     "totalRecords": 1, 
+     "totalPageNum": 1, 
      "data": [
          {
-             "asset": "USDT", // 返佣资产，币种
-             "type": "spot",       // 返佣类型：现货，合约
-             "rate": "0.3", // 返佣比例
-             "amount": "0.0001126", // 返佣金额
-             "uid": "2293729101827", // 受邀人UID
-             "account": "154****291@qq.com", // 受邀人账号
-             "tradeTime": 1637651320000,//用户交易时间
-             "updateTime": 1637651320000//获取返佣时间
+             "asset": "USDT", 
+             "type": "spot",       
+             "rate": "0.3", 
+             "amount": "0.0001126", 
+             "uid": "2293729101827", 
+             "account": "154****291@qq.com", 
+             "tradeTime": 1637651320000,
+             "updateTime": 1637651320000
          },
          ...
          {
-             "asset": "ETH", // 返佣资产，币种
-             "type": "spot", // 返佣类型：现货，合约
-             "rate": "0.3", // 返佣比例
-             "amount": "0.00000056",// 返佣金额
-             "uid": "22937291018263", // 受邀人UID
-             "account": "154****291@qq.com", // 受邀人账号
-             "tradeTime": 1637651320000,//用户交易时间
-             "updateTime": 1637928379000//获取返佣时间
+             "asset": "ETH", 
+             "type": "spot", 
+             "rate": "0.3", 
+             "amount": "0.00000056",
+             "uid": "22937291018263", 
+             "account": "154****291@qq.com", 
+             "tradeTime": 1637651320000,
+             "updateTime": 1637928379000
          }
      ]
 }
 ​
 ```
-**HTTP请求**
+**Http Request**
 
 - **GET** ```/api/v3/rebate/detail```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type|  Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long | 否       |        |
-| endTime    | long | 否       |        |
-| page       | int  | 否       | 默认 1  |
-| recvWindow | long | 否       |        |
-| timestamp  | long | 是       |        |
-| signature  | string | 是     |        |
+| startTime  | long | NO       |        |
+| endTime    | long | NO       |        |
+| page       | int  | NO       | default 1  |
+| recvWindow | long | NO       |        |
+| timestamp  | long | YES       |        |
+| signature  | string | YES     |        |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|asset|string|返佣资产，币种|
-|type|string|返佣类型：现货，合约|
-|rate|string|返佣比例|
-|amount|string|返佣金额|
-|uid|string|受邀人UID|
-|account|string|受邀人账号|
-|tradeTime|long|用户交易时间|
-|updateTime|long|获取返佣时间|
+|asset|string|rebate asset|
+|type|string|rebate type: spot futures |
+|rate|string|rebate rate|
+|amount|string|rebate amount|
+|uid|string|Invitee uid|
+|account|string|Invitee account|
+|tradeTime|long|trade time|
+|updateTime|long|update time|
 
-若startTime和endTime均未发送,返回最近一年的数据。
+If startTime and endTime are not sent, the recent 1 year's data will be returned.
 
-## 获取自返记录明细 （奖励记录）
+## Get Self Rebate Records Detail
 
-
-> 请求示例
+> request
 
 ```
 get /api/v3/rebate/detail/kickback?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
-    "page": 1,  //当前页
-    "totalRecords": 27,  //总记录数
-    "totalPageNum": 3,  //总页数
+    "page": 1,  
+    "totalRecords": 27,  
+    "totalPageNum": 3,  
     "data": [
         {
-            "asset": "USDT",  // 返佣资产，币种
-            "type": "spot",        // 返佣类型：现货，合约
-            "rate": "0.3", // 返佣比例
-            "amount": "0.0001126",  // 返佣金额
-            "uid": "2293729101827",  // 受邀人UID
-            "account": "154****291@qq.com",  // 受邀人账号
-            "tradeTime": 1637651320000,//用户交易时间
-            "updateTime": 1637651320000//获取返佣时间
+            "asset": "USDT",  
+            "type": "spot",        
+            "rate": "0.3", 
+            "amount": "0.0001126",  
+            "uid": "2293729101827",  
+            "account": "154****291@qq.com",  
+            "tradeTime": 1637651320000,
+            "updateTime": 1637651320000
         },
         ...
         {
-            "asset": "ETH", // 返佣资产，币种
-            "type": "spot", // 返佣类型：现货，合约
-            "rate": "0.3", // 返佣比例
-            "amount": "0.00000056",// 返佣金额
-            "uid": "22937291018263",  // 受邀人UID
-            "account": "154****291@qq.com",  // 受邀人账号
-            "tradeTime": 1637651320000,//用户交易时间
-            "updateTime": 1637928379000//获取返佣时间
+            "asset": "ETH", 
+            "type": "spot", 
+            "rate": "0.3", 
+            "amount": "0.00000056",
+            "uid": "22937291018263",  
+            "account": "154****291@qq.com",  
+            "tradeTime": 1637651320000,
+            "updateTime": 1637928379000
         }
     ]
 }
 ```
-**HTTP请求**
+**Http Request**
 
 - **GET** ```/api/v3/rebate/detail/kickback```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type|  Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long | 否       |        |
-| endTime    | long | 否       |        |
-| page       | int  | 否       | 默认 1  |
-| recvWindow | long | 否       |        |
-| timestamp  | long | 是       |        |
-| signature  | string | 是     |        |
+| startTime  | long | NO       |        |
+| endTime    | long | NO       |        |
+| page       | int  | NO       | default 1  |
+| recvWindow | long | NO       |        |
+| timestamp  | long | YES       |        |
+| signature  | string | YES     |        |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|asset|string|返佣资产，币种|
-|type|string|返佣类型：现货，合约|
-|rate|string|返佣比例|
-|amount|string|返佣金额|
-|uid|string|受邀人UID|
-|account|string|受邀人账号|
-|tradeTime|long|用户交易时间|
-|updateTime|long|获取返佣时间|
+|asset|string|rebate asset|
+|type|string|rebate type: spot futures |
+|rate|string|rebate rate|
+|amount|string|rebate amount|
+|uid|string|Invitee uid|
+|account|string|Invitee account|
+|tradeTime|long|trade time|
+|updateTime|long|update time|
 
-若startTime和endTime均未发送,返回最近一年的数据。
+If startTime and endTime are not sent, the recent 1 year's data will be returned.
 
-## 获取邀请人
+## Query ReferCode
 
-> 请求示例
+> request
 
 ```
-get /api/v3/rebate/referCode?timestamp=1597026383085&signature=abc
+get /api/v3/rebate/referCode?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
     "referCode": "in3jd"
 }
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/referCode```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| recvWindow | long | 否       |        |
-| timestamp  | long | 是       |        |
-| signature  | string | 是     |        |
+| recvWindow | long | NO       |        |
+| timestamp  | long | YES       |        |
+| signature  | string | YES     |        |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-|referCode|string|邀请人的邀请码，非用户本身的|
+|referCode|string|referCode|
 
-## 获取代理邀请返佣记录 （代理账户）
 
-> 请求示例
+## Get Affiliate Commission Record (affiliate only)
+
+> request
 
 ```
 get /api/v3/rebate/affiliate/commission?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -4418,52 +4585,53 @@ get /api/v3/rebate/affiliate/commission?timestamp={{timestamp}}&signature={{sign
 }
 ​
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/affiliate/commission```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type | Mandatory  | Description  | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long    | 否       | 开始时间（佣金、入金数据时间） |
-| endTime    | long    | 否       | 截止时间（佣金、入金数据时间） |
-| inviteCode | string  | 否       | 邀请码  |
-| page       | int     | 否       | 页数  |
-| pageSize   | int     | 否       | 页面内容,不传默认10  |
-| timestamp  | long    | 是       | 时间戳    |
-| signature  | string  | 是       |  签名  |
+| startTime  | long    | No       | startTime |
+| endTime    | long    | No       | endTime  |
+| inviteCode | string  | No       | invite Code  |
+| page       | int     | No       | page   |
+| pageSize   | int     | No       | pageSize，default:10|
+| timestamp  | long    | Yes       | timestamp   |
+| signature  | string  | Yes       | signature  |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  | Type | Description |
 | :------------ | :-------- | :--------|
-| uid |string|用户uid|
-| account |string|邮箱账号(如果是手机号账号，返回null)|
-| inviteCode |string|邀请码|
-| inviteTime |long|注册时间|
-| spot |string|现货返佣(usdt)|
-| etf |string|ETF返佣(usdt) |
-| futures |string|合约返佣(usdt) |
-| total |string|返佣总额(usdt) |
-| deposit |string|已入金金额(usdt)|
-| firstDepositTime |string|首次入金日期(若没有，返回null)|
+| uid |string| user uid|
+| account |string|account|
+| inviteCode |string|inviteCode|
+| inviteTime |long|inviteTime|
+| spot |string|spot commission(usdt)|
+| etf |string|ETF commission(usdt) |
+| futures |string|futures commission(usdt) |
+| total |string| total commission(usdt) |
+| deposit |string|deposit amount(usdt)|
+| firstDepositTime |string|first Deposit Time|
 
-若startTime和endTime均未发送,返回最近半年的数据。
+If startTime and endTime are not sent, default return the data of the last six months .
 
-## 获取代理提现记录 （代理账户）
 
-> 请求示例
+## Get Affiliate Withdraw Record (affiliate only)
+
+> request
 
 ```
 get /api/v3/rebate/affiliate/withdraw?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -4492,44 +4660,44 @@ get /api/v3/rebate/affiliate/withdraw?timestamp={{timestamp}}&signature={{signat
 
 ​
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/affiliate/withdraw```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description  | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long    | 否       | 开始时间（佣金、入金数据时间） |
-| endTime    | long    | 否       | 截止时间（佣金、入金数据时间） |
-| page       | int     | 否       | 页数  |
-| pageSize   | int     | 否       | 页面内容,不传默认10  |
-| timestamp  | long    | 是       | 时间戳    |
-| signature  | string  | 是       |  签名  |
+| startTime  | long    | No       | startTime |
+| endTime    | long    | No       | endTime  |
+| page       | int     | No       | page  |
+| pageSize   | int     | No       | pageSize,default: 10  |
+| timestamp  | long    | Yes       | timestamp   |
+| signature  | string  | Yes       |  signature  |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description |
 | :------------ | :-------- | :--------|
-| withdrawalTime |long|提现时间|
-| asset |string|提现币种|
-| amount |string|提现金额|
+| withdrawTime |long|withdrawTime|
+| asset |string|withdraw asset|
+| amount |string|withdraw amount|
 
-若startTime和endTime均未发送,返回最近半年的数据。
+If startTime and endTime are not sent, the data of the last six months is returned.
 
-## 获取代理返佣明细 （代理账户）
+## Get Affiliate Commission Detail Record (affiliate only)
 
-> 请求示例
+> request
 
 ```
 get /api/v3/rebate/affiliate/commission/detail?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -4565,61 +4733,61 @@ get /api/v3/rebate/affiliate/commission/detail?timestamp={{timestamp}}&signature
 
 ​
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/affiliate/commission/detail```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description  | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long    | 否       | 开始时间（佣金、入金数据时间） |
-| endTime    | long    | 否       | 截止时间（佣金、入金数据时间） |
-| inviteCode | string  | 否       | 邀请码  |
-| page       | int     | 否       | 页数  |
-| pageSize   | int     | 否       | 页面内容,不传默认10  |
-| type       | int     | 否       | 返佣类型,1：现货、2：合约、3：ETF  |
-| timestamp  | long    | 是       | 时间戳    |
-| signature  | string  | 是       |  签名  |
+| startTime  | long    | No       | startTime |
+| endTime    | long    | No       | endTime |
+| inviteCode | string  | No       | inviteCode   |
+| page       | int     | No       | page  |
+| pageSize   | int     | No       | pageSize,default: 10  |
+| type       | int     | No       | commission type,1:spot,2:futures,3:ETF  |
+| timestamp  | long    | Yes       | timestamp   |
+| signature  | string  | Yes       |  signature  |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description |
 | :------------ | :-------- | :--------|
-| totalCommissionUsdtAmount| string|总佣金|
-| totalTradeUsdtAmount|string|总交易量|
-| type|int| 返佣类型,1：现货、2：合约、3：ETF|
-| sourceType|int|1：直客、2：子代理|
-| state|int|返佣状态|
-| date|long|交易日期|
-| uid |string|用户uid|
-| rate|string|返佣比例|
-| symbol|string|交易对|
-| takerAmount|string|taker金额|
-| makerAmount|string|maker金额|
-| amountCurrency|string|金额币种|
-| usdtAmount|string|usdt金额|
-| commission|string|返佣金额|
-| currency|string|返佣币种|
+| totalCommissionUsdtAmount| string|total commission in usdt|
+| totalTradeUsdtAmount|string|total trade volume in usdt |
+| type|int| commission type,1:spot 2:futures 3:ETF|
+| sourceType|int|sourceType,1:referral 2:sub-affiliate|
+| state|int|commission state|
+| date|long|trade date|
+| uid |string|uid|
+| rate|string|commission rate|
+| symbol|string|symbol|
+| takerAmount|string|taker amount|
+| makerAmount|string|maker amount|
+| amountCurrency|string|amount currency|
+| usdtAmount|string|usdt amount|
+| commission|string|commission amount|
+| currency|string|commission currency|
 
 
 
 
-若startTime和endTime均未发送,返回T-7~T的日期(近8天內日期)的数据,type不填则返回全部种类数据。
+If startTime and endTime are not sent, the data from T-7 to T is returned. If type is not sent, the data of all types is returned,maximum 30 days data can be queried at one time.
 
-<!-- ## 获取代理活动页面数据 （代理账户）
+<!-- ## Get Affiliate Campaign Data (affiliate only)
 
-> 请求示例
+> request
 
 ```
 get /api/v3/rebate/affiliate/campaign?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -4662,51 +4830,51 @@ get /api/v3/rebate/affiliate/campaign?timestamp={{timestamp}}&signature={{signat
 
 ​
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/affiliate/campaign```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long    | 否       | 开始时间（佣金、入金数据时间） |
-| endTime    | long    | 否       | 截止时间（佣金、入金数据时间） |
-| page       | int     | 否       | 页数  |
-| pageSize   | int     | 否       | 页面内容,不传默认10  |
-| timestamp  | long    | 是       | 时间戳    |
-| signature  | string  | 是       |  签名  |
+| startTime  | long    | No       | startTime |
+| endTime    | long    | No       | endTime  |
+| page       | int     | No       | page |
+| pageSize   | int     | No       | pageSize,default: 10  |
+| timestamp  | long    | Yes       | timestamp   |
+| signature  | string  | Yes       |  signature |
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  |Type | Description|
 | :------------ | :-------- | :--------|
-| campaign|string|活动名称|
-| inviteCode|string|活动邀请码|
-| createTime|long|活动创建时间|
-| clickTime|int|邀请码点击次数|
-| signup|int|注册人数|
-| deposited|int|已入金人数|
-| depositAmount|string|入金量，以usdt计算|
-| tradingAmount|string|交易量，以usdt计算|
-| traded|int|交易人数|
-| commission|string|佣金|
+| campaign|string|campaign name|
+| inviteCode|string|campaign inviteCode|
+| createTime|long|campaign createTime|
+| clickTime|int|inviteCode clickTime|
+| signup|int|signup number|
+| deposited|int|deposited number|
+| depositAmount|string|depositAmount(usdt)|
+| tradingAmount|string|tradingAmount(usdt)|
+| traded|int|traded number|
+| commission|string|commission|
 
 
-startTime、endTime若不填写，则预设查询T-7~T日內数据。 -->
+If startTime and endTime are not sent, the data from T-7 to T is returned. -->
 
-## 查询直客页面数据（代理账户）
+## Get Affiliate Referral Data（affiliate only）
 
-> 请求示例
+> request
 
 ```
 get /api/v3/rebate/affiliate/referral?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -4742,58 +4910,58 @@ get /api/v3/rebate/affiliate/referral?timestamp={{timestamp}}&signature={{signat
 
 ​
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/affiliate/referral```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long    | 否       | 开始时间（佣金、入金数据时间） |
-| endTime    | long    | 否       | 截止时间（佣金、入金数据时间） |
-| uid        |  string | 否       | 直客uid|
-| inviteCode |  string | 否       | 邀请码|
-| page       | int     | 否       | 页数  |
-| pageSize   | int     | 否       | 页面内容,不传默认10  |
-| timestamp  | long    | 是       | 时间戳    |
-| signature  | string  | 是       |  签名  |
+| startTime  | long    | No       | startTime  |
+| endTime    | long    | No       | endTime   |
+| uid        |  string | No       | uid|
+| inviteCode |  string | No       | invite code|
+| page       | int     | No       | page  |
+| pageSize   | int     | No       | pageSize,default: 10  |
+| timestamp  | long    | Yes       | timestamp    |
+| signature  | string  | Yes       |  signature  |
 
 
-**返回参数**
+**Response**
 
-| 参数名 | 类型 | 说明 |
+| Name  | Type | Description|
 | :------------ | :-------- | :--------|
 | uid | int | uid |
-| account | string | 邮箱账号|
-| inviteCode | string | 邀请码 |
-| inviteTime | long | 注册时间 |
-| nickName | string | 用户昵称，如果无数据返回空白 |
-| firstDeposit | long | 首次入金时间 |
-| firstTrade | long | 首次交易时间 |
-| lastDeposit | long | 最近一次入金时间 |
-| lastTrade | long | 最近一次交易时间|
-| depositAmount | string | 入金量，仅显示数值并统一换算USDT |
-| tradingAmount | string | 交易量，仅显示数值并统一换算USDT |
-| amount | string | 佣金，仅显示数值并统一换算USDT |
-| asset | string | 固定选项9种： 0 USDT、1-1,000 USDT、1,000 - 10,000 USDT、 10,000 - 50,000 USDT、50,000 - 100,000 USDT、 100,000 - 500,000 USDT、500,000 - 1,000,000 USDT、 1,000,000 - 5,000,000 USDT、>5,000,000 USDT |
-| withdrawalAmount | string | 提现金额，仅显示数值并统一换算USDT |
-| identification | int | 1：未认证、2：初级、3：高级、4：机构 |
+| account | string | account email|
+| inviteCode | string | invite code |
+| inviteTime | long | invite time |
+| nickName | string | nickName  |
+| firstDeposit | long | first deposit date|
+| firstTrade | long | first trade date|
+| lastDeposit | long | last deposit date|
+| lastTrade | long | last trade date|
+| depositAmount | string | deposit amount(USDT) |
+| tradingAmount | string | trading amount(USDT) |
+| amount | string | commission amount(USDT) |
+| asset | string |  0 USDT、1-1,000 USDT、1,000 - 10,000 USDT、 10,000 - 50,000 USDT、50,000 - 100,000 USDT、 100,000 - 500,000 USDT、500,000 - 1,000,000 USDT、 1,000,000 - 5,000,000 USDT、>5,000,000 USDT |
+| withdrawalAmount | string | withdrawal amount(USDT) |
+| identification | int | identification,1: Uncertified, 2: primary, 3: Advanced, 4: Institutional |
 
-startTime、endTime若不填写，则预设查询T-7~T日內数据。
+If startTime and endTime are not sent, the data from T-7 to T is returned.
 
-## 查询子代理页面数据（代理账户）
+## Get Subaffiliates Data (affiliate only)
 
-> 请求示例
+> request
 
 ```
 get /api/v3/rebate/affiliate/subaffiliates?timestamp={{timestamp}}&signature={{signature}}
 ```
-> 返回示例
+> response
 
 ```json
 {
@@ -4834,95 +5002,93 @@ get /api/v3/rebate/affiliate/subaffiliates?timestamp={{timestamp}}&signature={{s
 
 ​
 ```
-**HTTP请求**
+**HTTP Request**
 
 - **GET** ```/api/v3/rebate/affiliate/subaffiliates```  
 
-**接口权限要求:** 账户读 / SPOT_ACCOUNT_R
+**Permission:** SPOT_ACCOUNT_READ
 
-**权重(IP):** 1
+**Weight(IP):** 1
 
-**请求参数**
+**Request**
 
-| 参数名 | 数据类型| 是否必须  | 说明 | 
+| Name | Type| Mandatory  | Description | 
 | :------ | :-------- | :-------- | :---------- |
-| startTime  | long    | 否       | 开始时间（佣金、入金数据时间） |
-| endTime    | long    | 否       | 截止时间（佣金、入金数据时间） |
-| inviteCode | string  | 否       | 邀请码 |
-| page       | int     | 否       | 页数  |
-| pageSize   | int     | 否       | 页面内容,不传默认10  |
-| timestamp  | long    | 是       | 时间戳    |
-| signature  | string  | 是       |  签名  |
+| startTime  | long    | No       | startTime |
+| endTime    | long    | No       |  endTime  |
+| inviteCode | string  | No       | inviteCode|
+| page       | int     | No       | page  |
+| pageSize   | int     | No       | pageSize,default: 10  |
+| timestamp  | long    | Yes       | timestamp |
+| signature  | string  | Yes       | signature |
 
 
-**返回参数**
+**Response**
 
-| 参数名  |类型 | 说明|
+| Name  | Type | Description|
 | :------------ | :-------- | :--------|
-| subaffiliateName|string|子代理名称|
-| subaffiliateMail|string|子代理邮箱|
-| campaign|string|子代理注册时的活动|
-| inviteCode|string|子代理注册时的邀请码|
-| activationTime|long|子代理开通时间|
-| registered|int|注册人数|
-| deposited|int|已入金人数|
-| depositAmount|string|入金量|
-| commission|string|佣金|
+| subaffiliateName|string|subaffiliate name|
+| subaffiliateMail|string|subaffiliate mail|
+| campaign|string|campaign |
+| inviteCode|string|inviteCode|
+| activationTime|long|activation time|
+| registered|int|registered number|
+| deposited|int|deposited number|
+| depositAmount|string|deposit amount|
+| commission|string|commission |
 
-startTime、endTime若不填写，则预设查询T-7~T日內数据。
-
-
-# 公开API参数
-
-## 枚举定义
-
-### <a id="order_side">订单方向</a>
-
-- BUY 买入
-- SELL 卖出
-
-
-### <a id="order_type">订单类型</a>
-
-- LIMIT 限价单
-- MARKET 市价单
-- LIMIT_MAKER 限价只挂单
-- IMMEDIATE_OR_CANCEL IOC单 (无法立即成交的部分就撤销,订单在失效前会尽量多的成交。)
-- FILL_OR_KILL FOK单 (无法全部立即成交就撤销,如果无法全部成交,订单会失效。)
-
-### <a id="order_status">订单状态</a>
-
-- NEW 未成交
-- FILLED 已成交
-- PARTIALLY_FILLED 部分成交
-- CANCELED 已撤销
-- PARTIALLY_CANCELED 部分撤销
-
-### <a id="kline">K线间隔</a>
-
-- 1m  1分钟
-- 5m  5分钟
-- 15m  15分钟
-- 30m  30分钟
-- 60m  1小时
-- 4h  4小时
-- 1d  1天
-- 1W  1周
-- 1M  1月
-
-### <a id="account_position">变动类型</a>
-
-- WITHDRAW  提现
-- WITHDRAW_FEE 提现手续费
-- DEPOSIT 充值
-- DEPOSIT_FEE 充值手续费
-- ENTRUST 委托成交
-- ENTRUST_PLACE 下单
-- ENTRUST_CANCEL 撤单
-- TRADE_FEE 手续费
-- ENTRUST_UNFROZEN 订单冻结资金返还
-- SUGAR 空投
-- ETF_INDEX ETF下单
+If startTime and endTime are not sent, the data from T-7 to T is returned.
 
 
 
+
+# Public API Definitions
+
+## ENUM definitions
+
+### <a id="order_side">Order side</a>
+
+- BUY
+- SELL
+
+### <a id="order_type">Order type</a>
+
+- LIMIT (Limit order)   
+- MARKET (Market order)
+- LIMIT_MAKER   (Limit maker order)
+- IMMEDIATE_OR_CANCEL (Immediate or cancel order)
+- FILL_OR_KILL (Fill or kill order)
+
+### <a id="order_status">Order Status</a>
+
+- NEW   Uncompleted
+- FILLED  Filled
+- PARTIALLY_FILLED  Partially filled
+- CANCELED  Canceled
+- PARTIALLY_CANCELED  Partially canceled
+
+### <a id="kline_interval">Kline Interval</a>
+
+- 1m  1 minute
+- 5m  5 minute
+- 15m  15 minute
+- 30m  30 minute
+- 60m  60 minute
+- 4h  4 hour
+- 1d  1 day
+- 1W  1 week
+- 1M  1 month
+
+### <a id="account_position">changed type</a>
+
+- WITHDRAW  withdraw
+- WITHDRAW_FEE withdraw fee
+- DEPOSIT deposit
+- DEPOSIT_FEE deposit fee
+- ENTRUST deal
+- ENTRUST_PLACE place order
+- ENTRUST_CANCEL cancel order
+- TRADE_FEE trade fee
+- ENTRUST_UNFROZEN return frozen order funds
+- SUGAR airdrop
+- ETF_INDEX ETF place order
