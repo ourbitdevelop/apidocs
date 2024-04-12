@@ -1,0 +1,2357 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the ourbit API"
+        >
+    <title>API Document</title>
+    <link href="images/favicon-667d5fa9.png" rel="icon" type="image/png" />
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-60d8e448.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-2ee5847f.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <header>
+      <div class="flex_box">
+        <a href="https://www.ourbit.com">
+          <img src="images/ourbit-logo-f33a4867.svg" class="logo" alt="" />
+        </a>
+        <div class="nav_box">
+        </div>
+        <select class="toc-nav-dropdown" onChange="javascript:changeMenuLink(options[selectedIndex].value)">
+        </select>
+      </div>
+      <a onClick="javascript:changeHyperLink()" class="lang" href="javascript:void(0);" id="lang_box">english</a>
+    </header>
+    <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#ourbit-broker-introduction" class="toc-h1 toc-link" data-title="OURBIT Broker Introduction">OURBIT Broker Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#broker-modes-supported-by-ourbit" class="toc-h2 toc-link" data-title="Broker Modes Supported by OURBIT">Broker Modes Supported by OURBIT</a>
+                  </li>
+                  <li>
+                    <a href="#broker-services-provided-by-ourbit" class="toc-h2 toc-link" data-title="Broker Services Provided by OURBIT">Broker Services Provided by OURBIT</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#broker-endpoints" class="toc-h1 toc-link" data-title="Broker Endpoints">Broker Endpoints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#query-universal-transfer-history-broker-user" class="toc-h2 toc-link" data-title="Query Universal Transfer History - broker user">Query Universal Transfer History - broker user</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-sub-account" class="toc-h2 toc-link" data-title="Create a Sub-account">Create a Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#query-sub-account-list" class="toc-h2 toc-link" data-title="Query Sub-account List">Query Sub-account List</a>
+                  </li>
+                  <li>
+                    <a href="#create-an-apikey-for-a-sub-account" class="toc-h2 toc-link" data-title="Create an APIKey for a Sub-account">Create an APIKey for a Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#query-the-apikey-of-a-sub-account" class="toc-h2 toc-link" data-title="Query the APIKey of a Sub-account">Query the APIKey of a Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#delete-the-apikey-of-a-sub-account" class="toc-h2 toc-link" data-title="Delete the APIKey of a Sub-account">Delete the APIKey of a Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#generate-deposit-address-of-sub-account" class="toc-h2 toc-link" data-title="Generate Deposit Address of Sub-account">Generate Deposit Address of Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#deposit-address-of-sub-account" class="toc-h2 toc-link" data-title="Deposit Address of Sub-account">Deposit Address of Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#query-sub-account-deposit-history" class="toc-h2 toc-link" data-title="Query Sub-account Deposit History">Query Sub-account Deposit History</a>
+                  </li>
+                  <li>
+                    <a href="#query-all-sub-account-deposit-history-recent-3-days" class="toc-h2 toc-link" data-title="Query All Sub-account Deposit History(Recent 3 days)">Query All Sub-account Deposit History(Recent 3 days)</a>
+                  </li>
+                  <li>
+                    <a href="#withdraw" class="toc-h2 toc-link" data-title="Withdraw">Withdraw</a>
+                  </li>
+                  <li>
+                    <a href="#universal-transfer" class="toc-h2 toc-link" data-title="Universal Transfer">Universal Transfer</a>
+                  </li>
+                  <li>
+                    <a href="#enable-futures-for-sub-account" class="toc-h2 toc-link" data-title="Enable Futures for Sub-account">Enable Futures for Sub-account</a>
+                  </li>
+                  <li>
+                    <a href="#get-broker-rebate-history-records" class="toc-h2 toc-link" data-title="Get Broker Rebate History Records">Get Broker Rebate History Records</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#public-api-definitions" class="toc-h1 toc-link" data-title="Public API Definitions">Public API Definitions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#enum-definitions" class="toc-h2 toc-link" data-title="ENUM definitions">ENUM definitions</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='ourbit-broker-introduction'>OURBIT Broker Introduction</h1>
+<p><strong>OURBIT is committed to building crypto infrastructure, with API broker partners that provide valuable services being an essential part of the OURBIT ecosystem. To reward the partners, OURBIT now provides privileges for OURBIT brokers, including trading rebates and marketing support.</strong></p>
+
+<p>To apply for a partnership, please contact: <strong>broker@ourbit.com</strong></p>
+<h2 id='broker-modes-supported-by-ourbit'>Broker Modes Supported by OURBIT</h2>
+<p><strong>1. API Broker</strong></br>
+This includes copy trade platforms, trading bots, quantitative strategy platforms, or other asset management platforms with more than 500 people, etc. Users can authorize the API key to the API broker, and the API broker will send the trading orders containing the broker ID on behalf of the user and receive profit shares from fees.</p>
+
+<p><strong>2. Independent Broker</strong></br>
+This includes wallet platforms, market data platforms, aggregation trading platforms, stockbrokers, as well as stock and securities trading platforms, etc., all of which have their own independent users. OURBIT can provide order matching systems, account management systems, settlement systems, as well as main and sub-account systems, etc. Independent brokers can share the trading fluidity and depth over the OURBIT platform and receive profit shares from fees.</p>
+
+<p><strong>3. Oauth Broker</strong>  </p>
+
+<p><strong>Introduction</strong>  </p>
+
+<p>The third-party application connected to OURBIT OAuth 2.0 can provide OURBIT users the one-click trade function. The details are as follows:<br>
+OURBIT users only need to perform authorization in the third-party application in one click, and they can start trading without directly providing the API key to the third-party application.<br>
+OURBIT OAuth 2.0 is supported on Web version, and is developed based on the OAuth 2.0 protocol (RFC 6749).</p>
+<h2 id='broker-services-provided-by-ourbit'>Broker Services Provided by OURBIT</h2>
+<p><strong>1. API Brokers</strong></br>
+The user signs up at OURBIT, applies for API Key in OURBIT, and provides it to the broker. </p>
+
+<ul>
+<li>Supports trading pairs set by users</br></li>
+<li>Supports API Key renewal, and avoids multiple binding.<br></li>
+</ul>
+
+<p><img src="images/brokeren1-4a613b77.png"> </p>
+
+<p><strong>2. Independent Brokers</strong></br>
+Brokers have their own brands and separate account systems.Brokers create separate sub-accounts for users to trade under the Master account. Sub-accounts support deposit and withdrawal.</p>
+
+<ul>
+<li>Support sub-account deposit and withdrawal</li>
+<li>Support sub-account transfer<br></li>
+</ul>
+
+<p><img src="images/brokeren2-381043d3.png"> </p>
+
+<p><strong>3. Integration Procedure</strong><br>
+1. Sign up for an account on the official website and apply to become a broker.
+You must first apply to become a OURBIT broker using <a href="https://docs.google.com/forms/d/e/1FAIpQLSed5ocsfcvUU0xtq0dgJ2KIGBwzjQf3tKfhwi7phuRvxdKjsg/viewform">OURBIT Broker Project Application Form</a>.<br>
+2. Once approved, a dedicated account manager will provide you the corresponding developer docs.<br>
+3. OAuth Rebate Settings<br>
+After integration of the OAuth broker, when placing an order, you need to fill in the exclusive broker_id in the source field of the header to be used as an identifier for the rebate order statistics.  </p>
+
+<p><strong>Authorization Mode Introduction</strong><br>
+The authorization mode provided by OURBIT OAuth 2.0: Authorization code mode.  </p>
+
+<table><thead>
+<tr>
+<th>Authorization Mode</th>
+<th>Description</th>
+<th>Scenario</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization Mode</td>
+<td>User authorizes a third-party application to provide client_secret and obtain the authorization code, which is then used to obtain access token and refresh token.</td>
+<td>The application has a server, which can store the application key and interact the key with the OURBITOAuth server.</td>
+</tr>
+</tbody></table>
+
+<p><img src="images/brokeren3-a3cf0b23.png"> </p>
+
+<p><strong>Authorization Code Mode</strong><br>
+After the user jumps to the OURBIT authorization page through the third-party application and authorizes it, the third-party application can exchange the authorization code for an access token, and access the data resources authorized by the user by using OURBIT OpenAPI.</p>
+<h1 id='broker-endpoints'>Broker Endpoints</h1><h2 id='query-universal-transfer-history-broker-user'>Query Universal Transfer History - broker user</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get  /api/v3/broker/sub-account/universalTransfer?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tranId"</span><span class="p">:</span><span class="s2">"11945860693"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccount"</span><span class="p">:</span><span class="s2">"master@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccount"</span><span class="p">:</span><span class="s2">"subaccount1@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientTranId"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountType"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountType"</span><span class="p">:</span><span class="s2">"FUTURE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromSymbol"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toSymbol"</span><span class="p">:</span><span class="s2">"FUTURE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1544433325000</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tranId"</span><span class="p">:</span><span class="s2">"11945860693"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccount"</span><span class="p">:</span><span class="s2">"master@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccount"</span><span class="p">:</span><span class="s2">"subaccount1@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientTranId"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountType"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountType"</span><span class="p">:</span><span class="s2">"FUTURE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromSymbol"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toSymbol"</span><span class="p">:</span><span class="s2">"FUTURE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1544433325000</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/sub-account/universalTransfer</code></li>
+</ul>
+
+<p><strong>API Permission: SPOT_TRANSFER_READ</strong></p>
+
+<p><strong>Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fromAccount</td>
+<td>string</td>
+<td>no</td>
+<td>transfer from master account by default if fromAccount is not sent</td>
+</tr>
+<tr>
+<td>toAccount</td>
+<td>string</td>
+<td>no</td>
+<td>transfer to master account by default if toAccount is not sent</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>string</td>
+<td>yes</td>
+<td><a href="#from_account">fromAccountType</a></td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>string</td>
+<td>yes</td>
+<td><a href="#to_account">toAccountType</a></td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>no</td>
+<td>startTime(ms)</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>no</td>
+<td>endTime(ms)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>string</td>
+<td>no</td>
+<td>default 1</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>string</td>
+<td>no</td>
+<td>default 500, max 500</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>sign</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tranId</td>
+<td>string</td>
+<td>transfer ID</td>
+</tr>
+<tr>
+<td>fromAccount</td>
+<td>string</td>
+<td>fromAccount</td>
+</tr>
+<tr>
+<td>toAccount</td>
+<td>string</td>
+<td>toAccount</td>
+</tr>
+<tr>
+<td>clientTranId</td>
+<td>string</td>
+<td>clientTranId</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>string</td>
+<td>transfer asset</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>transfer amount</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>string</td>
+<td>fromAccountType</td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>string</td>
+<td>toAccountType</td>
+</tr>
+<tr>
+<td>fromsymbol</td>
+<td>string</td>
+<td>fromsymbol</td>
+</tr>
+<tr>
+<td>tosymbol</td>
+<td>string</td>
+<td>tosymbol</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>transfer status</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>number</td>
+<td>transfer time</td>
+</tr>
+</tbody></table>
+
+<!-- ##  Query Sub-account Once Token
+
+> request
+
+```
+get  /api/v3/broker/sub-account/onceToken
+
+```
+
+> response
+
+```json
+{
+    "onceToken": "lksod273hsbqi90ljiha"
+}
+
+```
+
+**Http Request:**
+
+- **GET** ```/api/v3/broker/sub-account/onceToken```
+
+**API Permission: SPOT_TRANSFER_READ**
+
+**Request Parameter:**
+
+| Name       | Type   | Mandatory | Description     |
+| ---------- | ------ | --------- | --------------- |
+| subAccount | string | yes       | subAccount name |
+| timestamp  | string | yes       | timestamp       |
+| signature  | string | yes       | signature       |
+
+**Response Parameter:**
+
+| Name      | Type   | Description          |
+| --------- | ------ | -------------------- |
+| onceToken | string | subAccount onceToken | -->
+<h2 id='create-a-sub-account'>Create a Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post  /api/v3/broker/sub-account/virtualSubAccount?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ourbit1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383085"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>POST</strong> <code>/api/v3/broker/sub-account/virtualSubAccount</code></li>
+</ul>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>yes</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>yes</td>
+<td>note</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>no</td>
+<td>password(hexadecimal string encrypted by MD5)</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>note</td>
+</tr>
+</tbody></table>
+<h2 id='query-sub-account-list'>Query Sub-account List</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get  /api/v3/broker/sub-account/list?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"isFreeze"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ourbit1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383085"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"isFreeze"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ourbit2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383787"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/sub-account/list</code></li>
+</ul>
+
+<p><strong>Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>isFreeze</td>
+<td>string</td>
+<td>no</td>
+<td>subAccount stauts,true:normal  false:freeze</td>
+</tr>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>no</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>page</td>
+<td>string</td>
+<td>no</td>
+<td>Default value: 1</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>string</td>
+<td>no</td>
+<td>Default value: 10, Max value: 200</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">[Choose one of `subaccount` and `isFreeze` to send,Return the list of all subAccounts if you do not send either subaccount or isFreeze.]</aside>
+
+<aside class="notice">[send both`subaccount` and `isFreeze`,if don't match,will return null]</aside>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>isFreeze</td>
+<td>boolean</td>
+<td>isFreeze</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>number</td>
+<td>create time</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>note</td>
+</tr>
+</tbody></table>
+<h2 id='create-an-apikey-for-a-sub-account'>Create an APIKey for a Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post  /api/v3/broker/sub-account/apiKey?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4Eb8rPPhpsAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"note2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"apikey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mx0npKfh57kEEVmyLa"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51f38875ebe0475dad6236783a95cc19"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1646291300120</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>POST</strong> <code>/api/v3/broker/sub-account/apiKey</code></li>
+</ul>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>yes</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>string</td>
+<td>yes</td>
+<td><a href="#permissions">Permission</a></td>
+</tr>
+<tr>
+<td>ip</td>
+<td>string</td>
+<td>no</td>
+<td>Link IP addresses, separate with commas if more than one. Support up to 4 addresses.</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>yes</td>
+<td>note</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>APIKey note</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>string</td>
+<td>apikey</td>
+</tr>
+<tr>
+<td>secretKey</td>
+<td>string</td>
+<td>secretKey</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>string</td>
+<td>APIKey  permissions</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>string</td>
+<td>APIKey IP address</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>number</td>
+<td>createTime</td>
+</tr>
+</tbody></table>
+<h2 id='query-the-apikey-of-a-sub-account'>Query the APIKey of a Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get  /api/v3/broker/sub-account/apiKey?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arg13sdfgs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.1.1,2.2.2.2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creatTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1597026383085</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v5.1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arg13sdfgs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read_only"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.1.1,2.2.2.2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creatTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1597026383085</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/sub-account/apiKey</code></li>
+</ul>
+
+<p><strong>Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>yes</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>note</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>string</td>
+<td>apikey</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>string</td>
+<td>APIKey permissions</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>string</td>
+<td>APIKey iP address</td>
+</tr>
+<tr>
+<td>creatTime</td>
+<td>number</td>
+<td>creatTime</td>
+</tr>
+</tbody></table>
+<h2 id='delete-the-apikey-of-a-sub-account'>Delete the APIKey of a Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>delete  /api/v3/broker/sub-account/apiKey?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ourbit1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>DELETE</strong> <code>/api/v3/broker/sub-account/apiKey</code></li>
+</ul>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>yes</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>apiKey</td>
+<td>string</td>
+<td>yes</td>
+<td>apiKey</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>subAccount name</td>
+</tr>
+</tbody></table>
+<h2 id='generate-deposit-address-of-sub-account'>Generate Deposit Address of Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post  /api/v3/broker/capital/deposit/subAddress?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TDunhSa7jkTNuKrusUTU1MUHtqXoBPKETV"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC-20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>POST</strong> <code>/api/v3/broker/capital/deposit/subAddress</code></li>
+</ul>
+
+<p><strong>API Permission: SPOT_DEPOSIT_WRITE</strong></p>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recvWindow</td>
+<td>string</td>
+<td>no</td>
+<td>recvWindow</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>yes</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>yes</td>
+<td>deposit network</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>deposit address</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>deposit network</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>memo</td>
+</tr>
+</tbody></table>
+<h2 id='deposit-address-of-sub-account'>Deposit Address of Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get  /api/v3/broker/capital/deposit/subAddress?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TDunhSa7jkTNuKrusUTU1MUHtqXoBPKETV"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC-20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TDunhSa7jkTNuKrusUTU1MUHtqXoBPKETV"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRC-20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/capital/deposit/subAddress</code></li>
+</ul>
+
+<p><strong>API Permission: SPOT_DEPOSIT_READ</strong></p>
+
+<p><strong>Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>yes</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>string</td>
+<td>no</td>
+<td>recvWindow</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>deposit address</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>deposit network</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>memo</td>
+</tr>
+</tbody></table>
+
+<!-- ##  Query Sub-account Deposit History(For Master Account)
+
+> request
+
+```
+get  /api/v3/broker/capital/deposit/subHisrec/getall
+
+```
+
+> response
+
+```json
+[
+    {
+        "amount":"0.00999800",
+        "coin":"PAXG",
+        "network":"ETH",
+        "status":,
+        "address":"0x788cabe9236ce061e5a892e1a59395a81fc8d62c",
+        "addressTag":"",
+        "txId":"0xaad4654a3234aa6118af9b4b335f5ae81c360b2394721c019b5d1e75328b09f3",
+        "unlockConfirm":"12", 
+        "confirmTimes":"7"
+    },
+    {
+        "amount":"0.50000000",
+        "coin":"IOTA",
+        "network":"IOTA",
+        "status":1,
+       "address":"SIZ9VLMHWATXKV99LH99CIGFJFUMLEHGWVZVNNZXRJJVWBPHYWPPBOSDORZ9EQSHCZAMPVAPGFYQAUUV9DROOXJLNW",
+        "addressTag":"",
+        "txId":"ESBFVQUTPIWQNJSPXFNHNYHSQNTGKRVKPRABQWTAXCDWOAKDKYWPTVG9BGXNVNKTLEJGESAVXIKIZ9999",
+         "unlockConfirm":"12", 
+         "confirmTimes":"7"
+    }
+]
+```
+
+**Http Request:**
+
+- **GET** ```/api/v3/broker/capital/deposit/subHisrec/getall```
+
+**API Permission: SPOT_DEPOSIT_READ**
+
+**Request Parameter:**
+
+| Name       | Type   | Mandatory | Description                                                  |
+| ---------- | ------ | --------- | ------------------------------------------------------------ |
+| coin       | string | no        | deposit coin                                                 |
+| status     | string | no        | <a href="#status">deposit status</a> |
+| startTime  | string | no        | default: 10 days ago from current time                       |
+| endTime    | string | no        | default:current time                                         |
+| limit      | string | no        | default:20                                                   |
+| page       | string | no        | default:1                                                    |
+| recvWindow | string | no        | recvWindow                                                   |
+| timestamp  | string | yes       | timestamp                                                    |
+| signature  | string | yes       | signature                                                    |
+
+**Response Parameter:**
+
+| Name          | Type   | Description                                                  |
+| ------------- | ------ | ------------------------------------------------------------ |
+| amount        | string | deposit amount                                               |
+| coin          | string | deposit coin                                                 |
+| network       | string | deposit network                                              |
+| status        | number | <a href="#status">deposit status</a>                         |
+| address       | string | deposit address                                              |
+| addressTag    | string | addressTag                                                   |
+| txId          | string | txid                                                         |
+| unlockConfirm | string | unlockConfirm                                                |
+| confirmTimes  | string | confirmTimes                                                 | -->
+<h2 id='query-sub-account-deposit-history'>Query Sub-account Deposit History</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get  /api/v3/broker/capital/deposit/subHisrec?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.00999800"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="s2">"PAXG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"network"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x788cabe9236ce061e5a892e159395a81fc8d62c"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"addressTag"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txId"</span><span class="p">:</span><span class="s2">"0xaad4654a3234aa6118af9b4b335f581c360b2394721c019b5d1e75328b09f3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unlockConfirm"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"confirmTimes"</span><span class="p">:</span><span class="s2">"7"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="s2">"IOTA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"network"</span><span class="p">:</span><span class="s2">"IOTA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"SIZ9VLMHWATXKV99LH99CIGFJFUMLEHGWVZVNXRJJVWBPHYWPPBOSDORZ9EQSHCZAMPVAPGFYQAUUV9DROOXJLNW"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"addressTag"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">            
+        </span><span class="nl">"txId"</span><span class="p">:</span><span class="s2">"ESBFVQUTPIWQXFNHNYHSQNTGKRVKPRABQWTAXCDWOAKDKYWPTVG9BGXNVNKTLEJGESAVXIKIZ9999"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unlockConfirm"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmTimes"</span><span class="p">:</span><span class="s2">"7"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/capital/deposit/subHisrec</code></li>
+</ul>
+
+<p><strong>Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>no</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>no</td>
+<td><a href="#status">deposit status</a></td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>no</td>
+<td>default: 10 days ago from current time</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>no</td>
+<td>default:current time</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>string</td>
+<td>no</td>
+<td>default:20</td>
+</tr>
+<tr>
+<td>page</td>
+<td>string</td>
+<td>no</td>
+<td>default:1</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>string</td>
+<td>no</td>
+<td>recvWindow</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>deposit amount</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>deposit network</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td><a href="#status">deposit status</a></td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>deposit address</td>
+</tr>
+<tr>
+<td>addressTag</td>
+<td>string</td>
+<td>addressTag</td>
+</tr>
+<tr>
+<td>txId</td>
+<td>string</td>
+<td>txid</td>
+</tr>
+<tr>
+<td>unlockConfirm</td>
+<td>string</td>
+<td>unlockConfirm</td>
+</tr>
+<tr>
+<td>confirmTimes</td>
+<td>string</td>
+<td>confirmTimes</td>
+</tr>
+</tbody></table>
+<h2 id='query-all-sub-account-deposit-history-recent-3-days'>Query All Sub-account Deposit History(Recent 3 days)</h2>
+<p>master account query all Sub-account deposit history</p>
+
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get  /api/v3/broker/capital/deposit/subHisrec/getall?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.00999800"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="s2">"PAXG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"network"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x788cabe9236ce061e5a892e1a59395a81f8d62c"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txId"</span><span class="p">:</span><span class="s2">"0xaad4654a3234aa6118af9b4b335f5ae81c360b2394721c019b5d1e8b09f3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unlockConfirm"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"confirmTimes"</span><span class="p">:</span><span class="s2">"7"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="s2">"IOTA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"network"</span><span class="p">:</span><span class="s2">"IOTA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"SIZ9VLMHWATXKV99LH99CIGFJFUMLEHGWVZZXRJJVWBPHYWPPBOSDORZ9EQSHCZAMPVAPGFYQAUUV9DROOXJLNW"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txId"</span><span class="p">:</span><span class="s2">"ESBFVQUTPIWQNJSPXFNHNYHSQNTGKRVKPRABQWTAXCWPTVG9BGXNVNKTLEJGESAVXIKIZ9999"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"unlockConfirm"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmTimes"</span><span class="p">:</span><span class="s2">"7"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/capital/deposit/subHisrec/getall</code></li>
+</ul>
+
+<p><strong>Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>no</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>no</td>
+<td><a href="#status">deposit status</a></td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>no</td>
+<td>startTime</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>no</td>
+<td>endTime</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>string</td>
+<td>no</td>
+<td>default:100</td>
+</tr>
+<tr>
+<td>page</td>
+<td>string</td>
+<td>no</td>
+<td>default:1</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>string</td>
+<td>no</td>
+<td>recvWindow</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>deposit amount</td>
+</tr>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>deposit coin</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>deposit network</td>
+</tr>
+<tr>
+<td>status</td>
+<td>number</td>
+<td><a href="#status">deposit status</a></td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>deposit address</td>
+</tr>
+<tr>
+<td>txId</td>
+<td>string</td>
+<td>txid</td>
+</tr>
+<tr>
+<td>unlockConfirm</td>
+<td>string</td>
+<td>unlockConfirm</td>
+</tr>
+<tr>
+<td>confirmTimes</td>
+<td>string</td>
+<td>confirmTimes</td>
+</tr>
+</tbody></table>
+<h2 id='withdraw'>Withdraw</h2>
+<p>[only support withdraw for sub-account,not master account]</p>
+
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post  /api/v3/broker/capital/withdraw/apply?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"7213fea8e94b4a5593d507237e5a555b"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>POST</strong> <code>/api/v3/broker/capital/withdraw/apply</code></li>
+</ul>
+
+<p><strong>API Permission: SPOT_TRANSFER_READ</strong></p>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recvWindow</td>
+<td>string</td>
+<td>no</td>
+<td>recvWindow</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coin</td>
+<td>string</td>
+<td>yes</td>
+<td>withdraw coin</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>yes</td>
+<td>withdraw network</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>yes</td>
+<td>withdraw address</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>yes</td>
+<td>amount</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>no</td>
+<td>password(hexadecimal string encrypted by MD5)</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td>no</td>
+<td>remark</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>withdrawID</td>
+</tr>
+</tbody></table>
+<h2 id='universal-transfer'>Universal Transfer</h2>
+<p>only support broker account</p>
+
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post  /api/v3/broker/sub-account/universalTransfer?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"tranId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7213fea8e94b4a5593d507237e5a555b"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>POST</strong> <code>/api/v3/broker/sub-account/universalTransfer</code></li>
+</ul>
+
+<p><strong>API Permission: SPOT_TRANSFER_READ</strong></p>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fromAccount</td>
+<td>string</td>
+<td>no</td>
+<td>Transfer from master account by default if fromAccount is not sent</td>
+</tr>
+<tr>
+<td>toAccount</td>
+<td>string</td>
+<td>no</td>
+<td>Transfer to master account by default if toAccount is not sent</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>string</td>
+<td>yes</td>
+<td><a href="#from_account">fromAccountType</a></td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>string</td>
+<td>yes</td>
+<td><a href="#to_account">toAccountType</a></td>
+</tr>
+<tr>
+<td>asset</td>
+<td>string</td>
+<td>yes</td>
+<td>asset,eg:USDT</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>yes</td>
+<td>amount,eg:1.82938475</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tranId</td>
+<td>string</td>
+<td>transfer ID</td>
+</tr>
+</tbody></table>
+<h2 id='enable-futures-for-sub-account'>Enable Futures for Sub-account</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post  /api/v3/broker/sub-account/futures?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ourbit1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isFuturesEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383085"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Http Request:</strong></p>
+
+<ul>
+<li><strong>POST</strong> <code>/api/v3/broker/sub-account/futures</code></li>
+</ul>
+
+<p><strong>Query Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>Body Request Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>yes</td>
+<td>subAccount name</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameter:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>string</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>isFuturesEnabled</td>
+<td>boolean</td>
+<td>isFuturesEnabled: true or false</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>response time</td>
+</tr>
+</tbody></table>
+<h2 id='get-broker-rebate-history-records'>Get Broker Rebate History Records</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>
+get  /api/v3/broker/rebate/taxQuery?timestamp={{timestamp}}&amp;signature={{signature}}
+
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">  
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">  
+    </span><span class="nl">"totalPageNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">  
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">  
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00082273"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"221827"</span><span class="p">,</span><span class="w">  
+            </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20221022"</span><span class="w">  
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">             
+            </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00082273"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"221827"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20221022"</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p><strong>HTTP REQUEST：</strong></p>
+
+<ul>
+<li><strong>GET</strong> <code>/api/v3/broker/rebate/taxQuery</code></li>
+</ul>
+
+<p><strong>request：</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>no</td>
+<td>startTime</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>no</td>
+<td>endTime</td>
+</tr>
+<tr>
+<td>page</td>
+<td>string</td>
+<td>no</td>
+<td>default 1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>string</td>
+<td>no</td>
+<td>default 10</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>string</td>
+<td>no</td>
+<td>recvWindow</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>yes</td>
+<td>signature</td>
+</tr>
+</tbody></table>
+
+<p><strong>response：</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>string</td>
+<td>rebate asset</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>rebate amount</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>rebate user uid</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>rebate type</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>rebate time</td>
+</tr>
+</tbody></table>
+<h1 id='public-api-definitions'>Public API Definitions</h1><h2 id='enum-definitions'>ENUM definitions</h2><h3 id='fromaccounttype'><a id="from_account">fromAccountType</a></h3>
+<ul>
+<li>SPOT </li>
+<li>FUTURES </li>
+</ul>
+<h3 id='toaccounttype'><a id="to_account">toAccountType</a></h3>
+<ul>
+<li>SPOT </li>
+<li>FUTURES </li>
+</ul>
+<h3 id='permission'><a id="permissions">Permission</a></h3>
+<ul>
+<li>SPOT_ACCOUNT_READ </li>
+<li>SPOT_ACCOUNT_WRITE </li>
+<li>SPOT_DEAL_READ </li>
+<li>SPOT_DEAL_WRITE </li>
+<li>CONTRACT_ACCOUNT_READ </li>
+<li>CONTRACT_ACCOUNT_WRITE</li>
+<li>CONTRACT_DEAL_READ </li>
+<li>CONTRACT_DEAL_WRITE </li>
+<li>SPOT_WITHDRAW_READ </li>
+<li>SPOT_WITHDRAW_WRITE </li>
+<li>SPOT_TRANSFER_READ </li>
+<li>SPOT_TRANSFER_WRITE </li>
+<li>SPOT_DEPOSIT_READ </li>
+<li>SPOT_DEPOSIT_WRITE </li>
+</ul>
+<h3 id='deposit-status'><a id="status">deposit status</a></h3>
+<ul>
+<li>SMALL </li>
+<li>TIME_DELAY </li>
+<li>LARGE_DELAY </li>
+<li>PENDING </li>
+<li>SUCCESS </li>
+<li>AUDITING </li>
+<li>REJECTED </li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(function(){
+      const menuObj = [
+        ['spot_v3', 'SpotV3', 'spot_v3_en', '现货V3' ,'spot_v3_cn'],
+        ['contract_v1', 'Futures', 'contract_v1_en', '合约' ,'contract_v1_cn'],
+        ['broker','Broker','broker_en','经纪商','broker_cn']
+      ];
+      const navBox = $('.nav_box');
+      const navOptions = $('.toc-nav-dropdown');
+      const currentLang = /cn/.test(window.location.pathname);
+      menuObj.forEach(item => {
+        const _item = `
+          <span class="nav_cell nav_tab">
+            <a onClick="javascript:changeMenuLink('${item[0]}')" class="${item[0]}" href="javascript:void(0);">${currentLang?item[3]:item[1]}</a>
+          </span>
+        `;
+        const _option = `<option class="${item[0]}" value="${item[0]}">${currentLang?item[3]:item[1]}</option>`;
+        navOptions.append(_option);
+        navBox.append(_item);
+      })
+      const toggleBtn = $("#lang_box");
+      console.log(window.location.pathname)
+      const currentSystem = menuObj.map(i=> i[0]).find(j => {
+        return new RegExp(j).test(window.location.pathname);
+      }) || 'spot_v3';
+      const current_btn =  $(`a.${currentSystem}`);
+      const current_option =  $(`option.${currentSystem}`);
+      toggleBtn.html(currentLang ? 'english': '中文');
+      current_btn.addClass('current');
+      current_option.attr('selected', 'selected');
+    })
+
+    function changeMenuLink(menu) {
+        const currentLang = /cn/.test(window.location.pathname);
+        window.location.href = window.location.origin + '/apidocs/' + menu + '_' + (currentLang? 'cn': 'en');
+    }
+
+    function changeHyperLink() {
+        const isEnglish = /en/.test(window.location.pathname);
+        if(isEnglish){
+          window.location.href = window.location.origin + window.location.pathname.replace(/en/,'cn')
+        }else{
+          window.location.href = window.location.origin + window.location.pathname.replace(/cn/,'en')
+        }
+      }
+  </script>
+</html>
