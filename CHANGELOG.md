@@ -78,6 +78,7 @@ If you have changed slate to use kramdown, and with GFM, you may need to install
 
 *June 21, 2020*
 
+
 * __[security]__ Bumped rack in Gemfile.lock from 2.2.2 to 2.2.3
 * Bumped bundled jQuery from 3.2.1 to 3.5.1
 * Bumped bundled lunr from 0.5.7 to 2.3.8
