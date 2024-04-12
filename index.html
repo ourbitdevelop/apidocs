@@ -499,14 +499,14 @@
 <p>欢迎使用OURBIT API！本文档为您提供了REST API的相关信息，帮助您获取市场行情，管理账户信息，并进行交易等。</p>
 <h2 id='api'>什么是API？</h2>
 <p>API是应用程序接口（Application Programming Interface），缩写为API，是一种结算接口，它定义多个应用程序之间的交互，以及可以进行的调用（call）或请求（request）的种类，如何进行调用或发出请求，应使用的数据格式，应遵循的惯例等。API文档中描述了应用程序如何与我们的交易所进行交互。</p>
-<h2 id='ae76626c05'>使用流程</h2>
-<p>步骤：开发者如需使用API，请先 <a href="https://www.ourbit.com/user/openapi" target="_blank">创建APIKey</a> ，然后根据此文档详情进行开发交易，使用过程中如有问题或者建议请及时反馈。 </p>
+<!--<h2 id='ae76626c05'>使用流程</h2>-->
+<!--<p>步骤：开发者如需使用API，请先 <a href="https://www.ourbit.com/user/openapi" target="_blank">创建APIKey</a> ，然后根据此文档详情进行开发交易，使用过程中如有问题或者建议请及时反馈。 </p>-->
 
-<ul>
-<li>请参考 <a href="https://support.ourbit-exchange.com/hc/zh-cn/articles/360056373151" target="_blank">这个页面</a> 来设置API Key。</li>
-<li>设置API Key的同时，为了安全，建议设置IP访问白名单。</li>
-<li>永远不要把你的API key/secret告诉给任何人。</li>
-</ul>
+<!--<ul>-->
+<!--<li>请参考 <a href="https://support.ourbit-exchange.com/hc/zh-cn/articles/360056373151" target="_blank">这个页面</a> 来设置API Key。</li>-->
+<!--<li>设置API Key的同时，为了安全，建议设置IP访问白名单。</li>-->
+<!--<li>永远不要把你的API key/secret告诉给任何人。</li>-->
+<!--</ul>-->
 <h2 id='rest-api'>接口类型 REST API</h2>
 <p>REST，即Representational State Transfer的缩写，是目前较为流行的基于HTTP的一种通信机制。它结构清晰、符合标准、易于理解、扩展方便，正得到越来越多网站的采用。其优点如下：</p>
 
@@ -516,64 +516,9 @@
 <li>建议开发者使用Rest API进行币币交易或者资产提现等操作；</li>
 <li>客户端通过四个HTTP指令，对服务器端资源进行操作，实现“表现层状态转化”；</li>
 </ul>
-<h2 id='api-v1-api-v2'>API V1或API V2</h2>
-<aside class="notice">
-API V1将于2021年6月底停用，不再维护，请提前做好准备。
-</aside>
 
-<p>我们建议所有用户在API的V2上构建其应用程序。使用V2具有以下优点：</p>
 
-<ul>
-<li>相对API V1，API V2签名的安全性和合理性更好。</li>
-<li>提高了特定端点/通道的性能。</li>
-<li>我们的官方客户库提供了更广泛的支持。</li>
-</ul>
-<h1 id='185368440e'>更新日志</h1>
-<table><thead>
-<tr>
-<th>时间</th>
-<th>接口</th>
-<th>更新类型</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>2020-01-09</td>
-<td>*</td>
-<td>新增</td>
-<td>REST API V2发布</td>
-</tr>
-<tr>
-<td>2020-02-24</td>
-<td>/open/api/v2/order/place<br/>/open/api/v2/order/place_batch<br/>/open/api/v2/order/cancel</td>
-<td>更新</td>
-<td>添加client order id支持</td>
-</tr>
-<tr>
-<td>2020-07-20</td>
-<td>/open/api/v2/order/cancel_by_symbol</td>
-<td>新增</td>
-<td>按交易对撤单</td>
-</tr>
-<tr>
-<td>2021-03-01</td>
-<td>/open/api/v2/order/list</td>
-<td>修改</td>
-<td>入参states由非必填改为必填，且只能单状态查询；入参start_time修改为默认查询最近7天，最多查询30天；修复入参start_time时间不准确的情况</td>
-</tr>
-<tr>
-<td>2021-08-27</td>
-<td>/open/api/v2/market/api_default_symbols</td>
-<td>新增</td>
-<td>新增获取平台支持API交易的交易对接口；取消展示签名方式二，保留同合约的签名方式</td>
-</tr>
-<tr>
-<td>2022-03-17</td>
-<td>/open/api/v2/order/deals<br/>/open/api/v2/order/deal_detail</td>
-<td>更新</td>
-<td>接口/推送增加client_order_id和trade_id和order_id</td>
-</tr>
-</tbody></table>
+
 <h1 id='2d07d50c97'>接入说明</h1><h2 id='url'>接入URL</h2>
 <p>请选用以下的baseurl进行API请求：</p>
 
