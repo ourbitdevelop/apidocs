@@ -10,7 +10,7 @@
             content="Documentation for the ourbit API"
         >
     <title>API Document</title>
-    <link href="images/favicon-667d5fa9.png" rel="icon" type="image/png" />
+    <link href="images/favicon.png" rel="icon" type="image/png" />
     <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -302,7 +302,7 @@
     <header>
       <div class="flex_box">
         <a href="https://www.ourbit.com">
-          <img src="images/ourbit-logo-f33a4867.svg" class="logo" alt="" />
+          <img src="images/ourbit-logo.svg" class="logo" alt="" />
         </a>
         <div class="nav_box">
         </div>
@@ -343,6 +343,9 @@
           <li>
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2024-04-10" class="toc-h2 toc-link" data-title="2024-04-10"><strong>2024-04-10</strong></a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -715,13 +718,10 @@ Any problem please submit <a href="https://github.com/ourbitdevelop/ourbit-api-s
 <li> For cases such as missing funds, help with 2FA, etc.</li>
 </ul></li>
 </ul>
-<h1 id='change-log'>Change Log</h1>
- <ul></ul>
-
-
-
-
-
+<h1 id='change-log'>Change Log</h1><h2 id='2024-04-10'><strong>2024-04-10</strong></h2>
+<ul>
+<li>New version API</li>
+</ul>
 <h1 id='faqs'>FAQs</h1><h2 id='q1-how-many-api-keys-can-a-user-apply'>Q1: How many API Keys can a user apply?</h2>
 <p>Each account can create up to 30 API Keys. The validity of an API Key without a linked IP address is 90 days, and the API Key will expire automatically. Each API Key can be linked to a maximum of 10 IP addresses.</p>
 <h2 id='q2-how-many-sub-accounts-can-a-main-account-apply'>Q2: How many sub-accounts can a main account apply?</h2>
@@ -819,7 +819,7 @@ Any problem please submit <a href="https://github.com/ourbitdevelop/ourbit-api-s
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nb">command</span>:
 
     <span class="o">(</span>HMAC SHA256<span class="o">)</span>
-    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-OURBIT-APIKEY: mx0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.ourbit.com/api/v3/order'</span> <span class="nt">-d</span> <span class="s1">'symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=323c96ab85a745712e95e63cad28903dd8292e4a905e99c4ee3932023843a117'</span>
+    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-OURBIT-APIKEY: ob0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.ourbit.com/api/v3/order'</span> <span class="nt">-d</span> <span class="s1">'symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=323c96ab85a745712e95e63cad28903dd8292e4a905e99c4ee3932023843a117'</span>
 
 </code></pre></div>
 <blockquote>
@@ -832,7 +832,7 @@ Any problem please submit <a href="https://github.com/ourbitdevelop/ourbit-api-s
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nb">command</span>:
 
     <span class="o">(</span>HMAC SHA256<span class="o">)</span>
-    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-OURBIT-APIKEY: mx0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.ourbit.com/api/v3/order'</span> <span class="nt">-d</span> <span class="s1">'symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=fd3e4e8543c5188531eb7279d68ae7d26a573d0fc5ab0d18eb692451654d837a'</span>
+    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-OURBIT-APIKEY: ob0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.ourbit.com/api/v3/order'</span> <span class="nt">-d</span> <span class="s1">'symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=fd3e4e8543c5188531eb7279d68ae7d26a573d0fc5ab0d18eb692451654d837a'</span>
 
 </code></pre></div>
 <blockquote>
@@ -845,7 +845,7 @@ Any problem please submit <a href="https://github.com/ourbitdevelop/ourbit-api-s
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nb">command</span>:
 
     <span class="o">(</span>HMAC SHA256<span class="o">)</span>
-    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-OURBIT-APIKEY: mx0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.ourbit.com/api/v3/order?symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT'</span> <span class="nt">-d</span> <span class="s1">'quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=d1a676610ceb39174c8039b3f548357994b2a34139a8addd33baadba65684592'</span>
+    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-OURBIT-APIKEY: ob0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.ourbit.com/api/v3/order?symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT'</span> <span class="nt">-d</span> <span class="s1">'quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=d1a676610ceb39174c8039b3f548357994b2a34139a8addd33baadba65684592'</span>
 
 </code></pre></div>
 <p>Here is a step-by-step example of how to send a vaild signed payload from the Linux command line using echo, openssl, and curl.</p>
@@ -858,7 +858,7 @@ Any problem please submit <a href="https://github.com/ourbitdevelop/ourbit-api-s
 </thead><tbody>
 <tr>
 <td>apiKey</td>
-<td>mx0aBYs33eIilxBWC5</td>
+<td>ob0aBYs33eIilxBWC5</td>
 </tr>
 <tr>
 <td>secretKey</td>
