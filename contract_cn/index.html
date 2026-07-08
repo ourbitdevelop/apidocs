@@ -1,0 +1,1241 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the ourbit API"
+        >
+    <title>API 文档</title>
+    <link href="https://www.ourbit.com/sites/favicon.ico" rel="icon" type="image/png" />
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-60d8e448.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-2ee5847f.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <header>
+      <div class="flex_box">
+       <a href="https://www.ourbit.com">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMTAwIDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBpZD0iR3JvdXAgMjgiPgo8cGF0aCBpZD0iVW5pb24iIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOTMuNDEzMSA0LjI1NzgxSDkwLjMxNjRWNy43NDE2OEg5My40MTMxVjE5Ljc0MTdIOTYuODk3VjcuNzQxNjhIOTkuOTkzOFY0LjI1NzgxSDk2Ljg5N0g5My40MTMxWiIgZmlsbD0iI0YyRjRGNiIvPgo8cGF0aCBpZD0iVW5pb25fMiIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03MC4xOTE0IDQuMjU3ODFINzcuNjQzQzgwLjIwODUgNC4yNTc4MSA4Mi4yODgyIDYuMzM3NTIgODIuMjg4MiA4LjkwMjk3QzgyLjI4ODIgOS44OTY5MyA4MS45NzYgMTAuODE4IDgxLjQ0NDMgMTEuNTczNEM4Mi4yNjcyIDEyLjQ0MDggODIuNzcyMSAxMy42MTI5IDgyLjc3MjEgMTQuOTAzQzgyLjc3MjEgMTcuNTc1MyA4MC42MDU3IDE5Ljc0MTcgNzcuOTMzMyAxOS43NDE3SDcwLjE5MTRWNC4yNTc4MVpNNzMuNjc1MyAxMC4wNjQzSDc3LjY0M0M3OC4yODQ0IDEwLjA2NDMgNzguODA0MyA5LjU0NDM0IDc4LjgwNDMgOC45MDI5N0M3OC44MDQzIDguMjYxNjEgNzguMjg0NCA3Ljc0MTY4IDc3LjY0MyA3Ljc0MTY4SDczLjY3NTNWMTAuMDY0M1pNNzMuNjc1MyAxNi4yNTc4SDc3LjkzMzNDNzguNjgxNiAxNi4yNTc4IDc5LjI4ODIgMTUuNjUxMiA3OS4yODgyIDE0LjkwM0M3OS4yODgyIDE0LjE1NDcgNzguNjgxNiAxMy41NDgxIDc3LjkzMzMgMTMuNTQ4MUg3My42NzUzVjE2LjI1NzhaIiBmaWxsPSIjRjJGNEY2Ii8+CjxwYXRoIGlkPSJVbmlvbl8zIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYzLjMyMDYgNC4yNTc4MUg1Ni4wNjI1VjE5Ljc0MTdINTkuNTQ2NFYxNC45MDNINjMuMzIwNkM2My40MzMyIDE0LjkwMyA2My41NDUgMTQuODk5NSA2My42NTU5IDE0Ljg5MjZMNjQuOTE3MyAxOS43NDE3SDY4LjY0MzFMNjcuMDAwMyAxMy40MjYyQzY4LjAxMjcgMTIuNDU3MiA2OC42NDMxIDExLjA5MjQgNjguNjQzMSA5LjU4MDM5QzY4LjY0MzEgNi42NDA4MyA2Ni4yNjAyIDQuMjU3ODEgNjMuMzIwNiA0LjI1NzgxWk02My4zMjA2IDcuNzQxNjhINTkuNTQ2NFYxMS40MTkxSDYzLjMyMDZDNjQuMzM2IDExLjQxOTEgNjUuMTU5MyAxMC41OTU5IDY1LjE1OTMgOS41ODAzOUM2NS4xNTkzIDguNTY0OTMgNjQuMzM2IDcuNzQxNjggNjMuMzIwNiA3Ljc0MTY4WiIgZmlsbD0iI0YyRjRGNiIvPgo8cGF0aCBpZD0iU3VidHJhY3QiIGQ9Ik00NS40MTc1IDQuMjU3ODFINDEuOTMzNlYxMy45MzUyQzQxLjkzMzYgMTcuNDA5MyA0NC43NDk5IDIwLjIyNTYgNDguMjIzOSAyMC4yMjU2QzUxLjY5OCAyMC4yMjU2IDU0LjUxNDIgMTcuNDA5MyA1NC41MTQyIDEzLjkzNTJWNC4yNTc4MUg1MS4wMzA0VjEzLjkzNTJDNTEuMDMwNCAxNS40ODUyIDQ5Ljc3MzkgMTYuNzQxNyA0OC4yMjM5IDE2Ljc0MTdDNDYuNjc0IDE2Ljc0MTcgNDUuNDE3NSAxNS40ODUyIDQ1LjQxNzUgMTMuOTM1MlY0LjI1NzgxWiIgZmlsbD0iI0YyRjRGNiIvPgo8cGF0aCBpZD0iUmVjdGFuZ2xlIDE2MCAoU3Ryb2tlKSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNi45MDE1IDEzLjkzNDdWMTAuMDYzOEMzNi45MDE1IDguNTEzOCAzNS42NDUgNy4yNTczMSAzNC4wOTUgNy4yNTczMUMzMi41NDUgNy4yNTczMSAzMS4yODg2IDguNTEzOCAzMS4yODg2IDEwLjA2MzhWMTMuOTM0N0MzMS4yODg2IDE1LjQ4NDcgMzIuNTQ1IDE2Ljc0MTIgMzQuMDk1IDE2Ljc0MTJDMzUuNjQ1IDE2Ljc0MTIgMzYuOTAxNSAxNS40ODQ3IDM2LjkwMTUgMTMuOTM0N1pNMzQuMDk1IDMuNzczNDRDMzAuNjIxIDMuNzczNDQgMjcuODA0NyA2LjU4OTcxIDI3LjgwNDcgMTAuMDYzOFYxMy45MzQ3QzI3LjgwNDcgMTcuNDA4OCAzMC42MjEgMjAuMjI1IDM0LjA5NSAyMC4yMjVDMzcuNTY5MSAyMC4yMjUgNDAuMzg1MyAxNy40MDg4IDQwLjM4NTMgMTMuOTM0N1YxMC4wNjM4QzQwLjM4NTMgNi41ODk3MSAzNy41NjkxIDMuNzczNDQgMzQuMDk1IDMuNzczNDRaIiBmaWxsPSIjRjJGNEY2Ii8+CjxnIGlkPSJHcm91cCAyMiI+CjxyZWN0IGlkPSJSZWN0YW5nbGUgMTU4IiB4PSI4NC4zMTY0IiB5PSI0LjI1NTg2IiB3aWR0aD0iNC42NDUxNiIgaGVpZ2h0PSIxNS40ODM5IiBmaWxsPSIjMDBCODc5Ii8+CjxyZWN0IGlkPSJSZWN0YW5nbGUgMTU5IiB4PSI4Ni40NDUzIiB5PSIzLjI4OTA2IiB3aWR0aD0iMC4zODcwOTciIGhlaWdodD0iMTcuNDE5NCIgZmlsbD0iIzAwQjg3OSIvPgo8L2c+CjxnIGlkPSJVbmlvbl80Ij4KPHBhdGggZD0iTTEzLjg3MSAyTDEwLjQwMzIgMEw2LjkzNTQ4IDJMMTAuNDAzMiA0TDEzLjg3MSAyWiIgZmlsbD0iIzAwQjg3OSIvPgo8cGF0aCBkPSJNMS40OTUwOGUtMDYgNkwzLjQ2NzczIDRMNi45MzU0OCA2LjAwMDAxTDMuNDY3NzQgOEwzLjQ2Nzc0IDE2TDEwLjQwMzIgMjBMMTcuMzM4NyAxNlY4TDEzLjg3MSA2TDE3LjMzODcgNEwyMC44MDY0IDZMMjAuODA2NSAxOEwxMC40MDMyIDI0TDAgMThMMS40OTUwOGUtMDYgNloiIGZpbGw9IiMwMEI4NzkiLz4KPHBhdGggZD0iTTEzLjg0OTEgMTQuMDEyNlYxMC4wMTI2TDEwLjM4MTQgOC4wMTI1N0w2LjkxMzY0IDEwLjAxMjZWMTQuMDEyNkwxMC4zODE0IDE2LjAxMjZMMTMuODQ5MSAxNC4wMTI2WiIgZmlsbD0iIzAwQjg3OSIvPgo8L2c+CjwvZz4KPC9zdmc+Cg==" class="logo" alt="" />
+        </a>
+        <div class="nav_box">
+        </div>
+        <select class="toc-nav-dropdown" onChange="javascript:changeMenuLink(options[selectedIndex].value)">
+        </select>
+      </div>
+      <a onClick="javascript:changeHyperLink()" class="lang" href="javascript:void(0);" id="lang_box">english</a>
+    </header>
+    <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#185368440e" class="toc-h1 toc-link" data-title="更新日志">更新日志</a>
+          </li>
+          <li>
+            <a href="#2d07d50c97" class="toc-h1 toc-link" data-title="接入说明">接入说明</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#url" class="toc-h2 toc-link" data-title="接入url">接入url</a>
+                  </li>
+                  <li>
+                    <a href="#6ab2e2229b" class="toc-h2 toc-link" data-title="鉴权方式">鉴权方式</a>
+                  </li>
+                  <li>
+                    <a href="#6da7f3b22a" class="toc-h2 toc-link" data-title="时间安全">时间安全</a>
+                  </li>
+                  <li>
+                    <a href="#api-key" class="toc-h2 toc-link" data-title="创建API key">创建API key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#93d49cc2e5" class="toc-h1 toc-link" data-title="交易接口">交易接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#20fe1788a5" class="toc-h2 toc-link" data-title="获取用户所有历史订单">获取用户所有历史订单</a>
+                  </li>
+                  <li>
+                    <a href="#402ff42189" class="toc-h2 toc-link" data-title="获取用户所有历史成交">获取用户所有历史成交</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#c0f526030f" class="toc-h2 toc-link" data-title="错误码示例">错误码示例</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='185368440e'>更新日志</h1>
+<table><thead>
+<tr>
+<th>生效时间（北京时间 UTC+8)</th>
+<th>接口</th>
+<th>更新类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2026-07-08</td>
+<td>*</td>
+<td>新增</td>
+<td>合约API发布</td>
+</tr>
+</tbody></table>
+<h1 id='2d07d50c97'>接入说明</h1><h2 id='url'>接入url</h2>
+<blockquote>
+<p>响应示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fairPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1587442022003</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>或</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"系统内部错误!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>https://futures.ourbit.com</li>
+</ul>
+
+<p>相应API接受GET、POST或DELETE类型的请求，post请求的Content-Type为: application/json。</p>
+
+<p>参数以json格式发送（参数命名规则为驼峰命名），get请求以requestParam形式发送（参数命名规则为&#39;_&#39;隔开）。</p>
+<h2 id='6ab2e2229b'>鉴权方式</h2>
+<blockquote>
+<p>java示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="cm">/**
+ * 获取get请求参数字符串
+ *
+ * @param param get/delete请求参数map
+ * @return
+ */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getRequestParamString</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">param</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="nc">MapUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">param</span><span class="o">))</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">(</span><span class="mi">1024</span><span class="o">);</span>
+    <span class="nc">SortedMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TreeMap</span><span class="o">&lt;&gt;(</span><span class="n">param</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="nc">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">())</span> <span class="o">?</span> <span class="s">""</span> <span class="o">:</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">key</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="sc">'='</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">urlEncode</span><span class="o">(</span><span class="n">value</span><span class="o">)).</span><span class="na">append</span><span class="o">(</span><span class="sc">'&amp;'</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">urlEncode</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="s">"UTF-8"</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"\\+"</span><span class="o">,</span> <span class="s">"%20"</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">UnsupportedEncodingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"UTF-8 encoding not supported!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+ * 签名
+ */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">sign</span><span class="o">(</span><span class="nc">SignVo</span> <span class="n">signVo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">signVo</span><span class="o">.</span><span class="na">getRequestParam</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">signVo</span><span class="o">.</span><span class="na">setRequestParam</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getAccessKey</span><span class="o">()</span> <span class="o">+</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getReqTime</span><span class="o">()</span> <span class="o">+</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getRequestParam</span><span class="o">();</span>
+    <span class="k">return</span> <span class="nf">actualSignature</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getSecretKey</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">actualSignature</span><span class="o">(</span><span class="nc">String</span> <span class="n">inputStr</span><span class="o">,</span> <span class="nc">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Mac</span> <span class="n">hmacSha256</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">hmacSha256</span> <span class="o">=</span> <span class="nc">Mac</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"HmacSHA256"</span><span class="o">);</span>
+        <span class="nc">SecretKeySpec</span> <span class="n">secKey</span> <span class="o">=</span>
+                <span class="k">new</span> <span class="nf">SecretKeySpec</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">),</span> <span class="s">"HmacSHA256"</span><span class="o">);</span>
+        <span class="n">hmacSha256</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">secKey</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">NoSuchAlgorithmException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"No such algorithm: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InvalidKeyException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Invalid key: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+    <span class="o">}</span>
+    <span class="kt">byte</span><span class="o">[]</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">hmacSha256</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">inputStr</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+    <span class="k">return</span> <span class="nc">Hex</span><span class="o">.</span><span class="na">encodeHexString</span><span class="o">(</span><span class="n">hash</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="nd">@Getter</span>
+<span class="nd">@Setter</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SignVo</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">reqTime</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">accessKey</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">secretKey</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">requestParam</span><span class="o">;</span> <span class="c1">//get请求参数根据字典顺序排序,使用&amp;拼接字符串,post为json字符串</span>
+<span class="o">}</span>
+</code></pre></div>
+<ol>
+<li><p>对于公共接口,不需要签名。</p></li>
+<li><p>对于私有接口,需要在header中传入ApiKey、Request-Time、Signature、Content-Type 必须指定为application/json、Recv-Window(可选)参数,Signature为签名字符串,签名规则如下:</p></li>
+</ol>
+
+<p>1)签名时需要先获得请求参数字符串，无参时为&quot;&quot;：</p>
+
+<p>对于GET/DELETE请求，按字典序拼接业务参数以&amp;间隔，并最终获得签名目标串（在批量操作的API中，若参数值中有逗号等特殊符号，这些符号在签名时需要做URL encode）。</p>
+
+<p>对于POST请求，签名参数为json字符串（无需进行字典排序）。</p>
+
+<p>2)获得参数字符串后，再拼接签名目标串，规则为：accessKey+时间戳+获取到的参数字符串</p>
+
+<p>3)使用HMAC SHA256算法对目标串进行签名，并最终将签名作为参数携带到header中</p>
+
+<p>注意：</p>
+
+<p>1)参与签名的业务参数为null时，不参与签名，对于path参数，也不参与签名；注意get请求将参数拼接至url上时，如果参数为null， 后台解析时，会解析成&quot;&quot;，固当POST请求，某参数为null时，不要传该参数，或者签名时，将该参数的值设置为&quot;&quot;，否则会出现验签失败。</p>
+
+<p>2)请求时将签名时用到的Request-Time的值放入header的Request-Time参数中，获得的签名字符串放入header的Signature参数中，将APIKEY的Access Key放在header的ApiKey参数中，其余业务参数按正常传递即可。</p>
+
+<p>3）获得的签名字符串不需要进行base64进行编码。</p>
+<h2 id='6da7f3b22a'>时间安全</h2>
+<p>所有签名接口均需要传入header参数Request-Time，即以毫秒表示的时间戳字符串，服务端接收到请求后会验证请求发出的时间
+范围。若接受请求时，收到的req_time小于或大于服务端时间10秒（默认值）以上（该时间窗口值可以通过发送可选header参数
+Recv-Window来自定义，其最大值为60，不推荐使用30秒以上的recv_window），则认为该请求无效</p>
+<h2 id='api-key'>创建API key</h2>
+<p>用户可以在OURBIT站点个人中心，创建API key，其包括两个部分，Access keyAPI的访问秘钥，Secret key对应的秘钥，用于签名计算及验证。</p>
+
+<p>这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露。 </p>
+
+<h1 id='93d49cc2e5'>交易接口</h1>
+<p>[交易接口]模块下的API接口需要身份验证</p>
+
+<h2 id='20fe1788a5'>获取用户所有历史订单</h2>
+<blockquote>
+<p>响应示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dealAvgPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dealVol"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderMargin"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"takerFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"makerFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"profit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"openType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"externalOid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"usedMargin"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>api/v1/private/order/list/history_orders</code></li>
+</ul>
+
+<p><strong>需要权限:</strong> 合约交易读取权限</p>
+
+<aside class="notice">
+限速规则: 20次/2秒
+</aside>
+
+<p><strong>请求参数:</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>合约名</td>
+</tr>
+<tr>
+<td>states</td>
+<td>string</td>
+<td>false</td>
+<td>订单状态,1:待报,2未完成,3已完成,4已撤销,5无效;多个用 &#39;,&#39; 隔开</td>
+</tr>
+<tr>
+<td>category</td>
+<td>int</td>
+<td>false</td>
+<td>订单类别,1:限价委托,2:强平代管委托,4:ADL减仓;多个用 &#39;,&#39; 隔开</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>long</td>
+<td>false</td>
+<td>开始时间，开始时间和结束时间的跨度一次最大只能查180天，不传时间默认返回最近7天的数据</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>long</td>
+<td>false</td>
+<td>结束时间，开始时间和结束时间的跨度一次最大只能查180天</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>false</td>
+<td>订单方向 1开多,2平空,3开空,4平多</td>
+</tr>
+<tr>
+<td>page_num</td>
+<td>int</td>
+<td>true</td>
+<td>当前页数,默认为1</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>int</td>
+<td>true</td>
+<td>每页大小,默认20,最大100</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数:</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>状态码</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>错误描述（如有）</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>long</td>
+<td>订单id</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>合约名</td>
+</tr>
+<tr>
+<td>positionId</td>
+<td>long</td>
+<td>持仓id</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>委托价格</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>decimal</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>long</td>
+<td>杠杆倍数</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>订单方向 1开多,2平空,3开空,4平多</td>
+</tr>
+<tr>
+<td>category</td>
+<td>int</td>
+<td>订单类别:1限价委托,2强平代管委托,4ADL减仓</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>int</td>
+<td>1:限价单,2:Post Only只做Maker,3:立即成交或立即取消,4:全部成交或者全部取消，5:市价单,6:市价转现价</td>
+</tr>
+<tr>
+<td>dealAvgPrice</td>
+<td>decimal</td>
+<td>成交均价</td>
+</tr>
+<tr>
+<td>dealVol</td>
+<td>decimal</td>
+<td>成交数量</td>
+</tr>
+<tr>
+<td>orderMargin</td>
+<td>decimal</td>
+<td>委托保证金</td>
+</tr>
+<tr>
+<td>takerFee</td>
+<td>decimal</td>
+<td>买单手续费</td>
+</tr>
+<tr>
+<td>makerFee</td>
+<td>decimal</td>
+<td>卖单手续费</td>
+</tr>
+<tr>
+<td>profit</td>
+<td>decimal</td>
+<td>平仓盈亏</td>
+</tr>
+<tr>
+<td>feeCurrency</td>
+<td>string</td>
+<td>收费币种</td>
+</tr>
+<tr>
+<td>openType</td>
+<td>int</td>
+<td>开仓类型,1逐仓,2全仓</td>
+</tr>
+<tr>
+<td>state</td>
+<td>int</td>
+<td>订单状态,1:待报,2未完成,3已完成,4已撤销,5无效</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td>int</td>
+<td>错误code,0:正常，1：参数错误，2：账户余额不足，3：仓位不存在，4：仓位可用持仓不足，5：多仓时， 委托价小于了强平价，空仓时， 委托价大于了强平价，6：开多时， 强平价大于了合理价，开空时， 强平价小于了合理价</td>
+</tr>
+<tr>
+<td>externalOid</td>
+<td>string</td>
+<td>外部订单号</td>
+</tr>
+<tr>
+<td>usedMargin</td>
+<td>decimal</td>
+<td>已经使用的保证金</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>updateTime</td>
+<td>date</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+
+<h2 id='402ff42189'>获取历史成交</h2>
+<blockquote>
+<p>响应示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH_USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1783.96</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.19980352</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"profit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1783305295000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"positionMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>api/v1/private/order/list/order_deals</code></li>
+</ul>
+
+<p><strong>需要权限:</strong> 合约交易读取权限</p>
+
+<aside class="notice">
+限速规则: 20次/2秒
+</aside>
+
+<p><strong>请求参数:</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>合约名</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>long</td>
+<td>false</td>
+<td>开始时间，开始时间和结束时间的跨度一次最大只能查180天，不传时间默认返回最近7天的数据</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>long</td>
+<td>false</td>
+<td>结束时间，开始时间和结束时间的跨度一次最大只能查180天</td>
+</tr>
+<tr>
+<td>page_num</td>
+<td>int</td>
+<td>true</td>
+<td>当前页数,默认为1</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>int</td>
+<td>true</td>
+<td>每页大小,默认20,最大100</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数:</strong></p>
+
+<table><thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>合约名</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>订单方向 1开多,2平空,3开空,4平多</td>
+</tr>
+<td>vol</td>
+<td>int</td>
+<td>成交张数</td>
+</tr>
+<tr>
+<td>category</td>
+<td>int</td>
+<td>订单类别:1限价委托,2强平代管委托,3代管平仓委托,4ADL减仓</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>成交价格</td>
+</tr>
+<tr>
+<td>profit</td>
+<td>decimal</td>
+<td>盈亏</td>
+</tr>
+<tr>
+<td>feeCurrency</td>
+<td>string</td>
+<td>手续费币种</td>
+</tr>
+<tr>
+<td>taker</td>
+<td>bool</td>
+<td>是否taker</td>
+</tr>
+
+</tbody></table>
+
+
+<h1 id='e08c1d4f9a'>错误码</h1><h2 id='c0f526030f'>错误码示例</h2>
+<p>每个接口都有可能抛出异常</p>
+
+<p>以下为接口可能返回的错误码信息</p>
+
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>操作成功</td>
+</tr>
+<tr>
+<td>9999</td>
+<td>公共异常</td>
+</tr>
+<tr>
+<td>500</td>
+<td>内部错误</td>
+</tr>
+<tr>
+<td>501</td>
+<td>系统繁忙</td>
+</tr>
+<tr>
+<td>401</td>
+<td>未授权</td>
+</tr>
+<tr>
+<td>402</td>
+<td>api_key过期</td>
+</tr>
+<tr>
+<td>406</td>
+<td>访问ip不在白名单</td>
+</tr>
+<tr>
+<td>506</td>
+<td>未知的请求来源</td>
+</tr>
+<tr>
+<td>510</td>
+<td>请求过于频繁</td>
+</tr>
+<tr>
+<td>511</td>
+<td>接口禁止访问</td>
+</tr>
+<tr>
+<td>513</td>
+<td>请求无效(针对open api 请求时间&gt;服务器时间2秒或者&lt;服务器时间10秒以上)</td>
+</tr>
+<tr>
+<td>600</td>
+<td>参数错误</td>
+</tr>
+<tr>
+<td>601</td>
+<td>数据解析错误</td>
+</tr>
+<tr>
+<td>602</td>
+<td>验签失败</td>
+</tr>
+<tr>
+<td>603</td>
+<td>重复请求</td>
+</tr>
+<tr>
+<td>701</td>
+<td>需要账户读权限</td>
+</tr>
+<tr>
+<td>702</td>
+<td>需要账户写权限</td>
+</tr>
+<tr>
+<td>703</td>
+<td>需要交易读权限</td>
+</tr>
+<tr>
+<td>704</td>
+<td>需要交易写权限</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>账户不存在</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>合约不存在</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>合约未启用</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>风险限额等级错误</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>金额错误</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>订单方向错误</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>开仓类型错误</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>买单价格过高</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>卖单价格过低</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>余额不足</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>杠杆倍数错误</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>订单价格错误</td>
+</tr>
+<tr>
+<td>2008</td>
+<td>可平数量不足</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>仓位不存在或已平仓</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>订单数量错误</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>取消订单数量超过最大限制</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>批量下单数量超限</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>价格或者数量精度错误</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>计划委托超过最大委托数量</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>超过最大可减保证金</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>存在开仓活跃委托</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>下单杠杆倍数和已有仓位杠杆倍数不一致</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>持仓类型错误</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>存在大于新档位最大杠杆倍数的持仓</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>存在大于新档位最大杠杆倍数的订单</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>当前持仓数量大于新档位最大允许数量</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>全仓不支持修改杠杆</td>
+</tr>
+<tr>
+<td>2027</td>
+<td>同一方向全仓和逐仓只能存在一个</td>
+</tr>
+<tr>
+<td>2028</td>
+<td>超过最大下单数量</td>
+</tr>
+<tr>
+<td>2029</td>
+<td>订单类型错误</td>
+</tr>
+<tr>
+<td>2030</td>
+<td>外部订单id过长(最大32位长度)</td>
+</tr>
+<tr>
+<td>2031</td>
+<td>超过当前风险限额最大允许持仓数量</td>
+</tr>
+<tr>
+<td>2032</td>
+<td>下单价格小于多仓强平价</td>
+</tr>
+<tr>
+<td>2033</td>
+<td>下单价格大于空仓强平价</td>
+</tr>
+<tr>
+<td>2034</td>
+<td>批量查询数量超限</td>
+</tr>
+<tr>
+<td>2035</td>
+<td>不支持的市价单档位</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>计划委托价格类型错误</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>计划委托触发类型错误</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>执行周期错误</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>触发价格错误</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>不支持的币种</td>
+</tr>
+<tr>
+<td>2036</td>
+<td>下单次数超过上限，请联系客服</td>
+</tr>
+<tr>
+<td>2037</td>
+<td>交易频繁,请稍后再试</td>
+</tr>
+<tr>
+<td>2038</td>
+<td>超过最大允许持仓数量，请联系客服!</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>止盈价和止损价不能同时为空</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>止盈止损单不存在或已关闭</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>止盈止损价设置有误</td>
+</tr>
+<tr>
+<td>5004</td>
+<td>止盈止损单总挂单量大于仓位可平数量</td>
+</tr>
+<tr>
+<td>6001</td>
+<td>禁止交易</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>禁止开仓</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>时间范围错误</td>
+</tr>
+<tr>
+<td>6004</td>
+<td>必须传交易对和状态</td>
+</tr>
+<tr>
+<td>6005</td>
+<td>交易对未开放</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(function(){
+      const menuObj = [
+        ['spot_v3', 'SpotV3', 'spot_v3_en', '现货V3' ,'spot_v3_cn'],
+        ['contract', 'Futures', 'contract_en', '合约' ,'contract_cn']
+      ];
+      const navBox = $('.nav_box');
+      const navOptions = $('.toc-nav-dropdown');
+      const currentLang = /cn/.test(window.location.pathname);
+      menuObj.forEach(item => {
+        const _item = `
+          <span class="nav_cell nav_tab">
+            <a onClick="javascript:changeMenuLink('${item[0]}')" class="${item[0]}" href="javascript:void(0);">${currentLang?item[3]:item[1]}</a>
+          </span>
+        `;
+        const _option = `<option class="${item[0]}" value="${item[0]}">${currentLang?item[3]:item[1]}</option>`;
+        navOptions.append(_option);
+        navBox.append(_item);
+      })
+      const toggleBtn = $("#lang_box");
+      console.log(window.location.pathname)
+      const currentSystem = menuObj.map(i=> i[0]).find(j => {
+        return new RegExp(j).test(window.location.pathname);
+      }) || 'spot_v3';
+      const current_btn =  $(`a.${currentSystem}`);
+      const current_option =  $(`option.${currentSystem}`);
+      toggleBtn.html(currentLang ? 'english': '中文');
+      current_btn.addClass('current');
+      current_option.attr('selected', 'selected');
+    })
+
+    function changeMenuLink(menu) {
+        const currentLang = /cn/.test(window.location.pathname);
+        window.location.href = window.location.origin + '/apidocs/' + menu + '_' + (currentLang? 'cn': 'en');
+    }
+
+    function changeHyperLink() {
+        const isEnglish = /en/.test(window.location.pathname);
+        if(isEnglish){
+          window.location.href = window.location.origin + window.location.pathname.replace(/en/,'cn')
+        }else{
+          window.location.href = window.location.origin + window.location.pathname.replace(/cn/,'en')
+        }
+      }
+  </script>
+</html>

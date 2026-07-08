@@ -1,0 +1,1240 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the ourbit API"
+        >
+    <title>API Document</title>
+    <link href="https://www.ourbit.com/sites/favicon.ico" rel="icon" type="image/png" />
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-60d8e448.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-2ee5847f.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <header>
+      <div class="flex_box">
+       <a href="https://www.ourbit.com">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMTAwIDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBpZD0iR3JvdXAgMjgiPgo8cGF0aCBpZD0iVW5pb24iIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOTMuNDEzMSA0LjI1NzgxSDkwLjMxNjRWNy43NDE2OEg5My40MTMxVjE5Ljc0MTdIOTYuODk3VjcuNzQxNjhIOTkuOTkzOFY0LjI1NzgxSDk2Ljg5N0g5My40MTMxWiIgZmlsbD0iI0YyRjRGNiIvPgo8cGF0aCBpZD0iVW5pb25fMiIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03MC4xOTE0IDQuMjU3ODFINzcuNjQzQzgwLjIwODUgNC4yNTc4MSA4Mi4yODgyIDYuMzM3NTIgODIuMjg4MiA4LjkwMjk3QzgyLjI4ODIgOS44OTY5MyA4MS45NzYgMTAuODE4IDgxLjQ0NDMgMTEuNTczNEM4Mi4yNjcyIDEyLjQ0MDggODIuNzcyMSAxMy42MTI5IDgyLjc3MjEgMTQuOTAzQzgyLjc3MjEgMTcuNTc1MyA4MC42MDU3IDE5Ljc0MTcgNzcuOTMzMyAxOS43NDE3SDcwLjE5MTRWNC4yNTc4MVpNNzMuNjc1MyAxMC4wNjQzSDc3LjY0M0M3OC4yODQ0IDEwLjA2NDMgNzguODA0MyA5LjU0NDM0IDc4LjgwNDMgOC45MDI5N0M3OC44MDQzIDguMjYxNjEgNzguMjg0NCA3Ljc0MTY4IDc3LjY0MyA3Ljc0MTY4SDczLjY3NTNWMTAuMDY0M1pNNzMuNjc1MyAxNi4yNTc4SDc3LjkzMzNDNzguNjgxNiAxNi4yNTc4IDc5LjI4ODIgMTUuNjUxMiA3OS4yODgyIDE0LjkwM0M3OS4yODgyIDE0LjE1NDcgNzguNjgxNiAxMy41NDgxIDc3LjkzMzMgMTMuNTQ4MUg3My42NzUzVjE2LjI1NzhaIiBmaWxsPSIjRjJGNEY2Ii8+CjxwYXRoIGlkPSJVbmlvbl8zIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYzLjMyMDYgNC4yNTc4MUg1Ni4wNjI1VjE5Ljc0MTdINTkuNTQ2NFYxNC45MDNINjMuMzIwNkM2My40MzMyIDE0LjkwMyA2My41NDUgMTQuODk5NSA2My42NTU5IDE0Ljg5MjZMNjQuOTE3MyAxOS43NDE3SDY4LjY0MzFMNjcuMDAwMyAxMy40MjYyQzY4LjAxMjcgMTIuNDU3MiA2OC42NDMxIDExLjA5MjQgNjguNjQzMSA5LjU4MDM5QzY4LjY0MzEgNi42NDA4MyA2Ni4yNjAyIDQuMjU3ODEgNjMuMzIwNiA0LjI1NzgxWk02My4zMjA2IDcuNzQxNjhINTkuNTQ2NFYxMS40MTkxSDYzLjMyMDZDNjQuMzM2IDExLjQxOTEgNjUuMTU5MyAxMC41OTU5IDY1LjE1OTMgOS41ODAzOUM2NS4xNTkzIDguNTY0OTMgNjQuMzM2IDcuNzQxNjggNjMuMzIwNiA3Ljc0MTY4WiIgZmlsbD0iI0YyRjRGNiIvPgo8cGF0aCBpZD0iU3VidHJhY3QiIGQ9Ik00NS40MTc1IDQuMjU3ODFINDEuOTMzNlYxMy45MzUyQzQxLjkzMzYgMTcuNDA5MyA0NC43NDk5IDIwLjIyNTYgNDguMjIzOSAyMC4yMjU2QzUxLjY5OCAyMC4yMjU2IDU0LjUxNDIgMTcuNDA5MyA1NC41MTQyIDEzLjkzNTJWNC4yNTc4MUg1MS4wMzA0VjEzLjkzNTJDNTEuMDMwNCAxNS40ODUyIDQ5Ljc3MzkgMTYuNzQxNyA0OC4yMjM5IDE2Ljc0MTdDNDYuNjc0IDE2Ljc0MTcgNDUuNDE3NSAxNS40ODUyIDQ1LjQxNzUgMTMuOTM1MlY0LjI1NzgxWiIgZmlsbD0iI0YyRjRGNiIvPgo8cGF0aCBpZD0iUmVjdGFuZ2xlIDE2MCAoU3Ryb2tlKSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNi45MDE1IDEzLjkzNDdWMTAuMDYzOEMzNi45MDE1IDguNTEzOCAzNS42NDUgNy4yNTczMSAzNC4wOTUgNy4yNTczMUMzMi41NDUgNy4yNTczMSAzMS4yODg2IDguNTEzOCAzMS4yODg2IDEwLjA2MzhWMTMuOTM0N0MzMS4yODg2IDE1LjQ4NDcgMzIuNTQ1IDE2Ljc0MTIgMzQuMDk1IDE2Ljc0MTJDMzUuNjQ1IDE2Ljc0MTIgMzYuOTAxNSAxNS40ODQ3IDM2LjkwMTUgMTMuOTM0N1pNMzQuMDk1IDMuNzczNDRDMzAuNjIxIDMuNzczNDQgMjcuODA0NyA2LjU4OTcxIDI3LjgwNDcgMTAuMDYzOFYxMy45MzQ3QzI3LjgwNDcgMTcuNDA4OCAzMC42MjEgMjAuMjI1IDM0LjA5NSAyMC4yMjVDMzcuNTY5MSAyMC4yMjUgNDAuMzg1MyAxNy40MDg4IDQwLjM4NTMgMTMuOTM0N1YxMC4wNjM4QzQwLjM4NTMgNi41ODk3MSAzNy41NjkxIDMuNzczNDQgMzQuMDk1IDMuNzczNDRaIiBmaWxsPSIjRjJGNEY2Ii8+CjxnIGlkPSJHcm91cCAyMiI+CjxyZWN0IGlkPSJSZWN0YW5nbGUgMTU4IiB4PSI4NC4zMTY0IiB5PSI0LjI1NTg2IiB3aWR0aD0iNC42NDUxNiIgaGVpZ2h0PSIxNS40ODM5IiBmaWxsPSIjMDBCODc5Ii8+CjxyZWN0IGlkPSJSZWN0YW5nbGUgMTU5IiB4PSI4Ni40NDUzIiB5PSIzLjI4OTA2IiB3aWR0aD0iMC4zODcwOTciIGhlaWdodD0iMTcuNDE5NCIgZmlsbD0iIzAwQjg3OSIvPgo8L2c+CjxnIGlkPSJVbmlvbl80Ij4KPHBhdGggZD0iTTEzLjg3MSAyTDEwLjQwMzIgMEw2LjkzNTQ4IDJMMTAuNDAzMiA0TDEzLjg3MSAyWiIgZmlsbD0iIzAwQjg3OSIvPgo8cGF0aCBkPSJNMS40OTUwOGUtMDYgNkwzLjQ2NzczIDRMNi45MzU0OCA2LjAwMDAxTDMuNDY3NzQgOEwzLjQ2Nzc0IDE2TDEwLjQwMzIgMjBMMTcuMzM4NyAxNlY4TDEzLjg3MSA2TDE3LjMzODcgNEwyMC44MDY0IDZMMjAuODA2NSAxOEwxMC40MDMyIDI0TDAgMThMMS40OTUwOGUtMDYgNloiIGZpbGw9IiMwMEI4NzkiLz4KPHBhdGggZD0iTTEzLjg0OTEgMTQuMDEyNlYxMC4wMTI2TDEwLjM4MTQgOC4wMTI1N0w2LjkxMzY0IDEwLjAxMjZWMTQuMDEyNkwxMC4zODE0IDE2LjAxMjZMMTMuODQ5MSAxNC4wMTI2WiIgZmlsbD0iIzAwQjg3OSIvPgo8L2c+CjwvZz4KPC9zdmc+Cg==" class="logo" alt="" />
+        </a>
+        <div class="nav_box">
+        </div>
+        <select class="toc-nav-dropdown" onChange="javascript:changeMenuLink(options[selectedIndex].value)">
+        </select>
+      </div>
+      <a onClick="javascript:changeHyperLink()" class="lang" href="javascript:void(0);" id="lang_box">中文</a>
+    </header>
+    <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#185368440e" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
+          </li>
+          <li>
+            <a href="#2d07d50c97" class="toc-h1 toc-link" data-title="General Info">General Info</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#url" class="toc-h2 toc-link" data-title="Base URL">Base URL</a>
+                  </li>
+                  <li>
+                    <a href="#6ab2e2229b" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#6da7f3b22a" class="toc-h2 toc-link" data-title="Timing Security">Timing Security</a>
+                  </li>
+                  <li>
+                    <a href="#api-key" class="toc-h2 toc-link" data-title="Create API Key">Create API Key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#93d49cc2e5" class="toc-h1 toc-link" data-title="Trade API">Trade API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#20fe1788a5" class="toc-h2 toc-link" data-title="Get All Historical Orders">Get All Historical Orders</a>
+                  </li>
+                  <li>
+                    <a href="#402ff42189" class="toc-h2 toc-link" data-title="Get All Historical Deals">Get All Historical Deals</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#c0f526030f" class="toc-h2 toc-link" data-title="Error Code Examples">Error Code Examples</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='185368440e'>Change Log</h1>
+<table><thead>
+<tr>
+<th>Effective Time (Beijing Time UTC+8)</th>
+<th>API</th>
+<th>Update Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2026-07-08</td>
+<td>*</td>
+<td>Add</td>
+<td>Contract API release</td>
+</tr>
+</tbody></table>
+<h1 id='2d07d50c97'>General Info</h1><h2 id='url'>Base URL</h2>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC_USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fairPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1587442022003</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>or</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal system error!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>https://futures.ourbit.com</li>
+</ul>
+
+<p>The API accepts GET, POST, or DELETE requests. POST requests must use Content-Type: application/json.</p>
+
+<p>Parameters are sent as JSON (camelCase naming) for POST requests; GET requests send parameters as request params (snake_case naming separated by &#39;_&#39;).</p>
+<h2 id='6ab2e2229b'>Authentication</h2>
+<blockquote>
+<p>Java Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="cm">/**
+ * Get GET request parameter string
+ *
+ * @param param GET/DELETE request parameter map
+ * @return
+ */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getRequestParamString</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">param</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="nc">MapUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">param</span><span class="o">))</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">(</span><span class="mi">1024</span><span class="o">);</span>
+    <span class="nc">SortedMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TreeMap</span><span class="o">&lt;&gt;(</span><span class="n">param</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="nc">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">())</span> <span class="o">?</span> <span class="s">""</span> <span class="o">:</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">key</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="sc">'='</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">urlEncode</span><span class="o">(</span><span class="n">value</span><span class="o">)).</span><span class="na">append</span><span class="o">(</span><span class="sc">'&amp;'</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">urlEncode</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="s">"UTF-8"</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"\\+"</span><span class="o">,</span> <span class="s">"%20"</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">UnsupportedEncodingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"UTF-8 encoding not supported!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+ * Sign
+ */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">sign</span><span class="o">(</span><span class="nc">SignVo</span> <span class="n">signVo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">signVo</span><span class="o">.</span><span class="na">getRequestParam</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">signVo</span><span class="o">.</span><span class="na">setRequestParam</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getAccessKey</span><span class="o">()</span> <span class="o">+</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getReqTime</span><span class="o">()</span> <span class="o">+</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getRequestParam</span><span class="o">();</span>
+    <span class="k">return</span> <span class="nf">actualSignature</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">signVo</span><span class="o">.</span><span class="na">getSecretKey</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">actualSignature</span><span class="o">(</span><span class="nc">String</span> <span class="n">inputStr</span><span class="o">,</span> <span class="nc">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Mac</span> <span class="n">hmacSha256</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">hmacSha256</span> <span class="o">=</span> <span class="nc">Mac</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"HmacSHA256"</span><span class="o">);</span>
+        <span class="nc">SecretKeySpec</span> <span class="n">secKey</span> <span class="o">=</span>
+                <span class="k">new</span> <span class="nf">SecretKeySpec</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">),</span> <span class="s">"HmacSHA256"</span><span class="o">);</span>
+        <span class="n">hmacSha256</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">secKey</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">NoSuchAlgorithmException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"No such algorithm: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InvalidKeyException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Invalid key: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+    <span class="o">}</span>
+    <span class="kt">byte</span><span class="o">[]</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">hmacSha256</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">inputStr</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+    <span class="k">return</span> <span class="nc">Hex</span><span class="o">.</span><span class="na">encodeHexString</span><span class="o">(</span><span class="n">hash</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="nd">@Getter</span>
+<span class="nd">@Setter</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SignVo</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">reqTime</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">accessKey</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">secretKey</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">requestParam</span><span class="o">;</span> <span class="c1">// GET request params sorted by dictionary order, joined with &amp;; POST uses JSON string</span>
+<span class="o">}</span>
+</code></pre></div>
+<ol>
+<li><p>Public endpoints do not require a signature.</p></li>
+<li><p>For private endpoints, include ApiKey, Request-Time, and Signature in the request header. Content-Type must be application/json. Recv-Window is optional. Signature is the signed string. Signing rules are as follows:</p></li>
+</ol>
+
+<p>1) Obtain the request parameter string for signing. Use an empty string (&quot;&quot;) when there are no parameters:</p>
+
+<p>For GET/DELETE requests, concatenate business parameters in dictionary order separated by &amp;, then obtain the signing target string. (In batch APIs, if parameter values contain special characters such as commas, URL encode them when signing.)</p>
+
+<p>For POST requests, the signing parameter is the JSON string (no dictionary sorting required).</p>
+
+<p>2) After obtaining the parameter string, concatenate the signing target string as: accessKey + timestamp + parameter string</p>
+
+<p>3) Sign the target string using HMAC SHA256, then include the signature in the request header</p>
+
+<p>Notes:</p>
+
+<p>1) Business parameters with null values are excluded from signing. Path parameters are also excluded. For GET requests, null parameters appended to the URL are parsed as &quot;&quot; on the server. For POST requests, omit null parameters or set them to &quot;&quot; when signing, otherwise signature verification will fail.</p>
+
+<p>2) Place the Request-Time value used for signing in the Request-Time header, the signature string in the Signature header, and the API Key Access Key in the ApiKey header. Pass other business parameters as usual.</p>
+
+<p>3) The signature string does not need to be Base64 encoded.</p>
+<h2 id='6da7f3b22a'>Timing Security</h2>
+<p>All signed endpoints require the Request-Time header — a timestamp string in milliseconds. The server validates the request time window upon receipt. If req_time is more than 10 seconds (default) before or after server time (customizable via the optional Recv-Window header, max 60; recv_window above 30 seconds is not recommended), the request is considered invalid.</p>
+<h2 id='api-key'>Create API Key</h2>
+<p>Users can create an API key in the OURBIT account center. It consists of two parts: Access Key (API access key) and Secret Key (used for signature calculation and verification).</p>
+
+<p>These two keys are closely related to account security. Never disclose them to anyone.</p>
+
+<h1 id='93d49cc2e5'>Trade API</h1>
+<p>APIs under the [Trade API] module require authentication.</p>
+
+<h2 id='20fe1788a5'>Get All Historical Orders</h2>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dealAvgPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dealVol"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderMargin"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"takerFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"makerFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"profit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"openType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"externalOid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"usedMargin"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>api/v1/private/order/list/history_orders</code></li>
+</ul>
+
+<p><strong>Permission Required:</strong> Futures trading read permission</p>
+
+<aside class="notice">
+Rate limit: 20 requests per 2 seconds
+</aside>
+
+<p><strong>Request Parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>Contract symbol</td>
+</tr>
+<tr>
+<td>states</td>
+<td>string</td>
+<td>false</td>
+<td>Order status: 1 pending, 2 incomplete, 3 completed, 4 cancelled, 5 invalid; multiple values separated by &#39;,&#39;</td>
+</tr>
+<tr>
+<td>category</td>
+<td>int</td>
+<td>false</td>
+<td>Order category: 1 limit order, 2 liquidation managed order, 4 ADL reduction; multiple values separated by &#39;,&#39;</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>long</td>
+<td>false</td>
+<td>Start time. The time range between start and end time cannot exceed 180 days per query. Returns data from the last 7 days by default if not specified.</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>long</td>
+<td>false</td>
+<td>End time. The time range between start and end time cannot exceed 180 days per query.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>false</td>
+<td>Order side: 1 open long, 2 close short, 3 open short, 4 close long</td>
+</tr>
+<tr>
+<td>page_num</td>
+<td>int</td>
+<td>true</td>
+<td>Current page number, default 1</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>int</td>
+<td>true</td>
+<td>Page size, default 20, max 100</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Status code</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Error description (if any)</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>long</td>
+<td>Order ID</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Contract symbol</td>
+</tr>
+<tr>
+<td>positionId</td>
+<td>long</td>
+<td>Position ID</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>Order price</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>decimal</td>
+<td>Order quantity</td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>long</td>
+<td>Leverage</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>Order side: 1 open long, 2 close short, 3 open short, 4 close long</td>
+</tr>
+<tr>
+<td>category</td>
+<td>int</td>
+<td>Order category: 1 limit order, 2 liquidation managed order, 4 ADL reduction</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>int</td>
+<td>1: limit order, 2: Post Only (maker only), 3: IOC (immediate or cancel), 4: FOK (fill or kill), 5: market order, 6: market-to-limit</td>
+</tr>
+<tr>
+<td>dealAvgPrice</td>
+<td>decimal</td>
+<td>Average fill price</td>
+</tr>
+<tr>
+<td>dealVol</td>
+<td>decimal</td>
+<td>Filled quantity</td>
+</tr>
+<tr>
+<td>orderMargin</td>
+<td>decimal</td>
+<td>Order margin</td>
+</tr>
+<tr>
+<td>takerFee</td>
+<td>decimal</td>
+<td>Taker fee</td>
+</tr>
+<tr>
+<td>makerFee</td>
+<td>decimal</td>
+<td>Maker fee</td>
+</tr>
+<tr>
+<td>profit</td>
+<td>decimal</td>
+<td>Realized PnL</td>
+</tr>
+<tr>
+<td>feeCurrency</td>
+<td>string</td>
+<td>Fee currency</td>
+</tr>
+<tr>
+<td>openType</td>
+<td>int</td>
+<td>Open type: 1 isolated, 2 cross</td>
+</tr>
+<tr>
+<td>state</td>
+<td>int</td>
+<td>Order status: 1 pending, 2 incomplete, 3 completed, 4 cancelled, 5 invalid</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td>int</td>
+<td>Error code: 0 normal, 1 parameter error, 2 insufficient balance, 3 position does not exist, 4 insufficient available position, 5 long order price below liquidation price / short order price above liquidation price, 6 long liquidation price above fair price / short liquidation price below fair price</td>
+</tr>
+<tr>
+<td>externalOid</td>
+<td>string</td>
+<td>External order ID</td>
+</tr>
+<tr>
+<td>usedMargin</td>
+<td>decimal</td>
+<td>Used margin</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>date</td>
+<td>Created time</td>
+</tr>
+<tr>
+<td>updateTime</td>
+<td>date</td>
+<td>Updated time</td>
+</tr>
+</tbody></table>
+
+<h2 id='402ff42189'>Get Historical Deals</h2>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH_USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1783.96</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.19980352</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"profit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1783305295000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"positionMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>api/v1/private/order/list/order_deals</code></li>
+</ul>
+
+<p><strong>Permission Required:</strong> Futures trading read permission</p>
+
+<aside class="notice">
+Rate limit: 20 requests per 2 seconds
+</aside>
+
+<p><strong>Request Parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>Contract symbol</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>long</td>
+<td>false</td>
+<td>Start time. The time range between start and end time cannot exceed 180 days per query. Returns data from the last 7 days by default if not specified.</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>long</td>
+<td>false</td>
+<td>End time. The time range between start and end time cannot exceed 180 days per query.</td>
+</tr>
+<tr>
+<td>page_num</td>
+<td>int</td>
+<td>true</td>
+<td>Current page number, default 1</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>int</td>
+<td>true</td>
+<td>Page size, default 20, max 100</td>
+</tr>
+</tbody></table>
+
+<p><strong>Response Parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Contract symbol</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>Order side: 1 open long, 2 close short, 3 open short, 4 close long</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>int</td>
+<td>Filled contracts</td>
+</tr>
+<tr>
+<td>category</td>
+<td>int</td>
+<td>Order category: 1 limit order, 2 liquidation managed order, 3 managed close order, 4 ADL reduction</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>Fill price</td>
+</tr>
+<tr>
+<td>profit</td>
+<td>decimal</td>
+<td>Profit and loss</td>
+</tr>
+<tr>
+<td>feeCurrency</td>
+<td>string</td>
+<td>Fee currency</td>
+</tr>
+<tr>
+<td>taker</td>
+<td>bool</td>
+<td>Whether taker</td>
+</tr>
+
+</tbody></table>
+
+
+<h1 id='e08c1d4f9a'>Error Codes</h1><h2 id='c0f526030f'>Error Code Examples</h2>
+<p>Each endpoint may throw exceptions.</p>
+
+<p>The following are possible error codes returned by endpoints.</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>9999</td>
+<td>Common exception</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal error</td>
+</tr>
+<tr>
+<td>501</td>
+<td>System busy</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+</tr>
+<tr>
+<td>402</td>
+<td>API key expired</td>
+</tr>
+<tr>
+<td>406</td>
+<td>IP not in whitelist</td>
+</tr>
+<tr>
+<td>506</td>
+<td>Unknown request source</td>
+</tr>
+<tr>
+<td>510</td>
+<td>Too many requests</td>
+</tr>
+<tr>
+<td>511</td>
+<td>Endpoint access forbidden</td>
+</tr>
+<tr>
+<td>513</td>
+<td>Invalid request (Open API request time &gt; server time + 2s or &lt; server time - 10s)</td>
+</tr>
+<tr>
+<td>600</td>
+<td>Parameter error</td>
+</tr>
+<tr>
+<td>601</td>
+<td>Data parse error</td>
+</tr>
+<tr>
+<td>602</td>
+<td>Signature verification failed</td>
+</tr>
+<tr>
+<td>603</td>
+<td>Duplicate request</td>
+</tr>
+<tr>
+<td>701</td>
+<td>Account read permission required</td>
+</tr>
+<tr>
+<td>702</td>
+<td>Account write permission required</td>
+</tr>
+<tr>
+<td>703</td>
+<td>Trading read permission required</td>
+</tr>
+<tr>
+<td>704</td>
+<td>Trading write permission required</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>Account does not exist</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Contract does not exist</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Contract not enabled</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Risk limit tier error</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Amount error</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Order side error</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Open type error</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Buy order price too high</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Sell order price too low</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>Insufficient balance</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>Leverage error</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>Order price error</td>
+</tr>
+<tr>
+<td>2008</td>
+<td>Insufficient closable quantity</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>Position does not exist or already closed</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>Order quantity error</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>Cancel order count exceeds maximum limit</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Batch order count exceeds limit</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>Price or quantity precision error</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Trigger order exceeds maximum order count</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Exceeds maximum reducible margin</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>Active open orders exist</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Order leverage does not match existing position leverage</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Position type error</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Position exists with leverage greater than new tier maximum</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>Order exists with leverage greater than new tier maximum</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Current position size exceeds new tier maximum allowed</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Cross margin does not support leverage modification</td>
+</tr>
+<tr>
+<td>2027</td>
+<td>Only one of cross or isolated margin allowed per direction</td>
+</tr>
+<tr>
+<td>2028</td>
+<td>Exceeds maximum order quantity</td>
+</tr>
+<tr>
+<td>2029</td>
+<td>Order type error</td>
+</tr>
+<tr>
+<td>2030</td>
+<td>External order ID too long (max 32 characters)</td>
+</tr>
+<tr>
+<td>2031</td>
+<td>Exceeds maximum position size for current risk limit</td>
+</tr>
+<tr>
+<td>2032</td>
+<td>Order price below long liquidation price</td>
+</tr>
+<tr>
+<td>2033</td>
+<td>Order price above short liquidation price</td>
+</tr>
+<tr>
+<td>2034</td>
+<td>Batch query count exceeds limit</td>
+</tr>
+<tr>
+<td>2035</td>
+<td>Unsupported market order tier</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Trigger order price type error</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Trigger order trigger type error</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Execution cycle error</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>Trigger price error</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Unsupported currency</td>
+</tr>
+<tr>
+<td>2036</td>
+<td>Order count exceeds limit, please contact support</td>
+</tr>
+<tr>
+<td>2037</td>
+<td>Trading too frequent, please try again later</td>
+</tr>
+<tr>
+<td>2038</td>
+<td>Exceeds maximum allowed position size, please contact support!</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>Take-profit and stop-loss prices cannot both be empty</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Take-profit/stop-loss order does not exist or is closed</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Invalid take-profit/stop-loss price</td>
+</tr>
+<tr>
+<td>5004</td>
+<td>Total TP/SL order quantity exceeds closable position size</td>
+</tr>
+<tr>
+<td>6001</td>
+<td>Trading forbidden</td>
+</tr>
+<tr>
+<td>6002</td>
+<td>Opening positions forbidden</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>Time range error</td>
+</tr>
+<tr>
+<td>6004</td>
+<td>Symbol and status are required</td>
+</tr>
+<tr>
+<td>6005</td>
+<td>Trading pair not open</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(function(){
+      const menuObj = [
+        ['spot_v3', 'SpotV3', 'spot_v3_en', '现货V3' ,'spot_v3_cn'],
+        ['contract', 'Futures', 'contract_en', '合约' ,'contract_cn']
+      ];
+      const navBox = $('.nav_box');
+      const navOptions = $('.toc-nav-dropdown');
+      const currentLang = /cn/.test(window.location.pathname);
+      menuObj.forEach(item => {
+        const _item = `
+          <span class="nav_cell nav_tab">
+            <a onClick="javascript:changeMenuLink('${item[0]}')" class="${item[0]}" href="javascript:void(0);">${currentLang?item[3]:item[1]}</a>
+          </span>
+        `;
+        const _option = `<option class="${item[0]}" value="${item[0]}">${currentLang?item[3]:item[1]}</option>`;
+        navOptions.append(_option);
+        navBox.append(_item);
+      })
+      const toggleBtn = $("#lang_box");
+      console.log(window.location.pathname)
+      const currentSystem = menuObj.map(i=> i[0]).find(j => {
+        return new RegExp(j).test(window.location.pathname);
+      }) || 'spot_v3';
+      const current_btn =  $(`a.${currentSystem}`);
+      const current_option =  $(`option.${currentSystem}`);
+      toggleBtn.html(currentLang ? 'english': '中文');
+      current_btn.addClass('current');
+      current_option.attr('selected', 'selected');
+    })
+
+    function changeMenuLink(menu) {
+        const currentLang = /cn/.test(window.location.pathname);
+        window.location.href = window.location.origin + '/apidocs/' + menu + '_' + (currentLang? 'cn': 'en');
+    }
+
+    function changeHyperLink() {
+        const isEnglish = /en/.test(window.location.pathname);
+        if(isEnglish){
+          window.location.href = window.location.origin + window.location.pathname.replace(/en/,'cn')
+        }else{
+          window.location.href = window.location.origin + window.location.pathname.replace(/cn/,'en')
+        }
+      }
+  </script>
+</html>
